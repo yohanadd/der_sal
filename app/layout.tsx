@@ -20,7 +20,7 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: "Jungle Glam Hair - Hair Magic in Bad Laasphe",
+  title: "Der Salon Hair - Hair Magic in Bad Laasphe",
   description:
     "Where jungle vibes meet urban hair aesthetics. Professional hair salon in Bad Laasphe offering cuts, color, and styling services.",
     generator: 'v0.dev'
@@ -35,7 +35,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
         <Navigation />
-        <main className="pt-16">{children}</main>
+        <main>{children}</main>
         <ScrollToTop />
       </body>
     </html>
