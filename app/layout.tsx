@@ -1,0 +1,43 @@
+import type React from "react"
+import type { Metadata } from "next"
+import { Inter, Playfair_Display } from "next/font/google"
+import "./globals.css"
+import { Navigation } from "@/components/navigation"
+import { ScrollToTop } from "@/components/scroll-to-top"
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+})
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+  weight: ["400", "500", "600", "700", "800", "900"],
+  display: "swap",
+})
+
+export const metadata: Metadata = {
+  title: "Jungle Glam Hair - Hair Magic in Bad Laasphe",
+  description:
+    "Where jungle vibes meet urban hair aesthetics. Professional hair salon in Bad Laasphe offering cuts, color, and styling services.",
+    generator: 'v0.dev'
+}
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html lang="en">
+      <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
+        <Navigation />
+        <main className="pt-16">{children}</main>
+        <ScrollToTop />
+      </body>
+    </html>
+  )
+}
