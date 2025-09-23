@@ -80,7 +80,7 @@ export default function HomePage() {
       funFact:
         "Spricht drei Sprachen und flechtet in vier verschiedenen kulturellen Stilen",
       bio: "Lunas kreativer Geist schwebt so hoch wie ihr Papageien-Begleiter und kreiert Styles, die Ihre einzigartige Geschichte erzählen.",
-      image: stylist2,
+      image: stylist1,
       rating: 5.0,
       reviews: 156,
     },

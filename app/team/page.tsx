@@ -62,18 +62,18 @@ export default function TeamPage() {
       bio: "Alex bringt Präzision und Kunstfertigkeit in jeden Schnitt. Mit einem Hintergrund im Fashion-Styling versteht er, wie der richtige Haarschnitt nicht nur Ihr Aussehen, sondern auch Ihr Selbstvertrauen verwandeln kann.",
       certifications: ["Vidal Sassoon Ausgebildet", "Tigi Creative Team", "Herren-Styling Experte"],
     },
-    {
-      name: "Luna Chen",
-      role: "Bio-Pflege Spezialistin",
-      animal: "🦥",
-      image: "/images/member3.jpeg",
-      objectPosition: "center 10%",
-      specialties: ["Kopfhaut-Behandlungen", "Bio-Produkte", "Haar-Gesundheit"],
-      experience: "8 Jahre",
-      funFact: "Züchtet ihre eigenen Kräuter für individuelle Haarbehandlungen und praktiziert Meditation zwischen den Terminen",
-      bio: "Lunas ganzheitlicher Ansatz zur Haarpflege konzentriert sich auf Gesundheit von innen heraus. Sie spezialisiert sich auf Bio-Behandlungen und glaubt, dass gesundes Haar schönes Haar ist.",
-      certifications: ["Bio-Haarpflege Spezialist", "Kopfhaut-Therapie Experte", "Ayurvedische Haar-Behandlungen"],
-    },
+    // {
+    //   name: "Luna Chen",
+    //   role: "Bio-Pflege Spezialistin",
+    //   animal: "🦥",
+    //   image: "/images/member3.jpeg",
+    //   objectPosition: "center 10%",
+    //   specialties: ["Kopfhaut-Behandlungen", "Bio-Produkte", "Haar-Gesundheit"],
+    //   experience: "8 Jahre",
+    //   funFact: "Züchtet ihre eigenen Kräuter für individuelle Haarbehandlungen und praktiziert Meditation zwischen den Terminen",
+    //   bio: "Lunas ganzheitlicher Ansatz zur Haarpflege konzentriert sich auf Gesundheit von innen heraus. Sie spezialisiert sich auf Bio-Behandlungen und glaubt, dass gesundes Haar schönes Haar ist.",
+    //   certifications: ["Bio-Haarpflege Spezialist", "Kopfhaut-Therapie Experte", "Ayurvedische Haar-Behandlungen"],
+    // },
     {
       name: "Rico Martinez",
       role: "Herren-Styling Experte",
@@ -112,7 +112,7 @@ export default function TeamPage() {
                 <motion.span
                   key={index}
                   className="text-4xl"
-                  variants={fadeInUp}
+                  // variants={fadeInUp}
                   animate={{
                     y: [0, -10, 0],
                     rotate: [0, 5, -5, 0]

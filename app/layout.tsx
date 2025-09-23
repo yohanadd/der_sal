@@ -20,7 +20,7 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: "Der Salon Hair - Hair Magic in Bad Laasphe",
+  title: "Der Salon - Hair Magic in Bad Laasphe",
   description:
     "Where jungle vibes meet urban hair aesthetics. Professional hair salon in Bad Laasphe offering cuts, color, and styling services.",
     generator: 'v0.dev'

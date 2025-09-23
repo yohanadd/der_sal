@@ -69,13 +69,13 @@ export default function ContactPage() {
   }
 
   const openingHours = [
-    { day: "Montag", hours: "Geschlossen", icon: "🦥", note: "Faultier-Tag - Wir ruhen uns aus!" },
+    { day: "Montag", hours: "9:00 - 18:00", icon: "🦥", },
     { day: "Dienstag", hours: "9:00 - 18:00", icon: "✂️", note: "" },
     { day: "Mittwoch", hours: "9:00 - 18:00", icon: "🎨", note: "" },
     { day: "Donnerstag", hours: "9:00 - 18:00", icon: "💇‍♀️", note: "" },
     { day: "Freitag", hours: "9:00 - 18:00", icon: "✨", note: "" },
-    { day: "Samstag", hours: "8:00 - 16:00", icon: "🌟", note: "Früher Vogel Special!" },
-    { day: "Sonntag", hours: "Geschlossen", icon: "🌿", note: "Naturtag" },
+    { day: "Samstag", hours: "8:00 - 16:00", icon: "🌟", },
+    { day: "Sonntag", hours: "9:00 - 18:00", icon: "🌿", },
   ]
 
   return (
@@ -208,7 +208,7 @@ export default function ContactPage() {
                       </motion.div>
                       <div>
                         <h3 className="text-xl font-bold text-emerald-900 mb-2">Unser Dschungel-Standort</h3>
-                        <p className="text-gray-700 mb-2">Musterstraße 123</p>
+                        <p className="text-gray-700 mb-2">Königstraße 34</p>
                         <p className="text-gray-700 mb-4">57334 Bad Laasphe, Germany</p>
                         <motion.div 
                           className="flex flex-wrap gap-2"
@@ -336,7 +336,7 @@ export default function ContactPage() {
               </motion.div>
             </motion.div>
 
-            {/* Map Placeholder */}
+            {/* Interactive Map */}
             <motion.div 
               className="space-y-8"
               variants={slideInRight}
@@ -345,63 +345,115 @@ export default function ContactPage() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
-              <motion.div whileHover={{ scale: 1.02 }}>
-                <Card className="border-2 border-emerald-200">
+              <motion.div whileHover={{ scale: 1.01 }}>
+                <Card className="border-2 border-emerald-200 overflow-hidden">
                   <CardContent className="p-0">
-                    <div className="aspect-square bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-lg flex items-center justify-center relative overflow-hidden">
-                      {/* Map placeholder with jungle theme */}
-                      <div className="absolute inset-0 opacity-20">
-                        <motion.div 
-                          className="absolute top-10 left-10 w-16 h-16 text-emerald-400"
-                          animate={{ rotate: [0, 10, -10, 0] }}
-                          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                        >
-                          <Leaf className="w-full h-full rotate-12" />
-                        </motion.div>
-                        <motion.div 
-                          className="absolute bottom-10 right-10 w-12 h-12 text-emerald-400"
-                          animate={{ rotate: [0, -10, 10, 0] }}
-                          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-                        >
-                          <Leaf className="w-full h-full -rotate-45" />
-                        </motion.div>
-                      </div>
+                    <div className="aspect-square relative">
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2538.123456789!2d8.2234567!3d50.9234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bc123456789abc%3A0x123456789abcdef0!2sK%C3%B6nigstra%C3%9Fe%2034%2C%2057334%20Bad%20Laasphe%2C%20Germany!5e0!3m2!1sen!2sde!4v1234567890123!5m2!1sen!2sde&q=Königstraße+34,+57334+Bad+Laasphe,+Germany"
+                        width="100%"
+                        height="100%"
+                        style={{ border: 0 }}
+                        allowFullScreen
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        className="rounded-lg"
+                        title="Der Salon Location"
+                      />
+                      
+                      {/* Floating info card over the map */}
                       <motion.div 
-                        className="text-center z-10"
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
+                        className="absolute top-4 left-4 right-4 bg-white/95 backdrop-blur-sm rounded-lg p-4 shadow-lg border-2 border-emerald-200"
+                        initial={{ opacity: 0, y: -20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+                        transition={{ duration: 0.6, ease: "easeOut", delay: 0.5 }}
                       >
-                        <motion.div 
-                          className="w-20 h-20 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-xl"
-                          animate={{ 
-                            scale: [1, 1.1, 1],
-                            rotate: [0, 5, -5, 0]
-                          }}
-                          transition={{ 
-                            duration: 2,
-                            repeat: Infinity,
-                            ease: "easeInOut"
-                          }}
-                        >
-                          <Scissors className="w-10 h-10 text-emerald-900" />
-                        </motion.div>
-                        <h3 className="text-2xl font-bold text-emerald-900 mb-2 font-serif">Wir sind hier!</h3>
-                        <p className="text-emerald-700">Musterstraße 123, Bad Laasphe</p>
-                        <motion.div
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                        >
-                          <Button className="mt-4 bg-emerald-600 hover:bg-emerald-700 text-white">
-                            <MapPin className="w-4 h-4 mr-2" />
-                            In Karten öffnen
-                          </Button>
-                        </motion.div>
+                        <div className="flex items-center space-x-3">
+                          <motion.div 
+                            className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center flex-shrink-0"
+                            animate={{ 
+                              scale: [1, 1.1, 1],
+                              rotate: [0, 5, -5, 0]
+                            }}
+                            transition={{ 
+                              duration: 2,
+                              repeat: Infinity,
+                              ease: "easeInOut"
+                            }}
+                          >
+                            <Scissors className="w-5 h-5 text-white" />
+                          </motion.div>
+                          <div className="flex-1 min-w-0">
+                            <h3 className="text-lg font-bold text-emerald-900 font-serif">Der Salon</h3>
+                            <p className="text-sm text-emerald-700">Königstraße 34, Bad Laasphe</p>
+                          </div>
+                          <motion.div
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                          >
+                            <Button 
+                              size="sm"
+                              className="bg-emerald-600 hover:bg-emerald-700 text-white"
+                              onClick={() => window.open('https://maps.google.com/directions/?api=1&destination=Königstraße+34,+57334+Bad+Laasphe,+Germany', '_blank')}
+                            >
+                              Route
+                            </Button>
+                          </motion.div>
+                        </div>
                       </motion.div>
                     </div>
                   </CardContent>
                 </Card>
+              </motion.div>
+              
+              {/* Additional location info */}
+              <motion.div 
+                className="grid grid-cols-2 gap-4"
+                variants={staggerContainer}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+              >
+                <motion.div 
+                  variants={fadeInUp}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <Card className="border-2 border-emerald-200 hover:border-emerald-400 transition-colors duration-300 p-4">
+                    <div className="text-center">
+                      <motion.div 
+                        className="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-2"
+                        animate={{ rotate: [0, 10, -10, 0] }}
+                        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                      >
+                        <Car className="w-5 h-5 text-white" />
+                      </motion.div>
+                      <p className="text-sm font-semibold text-emerald-900">Kostenlose</p>
+                      <p className="text-xs text-emerald-700">Parkplätze</p>
+                    </div>
+                  </Card>
+                </motion.div>
+                
+                <motion.div 
+                  variants={fadeInUp}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  whileHover={{ scale: 1.05 }}
+                >
+                  <Card className="border-2 border-emerald-200 hover:border-emerald-400 transition-colors duration-300 p-4">
+                    <div className="text-center">
+                      <motion.div 
+                        className="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-2"
+                        animate={{ scale: [1, 1.1, 1] }}
+                        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                      >
+                        <Bus className="w-5 h-5 text-white" />
+                      </motion.div>
+                      <p className="text-sm font-semibold text-emerald-900">Bushaltestelle</p>
+                      <p className="text-xs text-emerald-700">in der Nähe</p>
+                    </div>
+                  </Card>
+                </motion.div>
               </motion.div>
             </motion.div>
           </div>
