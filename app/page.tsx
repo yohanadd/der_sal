@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { HeroSection } from "@/components/hero-section";
 import { Button } from "@/components/ui/button";
@@ -12,106 +12,127 @@ import {
   Phone,
   Star,
   Heart,
-  Facebook,
-  Music,
+  Sparkles,
+  Award,
+  Users,
+  Palette,
+  Shield,
+  Gem,
+  Mail,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 import Image from "next/image";
 import stylist1 from "@/public/images/member1.2.jpg";
-import stylist2 from "@/public/images/member3.jpeg";
+import stylist2 from "@/public/images/member2.jpg";
 import stylist3 from "@/public/images/member2.jpg";
 import { motion } from "framer-motion";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import { Footer } from "@/components/footer";
+import { useState, useRef } from "react";
 
 export default function HomePage() {
   // Animation variants
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
     animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6, ease: "easeOut" }
+    transition: { duration: 0.6, ease: "easeOut" },
   };
 
   const staggerContainer = {
     animate: {
       transition: {
-        staggerChildren: 0.1
-      }
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      const newPosition = Math.max(0, scrollPosition - 400);
+      scrollContainerRef.current.scrollTo({
+        left: newPosition,
+        behavior: 'smooth'
+      });
+      setScrollPosition(newPosition);
     }
   };
 
-  const scaleInOnHover = {
-    hover: { 
-      scale: 1.05, 
-      transition: { duration: 0.3, ease: "easeOut" }
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      const maxScroll = scrollContainerRef.current.scrollWidth - scrollContainerRef.current.clientWidth;
+      const newPosition = Math.min(maxScroll, scrollPosition + 400);
+      scrollContainerRef.current.scrollTo({
+        left: newPosition,
+        behavior: 'smooth'
+      });
+      setScrollPosition(newPosition);
     }
   };
 
   const teamMembers = [
     {
-      name: "Sarah Wilde",
-      role: "Leitende Coloristin & Inhaberin",
-      mascot: "🦎",
-      mascotName: "Chamäleon Chloe",
-      specialties: ["Balayage", "Farbkorrektur", "Fantasy Farben"],
-      funFact: "Kann 47 verschiedene Grüntöne aus dem Gedächtnis mischen",
-      bio: "Mit 12 Jahren Erfahrung verwandelt Sarah Haare in lebende Kunst und erweckt den Dschungel durch Farbe zum Leben.",
-      image: stylist1,
-      rating: 5.0,
-      reviews: 127,
-    },
-    {
-      name: "Marco Stone",
-      role: "Meister Barbier",
-      mascot: "🐆",
-      mascotName: "Panther Paulo",
-      specialties: ["Präzisionsschnitte", "Bart-Styling", "Fades"],
-      funFact: "Hat einmal für eine Wohltätigkeitsveranstaltung mit verbundenen Augen Haare geschnitten",
-      bio: "Präzision trifft auf Kunstfertigkeit in Marcos Händen. Jeder Schnitt wird mit der Anmut seines Panther-Geistes gefertigt.",
-      image: stylist3,
-      rating: 4.9,
-      reviews: 89,
-    },
-    {
-      name: "Luna Forest",
-      role: "Styling-Spezialistin",
-      mascot: "🦜",
-      mascotName: "Papagei Penny",
-      specialties: ["Hochzeitsstyles", "Farbkorrektur", "Balayage"],
-      funFact:
-        "Spricht drei Sprachen und flechtet in vier verschiedenen kulturellen Stilen",
-      bio: "Lunas kreativer Geist schwebt so hoch wie ihr Papageien-Begleiter und kreiert Styles, die Ihre einzigartige Geschichte erzählen.",
+      name: "Ines Scharavin",
+      role: "Friseurmeisterin · Coloristin · Blondexpertin",
+      specialties: ["Balayage", "moderne Farbtechniken", "Herrenstylings"],
+      bio: "Spezialisiert auf Balayage, moderne Farbtechniken und Herrenstylings. Mit Leidenschaft für präzises Handwerk und individuelle Looks.",
       image: stylist1,
       rating: 5.0,
       reviews: 156,
     },
+    {
+      name: "Sandra Krause",
+      role: "Spezialistin für Damenkurzhaar & Dauerwelle",
+      specialties: ["Damenkurzhaar", "Dauerwelle", "klassische Damenschnitte"],
+      bio: "Expertin für klassische Damenschnitte und typgerechte Stylings. Ihre Stärke: Präzision, Erfahrung und ein feines Gespür für Details.",
+      image: stylist2,
+      rating: 5,
+      reviews: 127,
+    },
   ];
+
+  const galleryImages = [
+    "images/pexels-cottonbro-3993469.jpg",
+    "/images/pexels-cottonbro-3998427.jpg",
+    "/images/pexels-cottonbro-7440131.jpg",
+    "/images/pexels-cottonbro-wash.jpg",
+    "/images/pexels-enginakyurt-3065209 (1).jpg",
+    "/images/pexels-ryank-12304509.jpg",
+    "/images/pexels-enginakyurt-extension.jpg",
+    "/images/pexels-markusspiske-112782.jpg",
+    "images/pexels-cottonbro-3993469.jpg",
+    "/images/pexels-cottonbro-3998427.jpg",
+    "/images/pexels-cottonbro-7440131.jpg",
+    "/images/pexels-cottonbro-wash.jpg",
+  ];
+
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gray-900 font-orbitron">
       {/* Hero Section */}
       <HeroSection />
 
       {/* Services Preview */}
-      <motion.section 
-        className="py-20 px-4 bg-white"
+      <motion.section
+        className="py-20 px-4 bg-gray-900"
         initial="initial"
         whileInView="animate"
         viewport={{ once: true, margin: "-100px" }}
         variants={fadeInUp}
       >
         <div className="max-w-6xl mx-auto">
-          <motion.div 
-            className="text-center mb-16"
-            variants={fadeInUp}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-emerald-900 mb-4 font-serif">
-              Unsere Dschungel-Services
+          <motion.div className="text-center mb-16" variants={fadeInUp}>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
+              Our Services
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Wo urbane Eleganz auf natürliche Schönheit trifft
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto tracking-wide">
+              Professional hair services in an atmosphere of refined elegance
             </p>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
             variants={staggerContainer}
             initial="initial"
@@ -120,42 +141,42 @@ export default function HomePage() {
           >
             {[
               {
-                title: "Damenschnitte",
-                icon: "✂️",
-                desc: "Präzisionsschnitte mit botanischem Flair",
+                title: "Women's Cuts",
+                icon: Scissors,
+                desc: "Precision cutting techniques for modern women",
               },
               {
-                title: "Farb-Magie",
-                icon: "🎨",
-                desc: "Natürliche Töne bis hin zu Dschungel-Nuancen",
+                title: "Color Services",
+                icon: Palette,
+                desc: "Expert coloring from natural tones to fashion shades",
               },
               {
-                title: "Herren-Styling",
-                icon: "🪒",
-                desc: "Scharfe Styles für den modernen Gentleman",
+                title: "Men's Grooming",
+                icon: Shield,
+                desc: "Classic and contemporary barbering services",
               },
               {
-                title: "Spezial-Pflege",
-                icon: "🌿",
-                desc: "Organische Behandlungen für gesundes Haar",
+                title: "Hair Treatments",
+                icon: Gem,
+                desc: "Luxury treatments for healthy, beautiful hair",
               },
             ].map((service, index) => (
               <motion.div key={index} variants={fadeInUp}>
-                <Card
-                  className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-emerald-100 hover:border-emerald-300"
-                >
-                  <CardContent className="p-6 text-center">
-                    <motion.div 
+                <Card className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-700 bg-gray-800/50 backdrop-blur-sm h-full flex flex-col">
+                  <CardContent className="p-6 text-center flex flex-col flex-grow">
+                    <motion.div
                       className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300"
-                      whileHover={{ scale: 1.2, rotate: 5 }}
+                      whileHover={{ scale: 1.2 }}
                       transition={{ type: "spring", stiffness: 300 }}
                     >
-                      {service.icon}
+                      <service.icon className="w-12 h-12 text-yellow-400 mx-auto" />
                     </motion.div>
-                    <h3 className="text-xl font-bold text-emerald-900 mb-2 font-serif">
+                    <h3 className="text-xl font-bold text-white mb-2 tracking-tight">
                       {service.title}
                     </h3>
-                    <p className="text-gray-600">{service.desc}</p>
+                    <p className="text-gray-400 tracking-wide flex-grow">
+                      {service.desc}
+                    </p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -164,155 +185,26 @@ export default function HomePage() {
         </div>
       </motion.section>
 
-      {/* <section id="team" className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-emerald-900 mb-4 font-serif">
-              Meet Our Wild Pack
-            </h2>
-            <p className="font-body text-xl text-muted-foreground max-w-3xl mx-auto">
-              Our team of passionate stylists each brings their own unique magic
-              to the jungle. Get to know the artists who will help unleash your
-              wild side.
-            </p>
-          </div>
-
-          <div className="bg-jungle-cream rounded-2xl p-8 mb-16 text-center shadow-leaf">
-            <Sparkles className="w-12 h-12 text-jungle-gold mx-auto mb-4" />
-            <h3 className=" text-3xl font-bold text-jungle-green mb-4">
-              What Makes Our Team Special
-            </h3>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="flex items-center justify-center space-x-3">
-                <Heart className="w-6 h-6 text-jungle-gold" />
-                <span className="font-body text-jungle-green">
-                  Passion-Driven Artistry
-                </span>
-              </div>
-              <div className="flex items-center justify-center space-x-3">
-                <Star className="w-6 h-6 text-jungle-gold" />
-                <span className="font-body text-jungle-green">
-                  Continuous Education
-                </span>
-              </div>
-              <div className="flex items-center justify-center space-x-3">
-                <Scissors className="w-6 h-6 text-jungle-gold" />
-                <span className="font-body text-jungle-green">
-                  Eco-Conscious Products
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <div className="grid lg:grid-cols-3 gap-8">
-            {teamMembers.map((member, index) => (
-              <Card
-                key={member.name}
-                className="group hover-tilt shadow-leaf border-border hover:shadow-elegant transition-all duration-300"
-              >
-                <CardContent className="p-6">
-                  <div className="relative mb-6">
-                    <img
-                      src={member.image.src}
-                      alt={member.name}
-                      className="w-32 h-32 rounded-full mx-auto object-cover border-4 border-jungle-gold shadow-gold"
-                    />
-                    <div className="absolute -bottom-2 -right-2 text-4xl">
-                      {member.mascot}
-                    </div>
-                  </div>
-
-                  <div className="text-center mb-4">
-                    <h3 className="font-heading text-xl font-bold text-jungle-green mb-1">
-                      {member.name}
-                    </h3>
-                    <p className="font-body text-jungle-gold font-semibold mb-2">
-                      {member.role}
-                    </p>
-                    <p className="font-body text-sm text-muted-foreground mb-4">
-                      with {member.mascotName}
-                    </p>
-
-                    <div className="flex items-center justify-center space-x-2 mb-4">
-                      <div className="flex items-center space-x-1">
-                        {[...Array(5)].map((_, i) => (
-                          <Star
-                            key={i}
-                            className={`w-4 h-4 ${
-                              i < Math.floor(member.rating)
-                                ? "text-jungle-gold fill-current"
-                                : "text-muted"
-                            }`}
-                          />
-                        ))}
-                      </div>
-                      <span className="font-body text-sm text-muted-foreground">
-                        {member.rating} ({member.reviews} reviews)
-                      </span>
-                    </div>
-                  </div>
-
-                  <p className="font-body text-sm text-muted-foreground text-center mb-4 leading-relaxed">
-                    {member.bio}
-                  </p>
-
-                  <div className="space-y-3">
-                    <div>
-                      <h4 className="font-body font-semibold text-jungle-green text-sm mb-2">
-                        Specialties:
-                      </h4>
-                      <div className="flex flex-wrap gap-2">
-                        {member.specialties.map((specialty) => (
-                          <Badge
-                            key={specialty}
-                            variant="secondary"
-                            className="text-xs"
-                          >
-                            {specialty}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="bg-jungle-cream/50 rounded-lg p-3">
-                      <h4 className="font-body font-semibold text-jungle-green text-sm mb-1">
-                        Fun Fact:
-                      </h4>
-                      <p className="font-body text-xs text-muted-foreground italic">
-                        {member.funFact}
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section> */}
-
       {/* Team Preview */}
-      <motion.section 
-        className="py-20 px-4 bg-gradient-to-br from-emerald-50 to-emerald-100"
+      <motion.section
+        className="py-20 px-4 bg-gray-800"
         initial="initial"
         whileInView="animate"
         viewport={{ once: true, margin: "-100px" }}
         variants={fadeInUp}
       >
         <div className="max-w-6xl mx-auto">
-          <motion.div 
-            className="text-center mb-16"
-            variants={fadeInUp}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-emerald-900 mb-4 font-serif">
-              Unser Dschungel-Team
+          <motion.div className="text-center mb-16" variants={fadeInUp}>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
+               Unser Team
             </h2>
-            <p className="text-xl text-emerald-700">
-              Jeder Stylist bringt seine eigene wilde Kreativität mit
+            <p className="text-xl text-gray-300 tracking-wide">
+              Erfahrene Profis mit Leidenschaft für Haar-Exzellenz
             </p>
           </motion.div>
 
-          <motion.div 
-            className="bg-jungle-cream rounded-2xl p-8 mb-16 text-center shadow-leaf"
+          <motion.div
+            className="bg-gray-700/50 rounded-2xl p-8 mb-16 text-center border border-gray-600 shadow-2xl"
             variants={fadeInUp}
             whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 300 }}
@@ -323,210 +215,246 @@ export default function HomePage() {
               viewport={{ once: true }}
               transition={{ type: "spring", stiffness: 300, delay: 0.2 }}
             >
-              <Sparkles className="w-12 h-12 text-jungle-gold mx-auto mb-4" />
+              <Award className="w-12 h-12 text-yellow-400 mx-auto mb-4" />
             </motion.div>
-            <h3 className=" text-3xl font-bold text-jungle-green mb-4">
-              Was unser Team besonders macht
+            <h3 className="text-3xl font-bold text-white mb-4 tracking-tight">
+              Warum Unser Salon?
             </h3>
-            <motion.div 
+            <motion.div
               className="grid md:grid-cols-3 gap-6"
               variants={staggerContainer}
             >
               {[
-                { icon: Heart, text: "Leidenschaftliche Kunstfertigkeit" },
-                { icon: Star, text: "Kontinuierliche Weiterbildung" },
-                { icon: Scissors, text: "Umweltbewusste Produkte" }
-              ].map(({ icon: Icon, text }, index) => (
-                <motion.div 
+                { icon: Heart, text: "Handwerkliche Perfektion" },
+                { icon: Star, text: "Ausgezeichnetes Team" },
+                { icon: Users, text: "Persönliche Beratung" },
+              ].map((item, index) => (
+                <motion.div
                   key={index}
                   className="flex items-center justify-center space-x-3"
                   variants={fadeInUp}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <Icon className="w-6 h-6 text-jungle-gold" />
-                  <span className="font-body text-jungle-green">
-                    {text}
+                  <item.icon className="w-6 h-6 text-yellow-400" />
+                  <span className="text-gray-300 tracking-wide">
+                    {item.text}
                   </span>
                 </motion.div>
               ))}
             </motion.div>
           </motion.div>
 
-          <motion.div 
-            className="grid md:grid-cols-3 gap-8"
+          <motion.div
+            className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto"
             variants={staggerContainer}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true, margin: "-50px" }}
           >
             {teamMembers.map((member, index) => (
-              <motion.div key={index} variants={fadeInUp}>
-                <Card
-                  className="group hover:shadow-xl transition-all duration-300 bg-white border-2 border-emerald-200 hover:border-yellow-400"
-                >
-                  <CardContent className="p-6 text-center">
-                    <motion.div 
-                      className="relative mb-6"
+              <motion.div key={index} variants={fadeInUp} className="flex">
+                <Card className="group hover:shadow-xl transition-all duration-300 bg-gray-700/30 border border-gray-600 backdrop-blur-sm flex flex-col w-full">
+                  <CardContent className="p-6 text-center flex flex-col flex-grow">
+                    {/* Increased image size with gold border */}
+                    <motion.div
+                      className="relative mb-4 flex justify-center"
                       whileHover={{ scale: 1.05 }}
                       transition={{ type: "spring", stiffness: 300 }}
                     >
-                      <motion.img
-                        src={member.image.src}
-                        alt={member.name}
-                        className="w-24 h-24 rounded-full mx-auto object-cover border-4 border-yellow-400 shadow-lg group-hover:scale-110 transition-transform duration-300"
-                        whileHover={{ rotate: 5 }}
-                      />
-                      <motion.div 
-                        className="absolute -bottom-2 -right-2 text-2xl"
-                        animate={{ 
-                          rotate: [0, -10, 10, -10, 0],
-                          scale: [1, 1.1, 1] 
-                        }}
-                        transition={{ 
-                          duration: 2,
-                          repeat: Infinity,
-                          repeatDelay: 3,
-                          ease: "easeInOut"
-                        }}
-                      >
-                        {member.mascot}
-                      </motion.div>
+                      <div className="w-40 h-40 rounded-full overflow-hidden border-2 border-yellow-400 shadow-lg">
+                        <Image
+                          src={member.image}
+                          alt={member.name}
+                          width={160}
+                          height={160}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
                     </motion.div>
-                    <h3 className="text-2xl font-bold text-emerald-900 mb-1 font-serif">
+                    
+                    {/* Decreased text size for name */}
+                    <h3 className="text-xl font-bold text-white mb-1 tracking-tight">
                       {member.name}
                     </h3>
-                    <Badge className="bg-yellow-400 text-emerald-900 mb-3">
+                    
+                    {/* Updated badge styling with gold accent */}
+                    <Badge className="bg-gray-600 text-gray-200 mb-3 font-semibold border border-gray-500 tracking-wide text-xs">
                       {member.role}
                     </Badge>
-                    <p className="text-gray-600">{member.specialties.join(" • ")}</p>
+                    
+                    {/* Decreased text size for bio */}
+                    <p className="text-gray-400 text-xs mb-3 tracking-wide flex-grow">
+                      {member.bio}
+                    </p>
+                    
+                    {/* Decreased text size for specialties */}
+                    <p className="text-gray-500 text-xs mb-3 tracking-wide">
+                      {member.specialties.join(" • ")}
+                    </p>
+                    
+                    {/* Gold star rating */}
+                    <div className="flex items-center justify-center space-x-1 mb-2">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className={`w-3 h-3 ${
+                            i < Math.floor(member.rating)
+                              ? "text-yellow-400 fill-current"
+                              : "text-gray-600"
+                          }`}
+                        />
+                      ))}
+                      <span className="text-gray-500 text-xs ml-1 tracking-wide">
+                        ({member.reviews})
+                      </span>
+                    </div>
                   </CardContent>
                 </Card>
               </motion.div>
             ))}
           </motion.div>
+
+          {/* Team Description */}
+          <motion.div
+            className="mt-12 max-w-3xl mx-auto text-center"
+            variants={fadeInUp}
+          >
+            <p className="text-gray-300 text-sm tracking-wide">
+              👉 Gemeinsam stehen wir für Professionalität, Kreativität und
+              persönliche Beratung – damit jeder Besuch bei uns ein Erlebnis
+              wird.
+            </p>
+          </motion.div>
         </div>
       </motion.section>
 
-      {/* Gallery Preview */}
-      <motion.section 
-        className="py-20 px-4 bg-white"
+      {/* Gallery Preview - Updated with Side Controls */}
+      <motion.section
+        className="py-20 px-4 bg-gray-900"
         initial="initial"
         whileInView="animate"
         viewport={{ once: true, margin: "-100px" }}
         variants={fadeInUp}
       >
-        <div className="max-w-6xl mx-auto">
-          <motion.div 
-            className="text-center mb-16"
-            variants={fadeInUp}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-emerald-900 mb-4 font-serif">
-              Dschungel-Verwandlungen
+        <div className="max-w-7xl mx-auto">
+          <motion.div className="text-center mb-16" variants={fadeInUp}>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
+              Our Work
             </h2>
-            <p className="text-xl text-gray-600">
-              Sehen Sie die Magie, die wir erschaffen
+            <p className="text-xl text-gray-300 tracking-wide">
+              Excellence in hair styling and transformation
             </p>
           </motion.div>
 
-          <motion.div 
-            className="grid grid-cols-2 md:grid-cols-4 gap-4"
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true, margin: "-50px" }}
-          >
-            {[
-              "/images/salon_inside.jpg",
-              "/images/salon_seats.jpg", 
-              "/images/salon_sits.jpg",
-              "/images/women_service.jpg",
-              "/images/man_service.png",
-              "/images/waiting.jpg",
-              "/images/outside.jpg",
-              "/images/team.jpg"
-            ].map((imageSrc, index) => (
-              <motion.div
-                key={index}
-                className="group relative aspect-square overflow-hidden rounded-2xl border-4 border-emerald-100 hover:border-yellow-400 transition-all duration-300"
-                variants={fadeInUp}
-                whileHover={{ scale: 1.03, rotate: 1 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <motion.div
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ duration: 0.6, ease: "easeOut" }}
-                >
-                  <Image
-                    src={imageSrc}
-                    alt={`Haar-Verwandlung ${index + 1}`}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                </motion.div>
-                <motion.div 
-                  className="absolute inset-0 bg-gradient-to-t from-emerald-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end"
-                  initial={{ opacity: 0 }}
-                  whileHover={{ opacity: 1 }}
-                >
-                  <motion.div 
-                    className="p-4 text-white"
-                    initial={{ y: 20, opacity: 0 }}
-                    whileHover={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.1 }}
-                  >
-                    <p className="font-semibold">Stil #{index + 1}</p>
-                  </motion.div>
-                </motion.div>
-              </motion.div>
-            ))}
-          </motion.div>
+          {/* Horizontal Scroll Container with Side Controls */}
+          <div className="relative">
+            {/* Left Scroll Button */}
+            <motion.button
+              onClick={scrollLeft}
+              className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 p-4 rounded-full bg-gray-800 border border-yellow-400 text-yellow-400 hover:bg-gray-700 transition-all duration-300 shadow-lg"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </motion.button>
 
-          <motion.div 
+            {/* Scroll Container */}
+            <motion.div
+              ref={scrollContainerRef}
+              className="flex gap-6 overflow-x-auto scrollbar-hide pb-8 px-4"
+              style={{ scrollBehavior: 'smooth' }}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true, margin: "-50px" }}
+              variants={staggerContainer}
+            >
+              {galleryImages.map((imageSrc, index) => (
+                <motion.div
+                  key={index}
+                  className="group flex-shrink-0 relative overflow-hidden rounded-2xl border-2 border-yellow-400 hover:border-yellow-300 transition-all duration-300"
+                  variants={fadeInUp}
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                  style={{ 
+                    width: '450px', 
+                    height: '560px'
+                  }}
+                >
+                  <div className="relative w-full h-full">
+                    <Image
+                      src={imageSrc}
+                      alt={`Professional hair work ${index + 1}`}
+                      fill
+                      className="object-contain group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 768px) 100vw, 450px"
+                      priority={index < 2}
+                    />
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                    <div className="p-6 text-white w-full">
+                      <p className="font-bold text-xl mb-2 tracking-wide">
+                        Style #{index + 1}
+                      </p>
+                      <p className="text-gray-200 text-sm tracking-wide">
+                        Professional hair transformation
+                      </p>
+                    </div>
+                  </div>
+                  
+                  {/* Gold hover overlay */}
+                  <div className="absolute inset-0 bg-yellow-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </motion.div>
+              ))}
+            </motion.div>
+
+            {/* Right Scroll Button */}
+            <motion.button
+              onClick={scrollRight}
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 p-4 rounded-full bg-gray-800 border border-yellow-400 text-yellow-400 hover:bg-gray-700 transition-all duration-300 shadow-lg"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <ChevronRight className="w-6 h-6" />
+            </motion.button>
+
+            {/* Gradient fade effects on sides */}
+            <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-gray-900 to-transparent pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-gray-900 to-transparent pointer-events-none" />
+          </div>
+
+          <motion.div
             className="text-center mt-12"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Button
-                size="lg"
-                className="bg-emerald-800 hover:bg-emerald-900 text-white px-8"
-              >
-                <Instagram className="w-5 h-5 mr-2" />
-                Vollständige Galerie
-              </Button>
-            </motion.div>
+            {/* Optional: Add button here if needed */}
           </motion.div>
         </div>
       </motion.section>
 
       {/* Contact & Location */}
-      <motion.section 
-        className="py-20 px-4 bg-gradient-to-br from-emerald-900 to-emerald-800 text-white"
+      <motion.section
+        className="py-20 px-4 bg-gray-800"
         initial="initial"
         whileInView="animate"
         viewport={{ once: true, margin: "-100px" }}
         variants={fadeInUp}
       >
         <div className="max-w-6xl mx-auto">
-          <motion.div 
-            className="text-center mb-16"
-            variants={fadeInUp}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 font-serif text-yellow-400">
-              Finden Sie Ihre Dschungel-Oase
+          <motion.div className="text-center mb-16" variants={fadeInUp}>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white tracking-tight">
+              Ihr Style-Spot in Bad Laasphe
             </h2>
-            <p className="text-xl text-emerald-100">
-              Im Herzen von Bad Laasphe gelegen
+            <p className="text-xl text-gray-300 tracking-wide">
+              Hier geht's nicht nur um Haare – hier geht's um Persönlichkeit,
+              Ausstrahlung und den Look, der zu dir passt.
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <motion.div 
+            <motion.div
               className="space-y-8"
               variants={staggerContainer}
               initial="initial"
@@ -534,48 +462,63 @@ export default function HomePage() {
               viewport={{ once: true }}
             >
               {[
-                { icon: MapPin, title: "Standort", desc: "Musterstraße 123, Bad Laasphe" },
-                { icon: Clock, title: "Öffnungszeiten", desc: "Di-Fr: 9:00-18:00 | Sa: 8:00-16:00", extra: "🦥 Montags geschlossen (Faultier-Tag!)" },
-                { icon: Phone, title: "Kontakt", desc: "+49 123 456 789" }
-              ].map(({ icon: Icon, title, desc, extra }, index) => (
-                <motion.div 
+                {
+                  icon: MapPin,
+                  title: "Address",
+                  desc: "Königsstraße 34 · 57334 Bad Laasphe",
+                },
+                {
+                  icon: Phone,
+                  title: "Phone",
+                  desc: "02752 / 22029205",
+                },
+                {
+                  icon: Mail,
+                  title: "Email",
+                  desc: "info@dersalon-scharavin.de",
+                },
+              ].map((item, index) => (
+                <motion.div
                   key={index}
                   className="flex items-center space-x-4"
                   variants={fadeInUp}
                   whileHover={{ scale: 1.02, x: 10 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <motion.div 
-                    className="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center"
+                  <motion.div
+                    className="w-12 h-12 bg-yellow-500/20 rounded-full flex items-center justify-center border border-yellow-500/30"
                     whileHover={{ rotate: 360, scale: 1.1 }}
                     transition={{ duration: 0.6 }}
                   >
-                    <Icon className="w-6 h-6 text-emerald-900" />
+                    <item.icon className="w-6 h-6 text-yellow-400" />
                   </motion.div>
                   <div>
-                    <h3 className="text-xl font-bold text-yellow-400">
-                      {title}
+                    <h3 className="text-xl font-bold text-white tracking-tight">
+                      {item.title}
                     </h3>
-                    <p className="text-emerald-100">{desc}</p>
-                    {extra && (
-                      <p className="text-emerald-200 text-sm">{extra}</p>
-                    )}
+                    <p className="text-gray-300 tracking-wide">{item.desc}</p>
                   </div>
                 </motion.div>
               ))}
+
+              <motion.div className="pt-4" variants={fadeInUp}>
+                <p className="text-gray-300 text-lg tracking-wide">
+                  Schreiben Sie uns, rufen Sie uns an oder buchen Sie direkt Ihren Termin – wir sind für Sie da
+                </p>
+              </motion.div>
             </motion.div>
 
-            <motion.div 
-              className="bg-emerald-800/50 rounded-2xl p-8 border-2 border-yellow-400/30"
+            <motion.div
+              className="bg-gray-700/30 rounded-2xl p-8 border border-gray-600 backdrop-blur-sm"
               variants={fadeInUp}
               whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <h3 className="text-2xl font-bold text-yellow-400 mb-6 font-serif">
-                Bereit für das Wilde?
+              <h3 className="text-2xl font-bold text-white mb-6 tracking-tight">
+                Buchen Sie Ihren Termin
               </h3>
-              <p className="text-emerald-100 mb-6">
-                🌿 Lassen Sie Ihr Haar wild wachsen – wir bändigen es mit Stil!
+              <p className="text-gray-300 mb-6 tracking-wide">
+                Erleben Sie professionelle Haarpflege in unserem eleganten, modernen Salonambiente.
               </p>
               <motion.div
                 whileHover={{ scale: 1.05 }}
@@ -583,15 +526,19 @@ export default function HomePage() {
               >
                 <Button
                   size="lg"
-                  className="w-full bg-gradient-to-r from-yellow-500 to-yellow-400 hover:from-yellow-600 hover:to-yellow-500 text-emerald-900 font-semibold"
+                  className="w-full bg-yellow-500/20 text-yellow-400 hover:bg-yellow-500/30 font-semibold border border-yellow-500/30 tracking-wide"
                 >
                   <motion.div
-                    animate={{ rotate: [0, 15, -15, 0] }}
-                    transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+                    animate={{ rotate: [0, 5, -5, 0] }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      repeatDelay: 3,
+                    }}
                   >
-                    <Scissors className="w-5 h-5 mr-2" />
+                    <Scissors className="w-5 h-5 mr-2 text-yellow-400" />
                   </motion.div>
-                  Ihr Dschungel-Abenteuer buchen
+                  Termin buchen
                 </Button>
               </motion.div>
             </motion.div>
@@ -601,31 +548,9 @@ export default function HomePage() {
 
       {/* Footer */}
       <Footer />
-      
+
       {/* Scroll to Top Button */}
       <ScrollToTop />
     </div>
   );
 }
-
-const Sparkles = ({ className }: { className?: string }) => (
-  <svg
-    className={className}
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path
-      d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z"
-      fill="currentColor"
-    />
-    <path
-      d="M19 3L19.5 5.5L22 6L19.5 6.5L19 9L18.5 6.5L16 6L18.5 5.5L19 3Z"
-      fill="currentColor"
-    />
-    <path
-      d="M5 15L5.5 17.5L8 18L5.5 18.5L5 21L4.5 18.5L2 18L4.5 17.5L5 15Z"
-      fill="currentColor"
-    />
-  </svg>
-);

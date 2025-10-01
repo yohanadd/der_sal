@@ -116,6 +116,31 @@ img {
   --sidebar-ring: oklch(0.439 0 0);
 }
 
+
+.font-orbitron {
+  font-family: var(--font-orbitron), sans-serif;
+}
+
+.font-orbitron-400 {
+  font-family: var(--font-orbitron), sans-serif;
+  font-weight: 400;
+}
+
+.font-orbitron-500 {
+  font-family: var(--font-orbitron), sans-serif;
+  font-weight: 500;
+}
+
+.font-orbitron-700 {
+  font-family: var(--font-orbitron), sans-serif;
+  font-weight: 700;
+}
+
+.font-orbitron-900 {
+  font-family: var(--font-orbitron), sans-serif;
+  font-weight: 900;
+}
+
 @theme inline {
   /* optional: --font-sans, --font-serif, --font-mono if they are applied in the layout.tsx */
 

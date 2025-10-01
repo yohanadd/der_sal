@@ -1,6 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Inter, Playfair_Display } from "next/font/google"
+import { Orbitron } from "next/font/google" // ← ADD THIS LINE
 import "./globals.css"
 import { Navigation } from "@/components/navigation"
 import { ScrollToTop } from "@/components/scroll-to-top"
@@ -19,6 +20,14 @@ const playfair = Playfair_Display({
   display: "swap",
 })
 
+// ← ADD THIS BLOCK
+const orbitron = Orbitron({
+  subsets: ["latin"],
+  variable: "--font-orbitron",
+  weight: ["400", "500", "700", "900"],
+  display: "swap",
+})
+
 export const metadata: Metadata = {
   title: "Der Salon - Hair Magic in Bad Laasphe",
   description:
@@ -33,7 +42,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
+      {/* ← ADD orbitron.variable to the body className */}
+      <body className={`${inter.variable} ${playfair.variable} ${orbitron.variable} font-sans antialiased`}>
         <Navigation />
         <main>{children}</main>
         <ScrollToTop />

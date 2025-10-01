@@ -3,15 +3,13 @@
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Menu, Scissors, Leaf, X } from "lucide-react"
+import { Menu, Scissors, X } from "lucide-react"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
-import floatingLeaf from "@/public/images/floating-leaf.png";
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false);
-
 
   const navItems = [
     { href: "/", label: "Startseite" },
@@ -33,7 +31,7 @@ export function Navigation() {
     <motion.nav 
       className={`fixed top-0 w-full z-50 transition-all duration-1000 ease-in-out ${
         isScrolled 
-          ? "bg-white/90 backdrop-blur-md shadow-lg border-b border-gray-200" 
+          ? "bg-gray-900/90 backdrop-blur-md shadow-lg border-b border-gray-700" 
           : "bg-transparent"
       }`}
       initial={{ y: -100 }}
@@ -45,44 +43,20 @@ export function Navigation() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 group">
             <motion.div 
-              className="relative"
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <motion.div 
-                className="w-10 h-10 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
-                whileHover={{ rotate: 360 }}
-                transition={{ duration: 0.6 }}
-              >
-                <motion.div
-                  animate={{ rotate: [0, 15, -15, 0] }}
-                  transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
-                >
-                  <Scissors className="w-5 h-5 text-emerald-900" />
-                </motion.div>
-              </motion.div>
-              <motion.div
-                animate={{ 
-                  rotate: [0, 10, -10, 0],
-                  scale: [1, 1.1, 1]
-                }}
-                transition={{ 
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              >
-                <Leaf className="absolute -top-1 -right-1 w-4 h-4 text-yellow-400" />
-              </motion.div>
-            </motion.div>
-            <motion.span 
-              className={`text-xl font-bold font-serif transition-colors duration-800 ease-in-out ${
-                isScrolled ? "text-emerald-900" : "text-white"
+              className={`text-xl font-bold font-orbitron tracking-tight transition-colors duration-800 ease-in-out flex items-center ${
+                isScrolled ? "text-white" : "text-white"
               }`}
               whileHover={{ scale: 1.05 }}
             >
-              Der Salon
-            </motion.span>
+             <p className="pr-1">D</p> 
+              {/* Custom E with three horizontal lines */}
+              <span className="relative inline-block mr-1">
+                <span className="block w-3 h-0.5 bg-white mb-1"></span>
+                <span className="block w-3 h-0.5 bg-white mb-1"></span>
+                <span className="block w-3 h-0.5 bg-white"></span>
+              </span>
+             <p >R SALON</p> 
+            </motion.div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -96,8 +70,8 @@ export function Navigation() {
               >
                 <Link
                   href={item.href}
-                  className={`hover:text-yellow-400 transition-colors duration-800 ease-in-out font-medium relative group ${
-                    isScrolled ? "text-emerald-800" : "text-emerald-100"
+                  className={`hover:text-gray-300 transition-colors duration-800 ease-in-out font-medium relative group font-orbitron tracking-wide ${
+                    isScrolled ? "text-gray-200" : "text-gray-200"
                   }`}
                 >
                   <motion.span
@@ -107,7 +81,7 @@ export function Navigation() {
                     {item.label}
                   </motion.span>
                   <motion.span 
-                    className="absolute -bottom-1 left-0 w-0 h-0.5 bg-yellow-400 group-hover:w-full transition-all duration-300"
+                    className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gray-400 group-hover:w-full transition-all duration-300"
                     whileHover={{ scaleX: 1 }}
                   />
                 </Link>
@@ -123,7 +97,7 @@ export function Navigation() {
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Button className="bg-gradient-to-r from-yellow-500 to-yellow-400 hover:from-yellow-600 hover:to-yellow-500 text-emerald-900 font-semibold">
+                  <Button className="bg-yellow-500/20 text-yellow-400 hover:bg-yellow-500/30 font-semibold border border-yellow-500/30 font-orbitron tracking-wide">
                     Termin buchen
                   </Button>
                 </motion.div>
@@ -138,8 +112,8 @@ export function Navigation() {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
-                <Button variant="ghost" size="icon" className={`hover:text-yellow-400 transition-colors duration-800 ease-in-out ${
-                  isScrolled ? "text-emerald-900" : "text-white"
+                <Button variant="ghost" size="icon" className={`hover:text-gray-300 transition-colors duration-800 ease-in-out ${
+                  isScrolled ? "text-white" : "text-white"
                 }`}>
                   <motion.div
                     animate={{ rotate: isOpen ? 90 : 0 }}
@@ -150,7 +124,7 @@ export function Navigation() {
                 </Button>
               </motion.div>
             </SheetTrigger>
-            <SheetContent side="right" className="bg-emerald-900 border-emerald-700">
+            <SheetContent side="right" className="bg-gray-900 border-gray-700">
               <motion.div 
                 className="flex flex-col space-y-6 mt-8"
                 initial={{ opacity: 0, x: 20 }}
@@ -166,7 +140,7 @@ export function Navigation() {
                   >
                     <Link
                       href={item.href}
-                      className="text-emerald-100 hover:text-yellow-400 transition-colors duration-200 text-lg font-medium block"
+                      className="text-gray-200 hover:text-gray-300 transition-colors duration-200 text-lg font-medium block font-orbitron tracking-wide"
                       onClick={() => setIsOpen(false)}
                     >
                       <motion.span
@@ -188,7 +162,7 @@ export function Navigation() {
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
-                      <Button className="bg-gradient-to-r from-yellow-500 to-yellow-400 hover:from-yellow-600 hover:to-yellow-500 text-emerald-900 font-semibold mt-4">
+                      <Button className="bg-yellow-500/20 text-yellow-400 hover:bg-yellow-500/30 font-semibold mt-4 border border-yellow-500/30 font-orbitron tracking-wide w-full">
                         Termin buchen
                       </Button>
                     </motion.div>
@@ -202,11 +176,6 @@ export function Navigation() {
     </motion.nav>
   )
 }
-
-
-
-
-
 
 
   // const [isMenuOpen, setIsMenuOpen] = useState(false);

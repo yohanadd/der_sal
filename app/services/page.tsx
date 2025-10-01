@@ -3,14 +3,14 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Scissors, Palette, Sparkles, Leaf, Heart, Crown } from "lucide-react"
+import { Scissors, Palette, Sparkles, Leaf, Heart, Crown, Zap } from "lucide-react"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { ScrollToTop } from "@/components/scroll-to-top"
 import { Footer } from "@/components/footer"
 
 export default function ServicesPage() {
-  // Animation variants - optimized for performance
+  // Animation variants
   const fadeInUp = {
     initial: { opacity: 0, y: 30 },
     animate: { opacity: 1, y: 0 }
@@ -30,7 +30,7 @@ export default function ServicesPage() {
     {
       title: "Damen-Services",
       icon: Crown,
-      color: "from-pink-500 to-rose-500",
+      color: "from-yellow-600 to-yellow-700",
       image: "/images/pexels-markusspiske-112782.jpg",
       services: [
         {
@@ -62,7 +62,7 @@ export default function ServicesPage() {
     {
       title: "Farb-Magie",
       icon: Palette,
-      color: "from-purple-500 to-indigo-500",
+      color: "from-yellow-600 to-yellow-700",
       image: "/images/pexels-john-diez-7388749.jpg",
       services: [
         {
@@ -94,7 +94,7 @@ export default function ServicesPage() {
     {
       title: "Herren-Styling",
       icon: Scissors,
-      color: "from-blue-500 to-cyan-500",
+      color: "from-yellow-600 to-yellow-700",
       image: "/images/pexels-jibarofoto-1453005.jpg",
       services: [
         {
@@ -126,7 +126,7 @@ export default function ServicesPage() {
     {
       title: "Bio-Pflege",
       icon: Leaf,
-      color: "from-green-500 to-emerald-500",
+      color: "from-yellow-600 to-yellow-700",
       image: "/images/pexels-jibarofoto-1453005.jpg",
       services: [
         {
@@ -158,10 +158,10 @@ export default function ServicesPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-emerald-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-gray-800 to-gray-900">
       {/* Hero Section */}
       <motion.section 
-        className="py-20 px-4 bg-gradient-to-br from-emerald-900 to-emerald-800 text-white"
+        className="py-20 px-4 bg-gradient-to-br from-gray-900 to-gray-800 text-white"
         initial="initial"
         animate="animate"
         variants={fadeInUp}
@@ -172,28 +172,97 @@ export default function ServicesPage() {
             className="mb-8"
             variants={staggerContainer}
           >
-            <motion.div
-              initial={{ scale: 0, rotate: -180 }}
-              animate={{ scale: 1, rotate: 0 }}
-              transition={{ duration: 0.8, type: "spring", stiffness: 200, damping: 20 }}
-            >
-              <Sparkles className="w-16 h-16 mx-auto mb-4 text-yellow-400" />
-            </motion.div>
             <motion.h1 
-              className="text-5xl md:text-6xl font-bold mb-4 font-serif text-yellow-400"
+              className="text-5xl md:text-6xl font-bold mb-4 font-orbitron-500 text-white"
               variants={fadeInUp}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              Unsere Dschungel-Services
+              Unsere Services
             </motion.h1>
             <motion.p 
-              className="text-xl text-emerald-100 max-w-3xl mx-auto"
+              className="text-xl text-gray-100 max-w-3xl mx-auto font-orbitron-500"
               variants={fadeInUp}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              Wo urbane Eleganz auf natürliche Schönheit trifft. Jeder Service wird mit Präzision und Sorgfalt
-              ausgeführt.
+               Mehr als nur Haare – bei uns geht's um Style, Persönlichkeit und das gewisse Extra.
             </motion.p>
+          </motion.div>
+        </div>
+      </motion.section>
+
+      {/* Intro Section */}
+      <motion.section 
+        className="py-16 px-4 bg-gradient-to-br from-gray-700 to-gray-800"
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={fadeInUp}
+      >
+        <div className="max-w-4xl mx-auto">
+          <motion.div 
+            className="grid md:grid-cols-2 gap-8 items-center"
+            variants={staggerContainer}
+          >
+            <motion.div variants={fadeInUp}>
+              <h2 className="text-3xl font-bold text-white mb-6 font-serif flex items-center">
+                <Crown className="w-8 h-8 mr-3 text-yellow-400" />
+                 Cuts für Sie
+              </h2>
+              <p className="text-gray-200 text-lg leading-relaxed font-orbitron-400">
+                Schnitte, die sitzen. Individuell, modern und so vielseitig wie Sie.
+              </p>
+            </motion.div>
+            
+            <motion.div variants={fadeInUp}>
+              <h2 className="text-3xl font-bold text-white mb-6 font-serif flex items-center">
+                <Palette className="w-8 h-8 mr-3 text-yellow-400" />
+                Color & Gloss
+              </h2>
+              <p className="text-gray-200 text-lg leading-relaxed font-orbitron-400">
+                Von dezenten Highlights bis zu Statement-Looks – wir bringen Farbe in Ihr Leben.
+              </p>
+            </motion.div>
+          </motion.div>
+
+          <motion.div 
+            className="grid md:grid-cols-2 gap-8 mt-12"
+            variants={staggerContainer}
+          >
+            <motion.div variants={fadeInUp}>
+              <h2 className="text-3xl font-bold text-white mb-6 font-serif flex items-center">
+                <Scissors className="w-8 h-8 mr-3 text-yellow-400" />
+                 Men's Styles
+              </h2>
+              <p className="text-gray-200 text-lg leading-relaxed font-orbitron-400">
+                Präzise, clean und maskulin – Looks, die Eindruck machen.
+              </p>
+            </motion.div>
+            
+            <motion.div variants={fadeInUp}>
+              <h2 className="text-3xl font-bold text-white mb-6 font-serif flex items-center">
+                <Leaf className="w-8 h-8 mr-3 text-yellow-400" />
+               Care & Specials
+              </h2>
+              <p className="text-gray-200 text-lg leading-relaxed font-orbitron-400">
+                Hochwertige Treatments für gesundes, glänzendes Haar, das sich einfach gut anfühlt.
+              </p>
+            </motion.div>
+          </motion.div>
+
+          {/* Team Description */}
+          <motion.div 
+            className="mt-16 p-8 bg-gradient-to-r from-yellow-600/20 to-yellow-700/20 rounded-2xl border border-yellow-500/30"
+            variants={fadeInUp}
+          >
+            <h2 className="text-3xl font-bold text-white mb-4 font-serif"> Unser Team</h2>
+            <p className="text-gray-200 text-lg leading-relaxed mb-4 font-orbitron-400">
+              Wir sind kein klassischer Friseursalon – wir sind ein Team mit Leidenschaft für Haare, Trends und Menschen. 
+              Jede von uns bringt ihre eigene Handschrift mit, und genau das macht den Unterschied: 
+              Kreativität, Professionalität und eine Atmosphäre, die man einfach erleben muss.
+            </p>
+            <p className="text-yellow-300 text-xl font-semibold font-orbitron-700">
+              👉 Jetzt Termin sichern und erleben, wie cool Perfektion aussehen kann.
+            </p>
           </motion.div>
         </div>
       </motion.section>
@@ -220,30 +289,60 @@ export default function ServicesPage() {
                 whileInView="animate"
                 viewport={{ once: true, margin: "-50px" }}
               >
-                <motion.div 
-                  className="text-center"
-                  variants={fadeInUp}
-                  transition={{ duration: 0.6 }}
-                >
-                  <motion.div
-                    className={`w-20 h-20 mx-auto mb-4 bg-gradient-to-br ${category.color} rounded-full flex items-center justify-center shadow-xl`}
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                {/* Special styling for first category */}
+                {categoryIndex === 0 ? (
+                  <motion.div 
+                    className="text-center relative"
+                    variants={fadeInUp}
+                    transition={{ duration: 0.6 }}
                   >
-                    <category.icon className="w-10 h-10 text-white" />
+                    <motion.div
+                      className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center shadow-2xl border-2 border-yellow-300"
+                      whileHover={{ scale: 1.15, rotate: 5 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    >
+                      <category.icon className="w-12 h-12 text-yellow-100" />
+                    </motion.div>
+                    <motion.h2 
+                      className="text-5xl font-bold text-white mb-4 font-serif bg-gradient-to-r from-yellow-400 to-yellow-300 bg-clip-text text-transparent"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    >
+                      {category.title}
+                    </motion.h2>
+                    <motion.p 
+                      className="text-xl text-gray-300 mb-8 font-orbitron-500 max-w-2xl mx-auto"
+                      variants={fadeInUp}
+                    >
+                      Premium Services für anspruchsvolle Damen – individuell und perfekt auf Sie abgestimmt
+                    </motion.p>
                   </motion.div>
-                  <motion.h2 
-                    className="text-4xl font-bold text-emerald-900 mb-2 font-serif"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                ) : (
+                  <motion.div 
+                    className="text-center"
+                    variants={fadeInUp}
+                    transition={{ duration: 0.6 }}
                   >
-                    {category.title}
-                  </motion.h2>
-                </motion.div>
+                    <motion.div
+                      className={`w-20 h-20 mx-auto mb-4 bg-gradient-to-br ${category.color} rounded-full flex items-center justify-center shadow-xl border border-yellow-500/30`}
+                      whileHover={{ scale: 1.1 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    >
+                      <category.icon className="w-10 h-10 text-yellow-200" />
+                    </motion.div>
+                    <motion.h2 
+                      className="text-4xl font-bold text-white mb-2 font-serif"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    >
+                      {category.title}
+                    </motion.h2>
+                  </motion.div>
+                )}
 
                 {/* Category Hero Image */}
                 <motion.div 
-                  className="relative h-64 md:h-80 rounded-2xl overflow-hidden mb-8"
+                  className={`relative rounded-2xl overflow-hidden mb-8 ${categoryIndex === 0 ? 'h-80 md:h-96' : 'h-64 md:h-80'}`}
                   whileHover={{ scale: 1.01 }}
                   transition={{ duration: 0.3, ease: "easeOut" }}
                 >
@@ -253,7 +352,7 @@ export default function ServicesPage() {
                     fill
                     className="object-cover transition-transform duration-300 hover:scale-105"
                     style={{ objectPosition: '80% 6%' }}
-                    priority={categoryIndex < 2} // Prioritize first 2 images
+                    priority={categoryIndex < 2}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end">
                     <motion.div 
@@ -263,8 +362,8 @@ export default function ServicesPage() {
                       viewport={{ once: true, margin: "-100px" }}
                       transition={{ delay: 0.2, duration: 0.6 }}
                     >
-                      <h3 className="text-3xl font-bold text-white font-serif">{category.title}</h3>
-                      <p className="text-white/90 text-lg">Professionelle Services in entspannter Atmosphäre</p>
+                      <h3 className={`${categoryIndex === 0 ? 'text-4xl' : 'text-3xl'} font-bold text-white font-serif`}>{category.title}</h3>
+                      <p className="text-white/90 text-lg font-orbitron-400">Professionelle Services in entspannter Atmosphäre</p>
                     </motion.div>
                   </div>
                 </motion.div>
@@ -282,26 +381,32 @@ export default function ServicesPage() {
                       variants={fadeInUp}
                       transition={{ duration: 0.5, delay: serviceIndex * 0.1 }}
                     >
-                      <Card className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 border-emerald-100 hover:border-emerald-300 overflow-hidden">
-                        <div className="relative h-48 overflow-hidden">
+                      <Card className={`group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 overflow-hidden bg-gray-800 h-full flex flex-col ${
+                        categoryIndex === 0 
+                          ? 'border-yellow-400 hover:border-yellow-300 shadow-lg' 
+                          : 'border-yellow-500/30 hover:border-yellow-400'
+                      }`}>
+                        <div className="relative h-48 overflow-hidden flex-shrink-0">
                           <Image
                             src={service.image || "/placeholder.svg"}
                             alt={service.name}
                             fill
                             className="object-cover transition-transform duration-300 group-hover:scale-110"
-                            loading="lazy" // Lazy load service images
+                            loading="lazy"
                           />
                           <div className="absolute top-4 right-4">
-                            <Badge className={`bg-gradient-to-r ${category.color} text-white transition-transform duration-200 hover:scale-105`}>
+                            <Badge className={`bg-gradient-to-r ${category.color} text-white transition-transform duration-200 hover:scale-105 border ${
+                              categoryIndex === 0 ? 'border-yellow-300' : 'border-yellow-400'
+                            } font-orbitron-700`}>
                               {service.price}
                             </Badge>
                           </div>
                         </div>
-                        <CardHeader className="pb-3">
-                          <CardTitle className="text-lg font-bold text-emerald-900 font-serif">{service.name}</CardTitle>
+                        <CardHeader className="pb-3 flex-shrink-0">
+                          <CardTitle className="text-lg font-bold text-white font-serif">{service.name}</CardTitle>
                         </CardHeader>
-                        <CardContent>
-                          <p className="text-gray-600 text-sm">{service.description}</p>
+                        <CardContent className="flex-grow">
+                          <p className="text-gray-300 text-sm font-orbitron-400">{service.description}</p>
                         </CardContent>
                       </Card>
                     </motion.div>
@@ -315,7 +420,7 @@ export default function ServicesPage() {
 
       {/* Special Packages */}
       <motion.section 
-        className="py-20 px-4 bg-gradient-to-br from-emerald-100 to-emerald-50"
+        className="py-20 px-4 bg-gradient-to-br from-gray-700 to-gray-800"
         initial="initial"
         whileInView="animate"
         viewport={{ once: true, margin: "-100px" }}
@@ -327,8 +432,26 @@ export default function ServicesPage() {
             variants={fadeInUp}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-emerald-900 mb-4 font-serif">Dschungel-Pakete</h2>
-            <p className="text-xl text-emerald-700">Komplette Verwandlungen zu Sonderpreisen</p>
+            <motion.div
+              className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center shadow-2xl border-2 border-yellow-300"
+              whileHover={{ scale: 1.15, rotate: 5 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            >
+              <Sparkles className="w-12 h-12 text-yellow-100" />
+            </motion.div>
+            <motion.h2 
+              className="text-5xl font-bold text-white mb-4 font-serif bg-gradient-to-r from-yellow-400 to-yellow-300 bg-clip-text text-transparent"
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            >
+              Premium-Pakete
+            </motion.h2>
+            <motion.p 
+              className="text-xl text-gray-300 font-orbitron-500 max-w-2xl mx-auto"
+              variants={fadeInUp}
+            >
+              Komplette Verwandlungen zu Sonderpreisen – alles inklusive für den perfekten Look
+            </motion.p>
           </motion.div>
 
           <motion.div 
@@ -340,17 +463,19 @@ export default function ServicesPage() {
           >
             {[
               {
-                name: "Das Wilde Makeover",
+                name: "Das Premium Makeover",
                 price: "120€",
                 original: "150€",
+                description: "Komplettes Premium-Paket für Ihre perfekte Verwandlung",
                 includes: ["Schnitt & Style", "Vollfarbe", "Tiefenbehandlung", "Styling"],
-                popular: true,
+                popular: false,
                 image: "/images/done.png",
               },
               {
-                name: "Dschungel-Auffrischung",
+                name: "Komplett-Auffrischung",
                 price: "80€",
                 original: "95€",
+                description: "Frische und Glanz für Ihren Look",
                 includes: ["Schnitt & Style", "Highlights", "Föhnen", "Haarmaske"],
                 popular: false,
                 image: "/images/pexels-cottonbro-7440066.jpg",
@@ -359,59 +484,40 @@ export default function ServicesPage() {
                 name: "Urban Gentleman",
                 price: "55€",
                 original: "70€",
+                description: "Modernes Styling für den zeitgenössischen Mann",
                 includes: ["Herrenschnitt", "Bart trimmen", "Heißes Handtuch", "Styling"],
                 popular: false,
                 image: "/images/man_service.png",
               },
             ].map((pkg, index) => (
-              <motion.div key={index} variants={fadeInUp}>
-                <Card
-                  className={`relative overflow-hidden ${pkg.popular ? "ring-4 ring-yellow-400 scale-105" : ""} hover:shadow-2xl transition-all duration-300`}
-                >
-                  {pkg.popular && (
-                    <motion.div 
-                      className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10"
-                      animate={{ 
-                        y: [0, -2, 0],
-                        scale: [1, 1.05, 1]
-                      }}
-                      transition={{ 
-                        duration: 2,
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                      }}
-                    >
-                      <Badge className="bg-yellow-400 text-emerald-900 px-4 py-1 text-sm font-bold">Beliebtestes</Badge>
-                    </motion.div>
-                  )}
-                  <motion.div 
-                    className="relative h-48 overflow-hidden"
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    <motion.div
-                      whileHover={{ scale: 1.1 }}
-                      transition={{ duration: 0.6, ease: "easeOut" }}
-                    >
-                      <Image src={pkg.image || "/placeholder.svg"} alt={pkg.name} fill className="object-cover" />
-                    </motion.div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                  </motion.div>
-                  <CardContent className="p-8 text-center">
-                    <motion.h3 
-                      className="text-2xl font-bold text-emerald-900 mb-2 font-serif"
-                      whileHover={{ scale: 1.05, color: "#059669" }}
-                    >
-                      {pkg.name}
-                    </motion.h3>
-                    <motion.div 
-                      className="mb-6"
-                      whileHover={{ scale: 1.1 }}
-                    >
-                      <span className="text-4xl font-bold text-emerald-900">{pkg.price}</span>
-                      <span className="text-lg text-gray-500 line-through ml-2">{pkg.original}</span>
-                    </motion.div>
+              <motion.div key={index} variants={fadeInUp} className="flex">
+                <Card className={`group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 overflow-hidden bg-gray-800 flex flex-col h-full w-full ${
+                  pkg.popular 
+                    ? 'border-yellow-400 hover:border-yellow-300 shadow-lg' 
+                    : 'border-yellow-500/30 hover:border-yellow-400'
+                }`}>
+                  <div className="relative h-48 overflow-hidden flex-shrink-0">
+                    <Image
+                      src={pkg.image || "/placeholder.svg"}
+                      alt={pkg.name}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-110"
+                      loading="lazy"
+                    />
+                    <div className="absolute top-4 right-4">
+                      <Badge className="bg-gradient-to-r from-yellow-600 to-yellow-700 text-white transition-transform duration-200 hover:scale-105 border border-yellow-400 font-orbitron-700">
+                        {pkg.price}
+                      </Badge>
+                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                  </div>
+                  <CardHeader className="pb-3 flex-shrink-0">
+                    <CardTitle className="text-lg font-bold text-white font-serif">{pkg.name}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="flex-grow">
+                    <p className="text-gray-300 text-sm mb-4 font-orbitron-400">{pkg.description}</p>
                     <motion.ul 
-                      className="space-y-2 mb-8"
+                      className="space-y-2 mb-6"
                       variants={staggerContainer}
                       initial="initial"
                       whileInView="animate"
@@ -420,22 +526,30 @@ export default function ServicesPage() {
                       {pkg.includes.map((item, itemIndex) => (
                         <motion.li 
                           key={itemIndex} 
-                          className="flex items-center justify-center"
+                          className="flex items-center"
                           variants={fadeInUp}
                           transition={{ delay: itemIndex * 0.1 }}
                           whileHover={{ x: 5 }}
                         >
-                          <Heart className="w-4 h-4 text-emerald-600 mr-2" />
-                          <span className="text-gray-700">{item}</span>
+                          <Heart className="w-4 h-4 text-yellow-400 mr-2 flex-shrink-0" />
+                          <span className="text-gray-300 text-sm font-orbitron-400">{item}</span>
                         </motion.li>
                       ))}
                     </motion.ul>
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="text-2xl font-bold text-yellow-400 font-orbitron-700">{pkg.price}</span>
+                      <span className="text-md text-gray-400 line-through font-orbitron-500">{pkg.original}</span>
+                    </div>
                     <motion.div
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
                       <Button
-                        className={`w-full ${pkg.popular ? "bg-gradient-to-r from-yellow-500 to-yellow-400 hover:from-yellow-600 hover:to-yellow-500 text-emerald-900" : "bg-emerald-800 hover:bg-emerald-900 text-white"}`}
+                        className={`w-full ${
+                          pkg.popular 
+                            ? "bg-gradient-to-r from-yellow-600 to-yellow-500 hover:from-yellow-700 hover:to-yellow-600 text-white border border-yellow-400" 
+                            : "bg-yellow-500/20 hover:bg-yellow-500/30 text-yellow-400 border border-yellow-500/30"
+                        } font-orbitron-600`}
                       >
                         Paket buchen
                       </Button>
@@ -450,7 +564,7 @@ export default function ServicesPage() {
 
       {/* CTA Section */}
       <motion.section 
-        className="py-20 px-4 bg-gradient-to-br from-emerald-900 to-emerald-800 text-white"
+        className="py-20 px-4 bg-gradient-to-br from-gray-900 to-gray-800 text-white"
         initial="initial"
         whileInView="animate"
         viewport={{ once: true, margin: "-100px" }}
@@ -458,17 +572,17 @@ export default function ServicesPage() {
       >
         <div className="max-w-4xl mx-auto text-center">
           <motion.h2 
-            className="text-4xl md:text-5xl font-bold mb-6 font-serif text-yellow-400"
+            className="text-4xl md:text-5xl font-bold mb-6 font-serif text-white"
             variants={fadeInUp}
             whileHover={{ scale: 1.05 }}
           >
             Bereit für Ihre Verwandlung?
           </motion.h2>
           <motion.p 
-            className="text-xl text-emerald-100 mb-8"
+            className="text-xl text-gray-100 mb-8 font-orbitron-500"
             variants={fadeInUp}
           >
-            🌿 Lassen Sie Ihr Haar wild wachsen – wir bändigen es mit Stil!
+            Erleben Sie, wie cool Perfektion aussehen kann
           </motion.p>
           <motion.div 
             className="flex flex-col sm:flex-row gap-4 justify-center"
@@ -484,9 +598,9 @@ export default function ServicesPage() {
             >
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-yellow-500 to-yellow-400 hover:from-yellow-600 hover:to-yellow-500 text-emerald-900 font-semibold px-8"
+                className="bg-yellow-500/20 text-yellow-400 hover:bg-yellow-500/30 font-semibold px-8 border border-yellow-500/30 font-orbitron-600"
               >
-                <Scissors className="w-5 h-5 mr-2" />
+                <Scissors className="w-5 h-5 mr-2 text-yellow-400" />
                 Termin vereinbaren
               </Button>
             </motion.div>
@@ -498,7 +612,7 @@ export default function ServicesPage() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-emerald-900 px-8 bg-transparent"
+                className="border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-gray-900 px-8 bg-transparent font-orbitron-600"
               >
                 Jetzt anrufen
               </Button>
