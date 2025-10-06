@@ -141,7 +141,7 @@ export default function ContactPage() {
     <div className="min-h-screen bg-gradient-to-b from-gray-800 to-gray-900 font-orbitron">
       {/* Hero Section */}
       <motion.section 
-        className="py-20 px-4 bg-gradient-to-br from-gray-900 to-gray-800 text-white"
+        className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-gradient-to-br from-gray-900 to-gray-800 text-white"
         initial="initial"
         animate="animate"
         variants={fadeInUp}
@@ -149,12 +149,12 @@ export default function ContactPage() {
       >
         <div className="max-w-6xl mx-auto text-center">
           <motion.div 
-            className="mb-8"
+            className="mb-6 sm:mb-8"
             variants={fadeInUp}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
             <motion.h1 
-              className="text-5xl md:text-6xl font-bold mb-4 text-white"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white px-2 sm:px-0"
               variants={fadeInUp}
               transition={{ duration: 0.6, ease: "easeOut" }}
               whileHover={{ scale: 1.05 }}
@@ -162,7 +162,7 @@ export default function ContactPage() {
               Finden Sie Uns
             </motion.h1>
             <motion.p 
-              className="text-xl text-gray-300 max-w-3xl mx-auto"
+              className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto px-4 sm:px-0"
               variants={fadeInUp}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
@@ -174,7 +174,7 @@ export default function ContactPage() {
 
       {/* Contact Information & Map */}
       <motion.section 
-        className="py-20 px-4"
+        className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6"
         initial="initial"
         whileInView="animate"
         viewport={{ once: true, margin: "-100px" }}
@@ -182,17 +182,17 @@ export default function ContactPage() {
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12">
             {/* Contact Info */}
             <motion.div 
-              className="space-y-8"
+              className="space-y-6 sm:space-y-8"
               variants={staggerContainer}
               initial="initial"
               whileInView="animate"
               viewport={{ once: true, margin: "-50px" }}
             >
               <motion.div variants={fadeInUp} transition={{ duration: 0.6, ease: "easeOut" }}>
-                <h2 className="text-4xl font-bold text-white mb-8">Kontakt aufnehmen</h2>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6 sm:mb-8">Kontakt aufnehmen</h2>
               </motion.div>
 
               {/* Location */}
@@ -202,19 +202,19 @@ export default function ContactPage() {
                 whileHover={{ scale: 1.02 }}
               >
                 <Card className="border-2 border-gray-700 hover:border-gray-600 transition-colors duration-300 bg-gray-800">
-                  <CardContent className="p-6">
-                    <div className="flex items-start space-x-4">
+                  <CardContent className="p-4 sm:p-6">
+                    <div className="flex items-start space-x-3 sm:space-x-4">
                       <motion.div 
-                        className="w-12 h-12 bg-gradient-to-br from-amber-600 to-amber-700 rounded-full flex items-center justify-center flex-shrink-0"
+                        className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-amber-600 to-amber-700 rounded-full flex items-center justify-center flex-shrink-0"
                         whileHover={{ rotate: 360, scale: 1.1 }}
                         transition={{ duration: 0.5 }}
                       >
-                        <MapPin className="w-6 h-6 text-amber-100" />
+                        <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-amber-100" />
                       </motion.div>
-                      <div>
-                        <h3 className="text-xl font-bold text-white mb-2">Unser Standort</h3>
-                        <p className="text-gray-300 mb-2">Königstraße 34</p>
-                        <p className="text-gray-300 mb-4">57334 Bad Laasphe, Germany</p>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Unser Standort</h3>
+                        <p className="text-gray-300 text-sm sm:text-base mb-2">Königstraße 34</p>
+                        <p className="text-gray-300 text-sm sm:text-base mb-3 sm:mb-4">57334 Bad Laasphe, Germany</p>
                         <motion.div 
                           className="flex flex-wrap gap-2"
                           variants={staggerContainer}
@@ -223,13 +223,13 @@ export default function ContactPage() {
                           viewport={{ once: true }}
                         >
                           <motion.div variants={fadeInUp} whileHover={{ scale: 1.05 }}>
-                            <Badge className="bg-gray-700 text-gray-100 font-orbitron">
+                            <Badge className="bg-gray-700 text-gray-100 font-orbitron text-xs">
                               <Car className="w-3 h-3 mr-1 text-gray-300" />
                               Kostenlose Parkplätze
                             </Badge>
                           </motion.div>
                           <motion.div variants={fadeInUp} whileHover={{ scale: 1.05 }}>
-                            <Badge className="bg-gray-700 text-gray-100 font-orbitron">
+                            <Badge className="bg-gray-700 text-gray-100 font-orbitron text-xs">
                               <Bus className="w-3 h-3 mr-1 text-gray-300" />
                               Bushaltestelle in der Nähe
                             </Badge>
@@ -243,7 +243,7 @@ export default function ContactPage() {
 
               {/* Phone & Email - Equal Height Cards */}
               <motion.div 
-                className="grid md:grid-cols-2 gap-6"
+                className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6"
                 variants={staggerContainer}
                 initial="initial"
                 whileInView="animate"
@@ -256,19 +256,19 @@ export default function ContactPage() {
                   className="h-full"
                 >
                   <Card className="border-2 border-gray-700 hover:border-gray-600 transition-colors duration-300 bg-gray-800 h-full">
-                    <CardContent className="p-6 h-full flex flex-col">
-                      <div className="flex items-start space-x-4 flex-grow">
+                    <CardContent className="p-4 sm:p-6 h-full flex flex-col">
+                      <div className="flex items-start space-x-3 sm:space-x-4 flex-grow">
                         <motion.div 
-                          className="w-12 h-12 bg-gradient-to-br from-amber-600 to-amber-700 rounded-full flex items-center justify-center flex-shrink-0"
+                          className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-amber-600 to-amber-700 rounded-full flex items-center justify-center flex-shrink-0"
                           whileHover={{ rotate: 360, scale: 1.1 }}
                           transition={{ duration: 0.5 }}
                         >
-                          <Phone className="w-6 h-6 text-amber-100" />
+                          <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-amber-100" />
                         </motion.div>
                         <div className="flex-grow">
-                          <h3 className="text-lg font-bold text-white">Rufen Sie uns an</h3>
-                          <p className="text-gray-300">+49 123 456 789</p>
-                          <p className="text-sm text-gray-400 mt-2">Erreichbar während der Öffnungszeiten</p>
+                          <h3 className="text-base sm:text-lg font-bold text-white">Rufen Sie uns an</h3>
+                          <p className="text-gray-300 text-sm sm:text-base">+49 123 456 789</p>
+                          <p className="text-xs sm:text-sm text-gray-400 mt-2">Erreichbar während der Öffnungszeiten</p>
                         </div>
                       </div>
                     </CardContent>
@@ -282,19 +282,19 @@ export default function ContactPage() {
                   className="h-full"
                 >
                   <Card className="border-2 border-gray-700 hover:border-gray-600 transition-colors duration-300 bg-gray-800 h-full">
-                    <CardContent className="p-6 h-full flex flex-col">
-                      <div className="flex items-start space-x-4 flex-grow">
+                    <CardContent className="p-4 sm:p-6 h-full flex flex-col">
+                      <div className="flex items-start space-x-3 sm:space-x-4 flex-grow">
                         <motion.div 
-                          className="w-12 h-12 bg-gradient-to-br from-amber-600 to-amber-700 rounded-full flex items-center justify-center flex-shrink-0"
+                          className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-amber-600 to-amber-700 rounded-full flex items-center justify-center flex-shrink-0"
                           whileHover={{ rotate: 360, scale: 1.1 }}
                           transition={{ duration: 0.5 }}
                         >
-                          <Mail className="w-6 h-6 text-amber-100" />
+                          <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-amber-100" />
                         </motion.div>
                         <div className="flex-grow">
-                          <h3 className="text-lg font-bold text-white">E-Mail senden</h3>
-                          <p className="text-gray-300">info@dersalon-scharavin.de</p>
-                          <p className="text-sm text-gray-400 mt-2">Wir antworten innerhalb von 24 Stunden</p>
+                          <h3 className="text-base sm:text-lg font-bold text-white">E-Mail senden</h3>
+                          <p className="text-gray-300 text-sm sm:text-base">info@dersalon-scharavin.de</p>
+                          <p className="text-xs sm:text-sm text-gray-400 mt-2">Wir antworten innerhalb von 24 Stunden</p>
                         </div>
                       </div>
                     </CardContent>
@@ -309,10 +309,10 @@ export default function ContactPage() {
                 whileHover={{ scale: 1.02 }}
               >
                 <Card className="border-2 border-gray-700 hover:border-gray-600 transition-colors duration-300 bg-gray-800">
-                  <CardContent className="p-6">
-                    <h3 className="text-xl font-bold text-white mb-4">Folgen Sie Uns</h3>
+                  <CardContent className="p-4 sm:p-6">
+                    <h3 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">Folgen Sie Uns</h3>
                     <motion.div 
-                      className="flex space-x-4"
+                      className="flex flex-col xs:flex-row gap-3 sm:gap-4"
                       variants={staggerContainer}
                       initial="initial"
                       whileInView="animate"
@@ -328,12 +328,13 @@ export default function ContactPage() {
                           variants={fadeInUp}
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
+                          className="flex-1"
                         >
                           <Button
-                            className={`bg-gradient-to-r ${social.color} hover:scale-105 transition-transform duration-300 text-white font-orbitron border border-gray-600`}
+                            className={`bg-gradient-to-r ${social.color} hover:scale-105 transition-transform duration-300 text-white font-orbitron border border-gray-600 w-full text-xs sm:text-sm`}
                           >
-                            <social.icon className="w-5 h-5 mr-2 text-amber-400" />
-                            {social.label}
+                            <social.icon className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-amber-400" />
+                            <span className="truncate">{social.label}</span>
                           </Button>
                         </motion.div>
                       ))}
@@ -345,14 +346,14 @@ export default function ContactPage() {
 
             {/* Interactive Map */}
             <motion.div 
-              className="space-y-8 flex flex-col items-center justify-center"
+              className="space-y-6 sm:space-y-8 flex flex-col items-center justify-center"
               variants={slideInRight}
               initial="initial"
               whileInView="animate"
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
-              <motion.div whileHover={{ scale: 1.01 }} className="w-full max-w-lg">
+              <motion.div whileHover={{ scale: 1.01 }} className="w-full">
                 <div className="border-2 border-gray-700 overflow-hidden bg-gray-800 rounded-lg">
                   <div className="aspect-square relative">
                     <iframe
@@ -369,15 +370,15 @@ export default function ContactPage() {
                     
                     {/* Floating info card over the map */}
                     <motion.div 
-                      className="absolute top-4 left-4 right-4 bg-gray-800/95 backdrop-blur-sm rounded-lg p-4 shadow-lg border-2 border-gray-700"
+                      className="absolute top-3 sm:top-4 left-3 sm:left-4 right-3 sm:right-4 bg-gray-800/95 backdrop-blur-sm rounded-lg p-3 sm:p-4 shadow-lg border-2 border-gray-700"
                       initial={{ opacity: 0, y: -20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.6, ease: "easeOut", delay: 0.5 }}
                     >
-                      <div className="flex items-center space-x-3">
+                      <div className="flex items-center space-x-2 sm:space-x-3">
                         <motion.div 
-                          className="w-10 h-10 bg-gradient-to-br from-amber-600 to-amber-700 rounded-full flex items-center justify-center flex-shrink-0"
+                          className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-amber-600 to-amber-700 rounded-full flex items-center justify-center flex-shrink-0"
                           animate={{ 
                             scale: [1, 1.1, 1],
                             rotate: [0, 5, -5, 0]
@@ -388,11 +389,11 @@ export default function ContactPage() {
                             ease: "easeInOut"
                           }}
                         >
-                          <Scissors className="w-5 h-5 text-amber-100" />
+                          <Scissors className="w-4 h-4 sm:w-5 sm:h-5 text-amber-100" />
                         </motion.div>
                         <div className="flex-1 min-w-0">
-                          <h3 className="text-lg font-bold text-white">Der Salon</h3>
-                          <p className="text-sm text-gray-300">Königstraße 34, Bad Laasphe</p>
+                          <h3 className="text-base sm:text-lg font-bold text-white truncate">Der Salon</h3>
+                          <p className="text-xs sm:text-sm text-gray-300 truncate">Königstraße 34, Bad Laasphe</p>
                         </div>
                         <motion.div
                           whileHover={{ scale: 1.05 }}
@@ -400,7 +401,7 @@ export default function ContactPage() {
                         >
                           <Button 
                             size="sm"
-                            className="bg-gray-700 hover:bg-gray-600 text-white font-orbitron border border-gray-600"
+                            className="bg-gray-700 hover:bg-gray-600 text-white font-orbitron border border-gray-600 text-xs sm:text-sm"
                             onClick={() => window.open('https://maps.google.com/directions/?api=1&destination=Königstraße+34,+57334+Bad+Laasphe,+Germany', '_blank')}
                           >
                             Route
@@ -414,7 +415,7 @@ export default function ContactPage() {
               
               {/* Additional location info */}
               <motion.div 
-                className="grid grid-cols-2 gap-4 w-full max-w-lg"
+                className="grid grid-cols-2 gap-3 sm:gap-4 w-full"
                 variants={staggerContainer}
                 initial="initial"
                 whileInView="animate"
@@ -425,16 +426,16 @@ export default function ContactPage() {
                   transition={{ duration: 0.6, ease: "easeOut" }}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <Card className="border-2 border-gray-700 hover:border-gray-600 transition-colors duration-300 p-4 bg-gray-800">
+                  <Card className="border-2 border-gray-700 hover:border-gray-600 transition-colors duration-300 p-3 sm:p-4 bg-gray-800">
                     <div className="text-center">
                       <motion.div 
-                        className="w-10 h-10 bg-gradient-to-br from-amber-600 to-amber-700 rounded-full flex items-center justify-center mx-auto mb-2"
+                        className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-amber-600 to-amber-700 rounded-full flex items-center justify-center mx-auto mb-2"
                         animate={{ rotate: [0, 10, -10, 0] }}
                         transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                       >
-                        <Car className="w-5 h-5 text-amber-100" />
+                        <Car className="w-4 h-4 sm:w-5 sm:h-5 text-amber-100" />
                       </motion.div>
-                      <p className="text-sm font-semibold text-white">Kostenlose</p>
+                      <p className="text-xs sm:text-sm font-semibold text-white">Kostenlose</p>
                       <p className="text-xs text-gray-300">Parkplätze</p>
                     </div>
                   </Card>
@@ -445,16 +446,16 @@ export default function ContactPage() {
                   transition={{ duration: 0.6, ease: "easeOut" }}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <Card className="border-2 border-gray-700 hover:border-gray-600 transition-colors duration-300 p-4 bg-gray-800">
+                  <Card className="border-2 border-gray-700 hover:border-gray-600 transition-colors duration-300 p-3 sm:p-4 bg-gray-800">
                     <div className="text-center">
                       <motion.div 
-                        className="w-10 h-10 bg-gradient-to-br from-amber-600 to-amber-700 rounded-full flex items-center justify-center mx-auto mb-2"
+                        className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-amber-600 to-amber-700 rounded-full flex items-center justify-center mx-auto mb-2"
                         animate={{ scale: [1, 1.1, 1] }}
                         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
                       >
-                        <Bus className="w-5 h-5 text-amber-100" />
+                        <Bus className="w-4 h-4 sm:w-5 sm:h-5 text-amber-100" />
                       </motion.div>
-                      <p className="text-sm font-semibold text-white">Bushaltestelle</p>
+                      <p className="text-xs sm:text-sm font-semibold text-white">Bushaltestelle</p>
                       <p className="text-xs text-gray-300">in der Nähe</p>
                     </div>
                   </Card>
@@ -467,7 +468,7 @@ export default function ContactPage() {
 
       {/* Contact Form */}
       <motion.section 
-        className="py-16 px-4" // Reduced from py-20 to py-16
+        className="py-12 sm:py-16 px-4 sm:px-6"
         initial="initial"
         whileInView="animate"
         viewport={{ once: true, margin: "-100px" }}
@@ -476,12 +477,13 @@ export default function ContactPage() {
       >
         <div className="max-w-4xl mx-auto">
           <motion.div 
-            className="text-center mb-5" // Reduced from mb-16 to mb-8
+            className="text-center mb-6 sm:mb-8"
             variants={fadeInUp}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Schreib uns!</h2>
-            
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4 px-2 sm:px-0">
+              Schreib uns!
+            </h2>
           </motion.div>
 
           <motion.div
@@ -490,19 +492,21 @@ export default function ContactPage() {
             whileHover={{ scale: 1.01 }}
           >
             <Card className="border-2 border-gray-700 bg-gray-800">
-              <CardHeader className="bg-gradient-to-r from-gray-700/30 to-gray-800/30">
-                <CardTitle className="text-2xl text-white">Kontakt aufnehmen</CardTitle>
+              <CardHeader className="bg-gradient-to-r from-gray-700/30 to-gray-800/30 p-4 sm:p-6">
+                <CardTitle className="text-xl sm:text-2xl text-white">Kontakt aufnehmen</CardTitle>
               </CardHeader>
-              <CardContent className="p-6"> {/* Reduced padding from p-8 to p-6 */}
+              <CardContent className="p-4 sm:p-6">
                 {/* Success Message */}
                 {formState.success && (
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="mb-4 p-3 bg-green-900/20 border border-green-700 rounded-lg flex items-center" // Reduced margin and padding
+                    className="mb-3 sm:mb-4 p-3 bg-green-900/20 border border-green-700 rounded-lg flex items-center"
                   >
-                    <CheckCircle className="w-5 h-5 text-green-400 mr-2" />
-                    <span className="text-green-300">Nachricht erfolgreich gesendet! Wir melden uns bald bei Ihnen.</span>
+                    <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-400 mr-2 flex-shrink-0" />
+                    <span className="text-green-300 text-sm sm:text-base">
+                      Nachricht erfolgreich gesendet! Wir melden uns bald bei Ihnen.
+                    </span>
                   </motion.div>
                 )}
 
@@ -511,16 +515,16 @@ export default function ContactPage() {
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="mb-4 p-3 bg-red-900/20 border border-red-700 rounded-lg flex items-center" // Reduced margin and padding
+                    className="mb-3 sm:mb-4 p-3 bg-red-900/20 border border-red-700 rounded-lg flex items-center"
                   >
-                    <AlertCircle className="w-5 h-5 text-red-400 mr-2" />
-                    <span className="text-red-300">Fehler: {formState.error}</span>
+                    <AlertCircle className="w-4 h-4 sm:w-5 sm:h-5 text-red-400 mr-2 flex-shrink-0" />
+                    <span className="text-red-300 text-sm sm:text-base">Fehler: {formState.error}</span>
                   </motion.div>
                 )}
 
                 <motion.form 
                   onSubmit={handleSubmit} 
-                  className="space-y-4" // Reduced from space-y-6 to space-y-4
+                  className="space-y-4"
                   variants={staggerContainer}
                   initial="initial"
                   whileInView="animate"
@@ -530,7 +534,7 @@ export default function ContactPage() {
                   <input type="hidden" name="address" value="dersalon" />
                   
                   <motion.div 
-                    className="grid md:grid-cols-2 gap-4" // Reduced from gap-6 to gap-4
+                    className="grid grid-cols-1 md:grid-cols-2 gap-4"
                     variants={staggerContainer}
                   >
                     <motion.div variants={fadeInUp} transition={{ duration: 0.6, ease: "easeOut" }}>
@@ -544,7 +548,7 @@ export default function ContactPage() {
                         required
                         value={formData.name}
                         onChange={handleInputChange}
-                        className="border-gray-700 focus:border-gray-600 bg-gray-900 text-white"
+                        className="border-gray-700 focus:border-gray-600 bg-gray-900 text-white text-sm sm:text-base"
                         placeholder="Geben Sie Ihren vollständigen Namen ein"
                         disabled={formState.loading}
                       />
@@ -560,7 +564,7 @@ export default function ContactPage() {
                         required
                         value={formData.email}
                         onChange={handleInputChange}
-                        className="border-gray-700 focus:border-gray-600 bg-gray-900 text-white"
+                        className="border-gray-700 focus:border-gray-600 bg-gray-900 text-white text-sm sm:text-base"
                         placeholder="ihre.email@beispiel.com"
                         disabled={formState.loading}
                       />
@@ -568,7 +572,7 @@ export default function ContactPage() {
                   </motion.div>
 
                   <motion.div 
-                    className="grid md:grid-cols-2 gap-4" // Reduced from gap-6 to gap-4
+                    className="grid grid-cols-1 md:grid-cols-2 gap-4"
                     variants={staggerContainer}
                   >
                     <motion.div variants={fadeInUp} transition={{ duration: 0.6, ease: "easeOut" }}>
@@ -581,7 +585,7 @@ export default function ContactPage() {
                         type="tel"
                         value={formData.phone}
                         onChange={handleInputChange}
-                        className="border-gray-700 focus:border-gray-600 bg-gray-900 text-white"
+                        className="border-gray-700 focus:border-gray-600 bg-gray-900 text-white text-sm sm:text-base"
                         placeholder="+49 123 456 789"
                         disabled={formState.loading}
                       />
@@ -595,7 +599,7 @@ export default function ContactPage() {
                         name="service"
                         value={formData.service}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-600 focus:border-gray-600 bg-gray-900 text-white"
+                        className="w-full px-3 py-2 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-600 focus:border-gray-600 bg-gray-900 text-white text-sm sm:text-base"
                         disabled={formState.loading}
                       >
                         <option value="">Wählen Sie einen Service</option>
@@ -618,8 +622,8 @@ export default function ContactPage() {
                       required
                       value={formData.message}
                       onChange={handleInputChange}
-                      rows={4} // Reduced from rows={5} to rows={4}
-                      className="border-gray-700 focus:border-gray-600 bg-gray-900 text-white"
+                      rows={4}
+                      className="border-gray-700 focus:border-gray-600 bg-gray-900 text-white text-sm sm:text-base"
                       placeholder="Erzählen Sie uns von Ihren Haar-Zielen, bevorzugten Terminen oder Fragen, die Sie haben..."
                       disabled={formState.loading}
                     />
@@ -637,17 +641,17 @@ export default function ContactPage() {
                       <Button
                         type="submit"
                         size="lg"
-                        className="bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-600 hover:to-gray-700 text-white px-8 font-orbitron border border-gray-600"
+                        className="bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-600 hover:to-gray-700 text-white px-6 sm:px-8 font-orbitron border border-gray-600 text-sm sm:text-base w-full sm:w-auto"
                         disabled={formState.loading}
                       >
                         {formState.loading ? (
                           <>
-                            <Loader2 className="w-5 h-5 mr-2 animate-spin text-amber-400" />
+                            <Loader2 className="w-4 h-4 sm:w-5 sm:h-5 mr-2 animate-spin text-amber-400" />
                             Wird gesendet...
                           </>
                         ) : (
                           <>
-                            <Send className="w-5 h-5 mr-2 text-amber-400" />
+                            <Send className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-amber-400" />
                             Nachricht senden
                           </>
                         )}
@@ -660,92 +664,6 @@ export default function ContactPage() {
           </motion.div>
         </div>
       </motion.section>
-
-      {/* Emergency Contact */}
-      {/* <motion.section 
-        className="py-20 px-4 bg-gradient-to-br from-gray-900 to-gray-800 text-white"
-        initial="initial"
-        whileInView="animate"
-        viewport={{ once: true, margin: "-100px" }}
-        variants={fadeInUp}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-      >
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.h2 
-            className="text-4xl md:text-5xl font-bold mb-6 text-white"
-            variants={fadeInUp}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            whileHover={{ scale: 1.05 }}
-          >
-            Brauchen Sie sofortige Hilfe?
-          </motion.h2>
-          <motion.p 
-            className="text-xl text-gray-300 mb-8"
-            variants={fadeInUp}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-          >
-            Professionelle Hilfe bei Ihren Haar-Anliegen
-          </motion.p>
-          <motion.div 
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-          >
-            <motion.div
-              variants={fadeInUp}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-600 hover:to-gray-700 text-white font-semibold px-8 font-orbitron border border-gray-600"
-              >
-                <motion.div
-                  animate={{ rotate: [0, 10, -10, 0] }}
-                  transition={{ 
-                    duration: 2,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                >
-                  <Phone className="w-5 h-5 mr-2 text-amber-400" />
-                </motion.div>
-                Notfall-Hotline
-              </Button>
-            </motion.div>
-            <motion.div
-              variants={fadeInUp}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-gray-700 to-gray-800 hover:from-gray-600 hover:to-gray-700 text-white font-semibold px-8 font-orbitron border border-gray-600"
-              >
-                <motion.div
-                  animate={{ 
-                    scale: [1, 1.1, 1],
-                    rotate: [0, 5, -5, 0]
-                  }}
-                  transition={{ 
-                    duration: 2,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: 0.5
-                  }}
-                >
-                  <MessageCircle className="w-5 h-5 mr-2 text-amber-400" />
-                </motion.div>
-                WhatsApp schreiben
-              </Button>
-            </motion.div>
-          </motion.div>
-        </div>
-      </motion.section> */}
 
       <Footer />
       <ScrollToTop />
