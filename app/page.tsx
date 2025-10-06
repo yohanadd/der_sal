@@ -50,7 +50,12 @@ export default function HomePage() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [showLeftButton, setShowLeftButton] = useState(false);
   const [showRightButton, setShowRightButton] = useState(true);
+  const [isClient, setIsClient] = useState(false);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const updateScrollButtons = () => {
     if (scrollContainerRef.current) {
@@ -84,10 +89,12 @@ export default function HomePage() {
   };
 
   useEffect(() => {
-    updateScrollButtons();
-    window.addEventListener('resize', updateScrollButtons);
-    return () => window.removeEventListener('resize', updateScrollButtons);
-  }, []);
+    if (isClient) {
+      updateScrollButtons();
+      window.addEventListener('resize', updateScrollButtons);
+      return () => window.removeEventListener('resize', updateScrollButtons);
+    }
+  }, [isClient]);
 
   const teamMembers = [
     {
@@ -124,6 +131,27 @@ export default function HomePage() {
     "/images/pexels-cottonbro-7440131.jpg",
     "/images/pexels-cottonbro-wash.jpg",
   ];
+
+  // Get card dimensions based on screen size - safe for SSR
+  const getCardDimensions = () => {
+    if (!isClient) {
+      // Default dimensions for SSR
+      return { width: '280px', height: '350px' };
+    }
+
+    const width = window.innerWidth;
+    if (width >= 1024) {
+      return { width: '450px', height: '560px' };
+    } else if (width >= 768) {
+      return { width: '400px', height: '500px' };
+    } else if (width >= 640) {
+      return { width: '350px', height: '440px' };
+    } else {
+      return { width: '280px', height: '350px' };
+    }
+  };
+
+  const cardDimensions = getCardDimensions();
 
   return (
     <div className="min-h-screen bg-gray-900 font-orbitron">
@@ -365,7 +393,7 @@ export default function HomePage() {
           {/* Horizontal Scroll Container with Responsive Controls */}
           <div className="relative">
             {/* Left Scroll Button - Hidden on mobile */}
-            {showLeftButton && (
+            {isClient && showLeftButton && (
               <motion.button
                 onClick={scrollLeft}
                 className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 z-10 p-2 sm:p-4 rounded-full bg-gray-800 border border-yellow-400 text-yellow-400 hover:bg-gray-700 transition-all duration-300 shadow-lg hidden sm:block"
@@ -397,20 +425,8 @@ export default function HomePage() {
                   whileHover={{ scale: 1.03 }}
                   transition={{ type: "spring", stiffness: 300 }}
                   style={{ 
-                    width: '280px', 
-                    height: '350px',
-                    ...(window.innerWidth >= 640 && {
-                      width: '350px',
-                      height: '440px'
-                    }),
-                    ...(window.innerWidth >= 768 && {
-                      width: '400px',
-                      height: '500px'
-                    }),
-                    ...(window.innerWidth >= 1024 && {
-                      width: '450px',
-                      height: '560px'
-                    })
+                    width: cardDimensions.width, 
+                    height: cardDimensions.height
                   }}
                 >
                   <div className="relative w-full h-full">
@@ -441,7 +457,7 @@ export default function HomePage() {
             </motion.div>
 
             {/* Right Scroll Button - Hidden on mobile */}
-            {showRightButton && (
+            {isClient && showRightButton && (
               <motion.button
                 onClick={scrollRight}
                 className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 z-10 p-2 sm:p-4 rounded-full bg-gray-800 border border-yellow-400 text-yellow-400 hover:bg-gray-700 transition-all duration-300 shadow-lg hidden sm:block"
