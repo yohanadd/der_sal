@@ -24,12 +24,9 @@ export function HeroSection() {
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat sm:bg-fixed"
         style={{
-          backgroundImage: `url(${homepageImage.src})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed'
+          backgroundImage: `url(${homepageImage.src})`
         }}
       >
         <div className="absolute inset-0 bg-black/40"></div>
