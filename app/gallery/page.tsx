@@ -8,6 +8,20 @@ import { Camera, Filter, Instagram, Heart, Share2, Eye } from "lucide-react"
 import Image from "next/image"
 import { Footer } from "@/components/footer"
 import { ScrollToTop } from "@/components/scroll-to-top"
+import { videos } from "@/lib/videos"
+
+import cu1 from "@/public/images/cu1.jpg"
+import cu2 from "@/public/images/cu2.jpg"
+import cu3 from "@/public/images/cu3.jpg"
+import cu4 from "@/public/images/cu4.jpg"
+import cu5 from "@/public/images/cu5.jpg"
+import cu6 from "@/public/images/cu6.jpg"
+import cu7 from "@/public/images/cu7.jpg"
+import cu8 from "@/public/images/cu8.jpg"
+import cu9 from "@/public/images/cu9.jpg"
+import cu10 from "@/public/images/cu10.jpg"
+import cu11 from "@/public/images/cu11.jpg"
+import cu12 from "@/public/images/cu12.jpg"
 
 export default function GalleryPage() {
   const [activeFilter, setActiveFilter] = useState("all")
@@ -39,8 +53,8 @@ export default function GalleryPage() {
       title: "Sonnenuntergang Balayage",
       description: "Warme goldene Töne mit natürlichen Highlights",
       likes: 127,
-      stylist: "Maya",
-      image: "/images/cu1.jpg",
+      stylist: "Ines",
+      image: cu1,
     },
     {
       id: 2,
@@ -48,8 +62,8 @@ export default function GalleryPage() {
       title: "Moderner Bob",
       description: "Eleganter Präzisionsschnitt mit subtilen Stufen",
       likes: 89,
-      stylist: "Alex",
-      image: "/images/cu2.jpg",
+      stylist: "Sandra",
+      image: cu2,
     },
     {
       id: 3,
@@ -58,7 +72,7 @@ export default function GalleryPage() {
       description: "Elegante Hochzeitsfrisur mit botanischen Akzenten",
       likes: 156,
       stylist: "Luna",
-      image: "/images/cu3.jpg",
+      image: cu3,
     },
     {
       id: 4,
@@ -66,8 +80,8 @@ export default function GalleryPage() {
       title: "Dschungel-Grün Ombré",
       description: "Kräftiger Smaragd-Verlauf mit natürlichem Ansatz",
       likes: 203,
-      stylist: "Maya",
-      image: "/images/cu4.jpg",
+      stylist: "Ines",
+      image: cu4,
     },
     {
       id: 5,
@@ -75,8 +89,8 @@ export default function GalleryPage() {
       title: "Strukturierte Stufen",
       description: "Voluminöser Schnitt mit Bewegung und Schwung",
       likes: 94,
-      stylist: "Alex",
-      image: "/images/cu5.jpg",
+      stylist: "Sandra",
+      image: cu5,
     },
     {
       id: 6,
@@ -85,7 +99,7 @@ export default function GalleryPage() {
       description: "Hollywood-Wellen mit goldenen Highlights",
       likes: 178,
       stylist: "Luna",
-      image: "/images/cu6.jpg",
+      image: cu6,
     },
     {
       id: 7,
@@ -93,8 +107,8 @@ export default function GalleryPage() {
       title: "Kupfer-Highlights",
       description: "Satte Kupfertöne mit dimensionaler Tiefe",
       likes: 112,
-      stylist: "Maya",
-      image: "/images/cu7.jpg",
+      stylist: "Ines",
+      image: cu7,
     },
     {
       id: 8,
@@ -102,8 +116,8 @@ export default function GalleryPage() {
       title: "Pixie-Perfektion",
       description: "Kantiger Kurzhaarschnitt mit texturiertem Styling",
       likes: 145,
-      stylist: "Alex",
-      image: "/images/cu8.jpg",
+      stylist: "Sandra",
+      image: cu8,
     },
     {
       id: 9,
@@ -112,7 +126,7 @@ export default function GalleryPage() {
       description: "Boho-Flechtfrisur mit farbigen Akzenten",
       likes: 167,
       stylist: "Luna",
-      image: "/images/cu9.jpg",
+      image: cu9,
     },
     {
       id: 10,
@@ -120,8 +134,8 @@ export default function GalleryPage() {
       title: "Platinblond",
       description: "Eisblonde Verwandlung mit Toner",
       likes: 189,
-      stylist: "Maya",
-      image: "/images/cu10.jpg",
+      stylist: "Ines",
+      image: cu10,
     },
     {
       id: 11,
@@ -129,8 +143,8 @@ export default function GalleryPage() {
       title: "Shag-Revival",
       description: "70er-inspirierter Shag mit modernem Twist",
       likes: 134,
-      stylist: "Alex",
-      image: "/images/cu11.jpg",
+      stylist: "Sandra",
+      image: cu11,
     },
     {
       id: 12,
@@ -139,7 +153,7 @@ export default function GalleryPage() {
       description: "Elegante Hochsteckfrisur für besondere Anlässe",
       likes: 198,
       stylist: "Luna",
-      image: "/images/cu12.jpg",
+      image: cu12,
     },
   ]
 
@@ -151,28 +165,28 @@ export default function GalleryPage() {
       id: 1,
       title: "Haar-Verwandlung",
       views: "12.5K",
-      videoSrc: "/video/Video-18.mp4",
+      videoSrc: videos.hairTransformation1,
       thumbnail: "/placeholder.svg?height=300&width=200",
     },
     {
       id: 2,
       title: "Styling-Prozess",
       views: "8.9K",
-      videoSrc: "/video/Video-614.mp4",
+      videoSrc: videos.stylingProcess1,
       thumbnail: "/placeholder.svg?height=300&width=200",
     },
     {
       id: 3,
       title: "Vorher & Nachher",
       views: "15.2K",
-      videoSrc: "/video/Video-659.mp4",
+      videoSrc: videos.beforeAfter1,
       thumbnail: "/placeholder.svg?height=300&width=200",
     },
     {
       id: 4,
       title: "Haar-Styling Zauber",
       views: "6.7K",
-      videoSrc: "/video/Video-699.mp4",
+      videoSrc: videos.stylingMagic1,
       thumbnail: "/placeholder.svg?height=300&width=200",
     },
   ]
@@ -182,28 +196,28 @@ export default function GalleryPage() {
       id: 1,
       title: "Haar-Verwandlung",
       views: "12.5K",
-      videoSrc: "/video/Video-66.mp4",
+      videoSrc: videos.hairTransformation2,
       thumbnail: "/placeholder.svg?height=300&width=200",
     },
     {
       id: 2,
       title: "Styling-Prozess",
       views: "8.9K",
-      videoSrc: "/video/Video-987.mp4",
+      videoSrc: videos.stylingProcess2,
       thumbnail: "/placeholder.svg?height=300&width=200",
     },
     {
       id: 3,
       title: "Vorher & Nachher",
       views: "15.2K",
-      videoSrc: "/video/Video-371.mp4",
+      videoSrc: videos.beforeAfter2,
       thumbnail: "/placeholder.svg?height=300&width=200",
     },
     {
       id: 5,
       title: "Haar-Styling Zauber",
       views: "6.7K",
-      videoSrc: "/video/Video-847.mp4",
+      videoSrc: videos.stylingMagic2,
       thumbnail: "/placeholder.svg?height=300&width=200",
     },
   ]
@@ -333,11 +347,12 @@ export default function GalleryPage() {
               >
                 <div className="relative aspect-square overflow-hidden">
                   <Image
-                    src={item.image || "/placeholder.svg"}
+                    src={item.image}
                     alt={item.title}
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
                     sizes="(max-width: 480px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    placeholder="blur"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4">

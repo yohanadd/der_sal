@@ -548,7 +548,7 @@ export default function ContactPage() {
                         required
                         value={formData.name}
                         onChange={handleInputChange}
-                        className="border-gray-700 focus:border-gray-600 bg-gray-900 text-white text-sm sm:text-base"
+                        className="border-gray-700 focus:border-gray-600 bg-gray-900 text-white text-sm sm:text-base placeholder:text-gray-400"
                         placeholder="Geben Sie Ihren vollständigen Namen ein"
                         disabled={formState.loading}
                       />
@@ -564,7 +564,7 @@ export default function ContactPage() {
                         required
                         value={formData.email}
                         onChange={handleInputChange}
-                        className="border-gray-700 focus:border-gray-600 bg-gray-900 text-white text-sm sm:text-base"
+                        className="border-gray-700 focus:border-gray-600 bg-gray-900 text-white text-sm sm:text-base placeholder:text-gray-400"
                         placeholder="ihre.email@beispiel.com"
                         disabled={formState.loading}
                       />
@@ -585,7 +585,7 @@ export default function ContactPage() {
                         type="tel"
                         value={formData.phone}
                         onChange={handleInputChange}
-                        className="border-gray-700 focus:border-gray-600 bg-gray-900 text-white text-sm sm:text-base"
+                        className="border-gray-700 focus:border-gray-600 bg-gray-900 text-white text-sm sm:text-base placeholder:text-gray-400"
                         placeholder="+49 123 456 789"
                         disabled={formState.loading}
                       />
@@ -599,7 +599,7 @@ export default function ContactPage() {
                         name="service"
                         value={formData.service}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-600 focus:border-gray-600 bg-gray-900 text-white text-sm sm:text-base"
+                        className="w-full px-3 py-2 border border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-600 focus:border-gray-600 bg-gray-900 text-white text-sm sm:text-base placeholder:text-gray-400"
                         disabled={formState.loading}
                       >
                         <option value="">Wählen Sie einen Service</option>
@@ -623,7 +623,7 @@ export default function ContactPage() {
                       value={formData.message}
                       onChange={handleInputChange}
                       rows={4}
-                      className="border-gray-700 focus:border-gray-600 bg-gray-900 text-white text-sm sm:text-base"
+                      className="border-gray-700 focus:border-gray-600 bg-gray-900 text-white text-sm sm:text-base placeholder:text-gray-400"
                       placeholder="Erzählen Sie uns von Ihren Haar-Zielen, bevorzugten Terminen oder Fragen, die Sie haben..."
                       disabled={formState.loading}
                     />

@@ -26,6 +26,14 @@ import Image from "next/image";
 import stylist1 from "@/public/images/Owner (2).jpg";
 import stylist2 from "@/public/images/member2.jpg";
 import stylist3 from "@/public/images/member2.jpg";
+import gallery1 from "@/public/images/pexels-cottonbro-3993469.jpg";
+import gallery2 from "@/public/images/pexels-cottonbro-3998427.jpg";
+import gallery3 from "@/public/images/pexels-cottonbro-7440131.jpg";
+import gallery4 from "@/public/images/pexels-cottonbro-wash.jpg";
+import gallery5 from "@/public/images/pexels-enginakyurt-3065209 (1).jpg";
+import gallery6 from "@/public/images/pexels-ryank-12304509.jpg";
+import gallery7 from "@/public/images/pexels-enginakyurt-extension.jpg";
+import gallery8 from "@/public/images/pexels-markusspiske-112782.jpg";
 import { motion } from "framer-motion";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import { Footer } from "@/components/footer";
@@ -118,18 +126,14 @@ export default function HomePage() {
   ];
 
   const galleryImages = [
-    "/images/pexels-cottonbro-3993469.jpg",
-    "/images/pexels-cottonbro-3998427.jpg",
-    "/images/pexels-cottonbro-7440131.jpg",
-    "/images/pexels-cottonbro-wash.jpg",
-    "/images/pexels-enginakyurt-3065209 (1).jpg",
-    "/images/pexels-ryank-12304509.jpg",
-    "/images/pexels-enginakyurt-extension.jpg",
-    "/images/pexels-markusspiske-112782.jpg",
-    "/images/pexels-cottonbro-3993469.jpg",
-    "/images/pexels-cottonbro-3998427.jpg",
-    "/images/pexels-cottonbro-7440131.jpg",
-    "/images/pexels-cottonbro-wash.jpg",
+    gallery1,
+    gallery2,
+    gallery3,
+    gallery4,
+    gallery5,
+    gallery6,
+    gallery7,
+    gallery8,
   ];
 
   // Get card dimensions based on screen size - safe for SSR

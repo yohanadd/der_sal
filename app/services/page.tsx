@@ -8,6 +8,21 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 import { ScrollToTop } from "@/components/scroll-to-top"
 import { Footer } from "@/components/footer"
+import damenServiceImage from "/public/images/pexels-markusspiske-112782.jpg"
+import colorMagicImage from "/public/images/pexels-john-diez-7388749.jpg"
+import herrenStylingImage from "/public/images/pexels-jibarofoto-1453005.jpg"
+import bioPflegeImage from "/public/images/pexels-jibarofoto-1453005.jpg"
+import cutImage from "/public/images/pexels-cottonbro-cut.jpg"
+import washImage from "/public/images/pexels-cottonbro-wash.jpg"
+import curlImage from "/public/images/pexels-enginakyurt-curl.jpg"
+import extensionImage from "/public/images/pexels-enginakyurt-extension.jpg"
+import herrenCutImage from "/public/images/pexels-ryank-12304509.jpg"
+import bartTrimImage from "/public/images/pexels-cottonbro-3998427.jpg"
+import hotTowelImage from "/public/images/pexels-mostafameraji-3037215.jpg"
+import colorTouchupImage from "/public/images/pexels-shkrabaanthony-6599038.jpg"
+import doneImage from "/public/images/done.png"
+import treatmentImage from "/public/images/pexels-cottonbro-7440066.jpg"
+import manServiceImage from "/public/images/man_service.png"
 
 export default function ServicesPage() {
   // Animation variants
@@ -31,31 +46,31 @@ export default function ServicesPage() {
       title: "Damen-Services",
       icon: Crown,
       color: "from-yellow-600 to-yellow-700",
-      image: "/images/pexels-markusspiske-112782.jpg",
+      image: damenServiceImage,
       services: [
         {
           name: "Präzisionsschnitt & Styling",
           price: "45-65€",
           description: "Expertenschnitte, angepasst an Ihre Gesichtsform und Ihren Lebensstil",
-          image: "/images/pexels-cottonbro-cut.jpg",
+          image: cutImage,
         },
         {
           name: "Waschen & Föhnen",
           price: "55-75€",
           description: "Komplettes Styling-Erlebnis mit Premium-Produkten",
-          image: "/images/pexels-cottonbro-wash.jpg",
+          image: washImage,
         },
         {
           name: "Festliches Styling",
           price: "35-50€",
           description: "Elegante Hochsteckfrisuren und Event-Frisuren",
-          image: "/images/pexels-enginakyurt-curl.jpg",
+          image: curlImage,
         },
         {
           name: "Haarverlängerungen",
           price: "80-150€",
           description: "Länge und Volumen mit natürlich aussehenden Extensions",
-          image: "/images/pexels-enginakyurt-extension.jpg",
+          image: extensionImage,
         },
       ],
     },
@@ -63,31 +78,31 @@ export default function ServicesPage() {
       title: "Farb-Magie",
       icon: Palette,
       color: "from-yellow-600 to-yellow-700",
-      image: "/images/pexels-john-diez-7388749.jpg",
+      image: colorMagicImage,
       services: [
         {
           name: "Farb-Verwandlung",
           price: "70-120€",
           description: "Vollständiger Farbwechsel mit professioneller Beratung",
-          image: "/images/pexels-cottonbro-cut.jpg",
+          image: cutImage,
         },
         {
           name: "Highlights & Lowlights",
           price: "60-100€",
           description: "Dimensionale Farbe für natürlich aussehende Tiefe",
-          image: "/images/pexels-cottonbro-wash.jpg",
+          image: washImage,
         },
         {
           name: "Balayage & Ombré",
           price: "80-140€",
           description: "Handgemalte Techniken für nahtlose Farbübergänge",
-          image: "/images/pexels-enginakyurt-curl.jpg",
+          image: curlImage,
         },
         {
           name: "Farbkorrektur",
           price: "100-200€",
           description: "Expertenkorrektur für vorherige Farbpannen",
-          image: "/images/pexels-enginakyurt-extension.jpg",
+          image: extensionImage,
         },
       ],
     },
@@ -95,66 +110,66 @@ export default function ServicesPage() {
       title: "Herren-Styling",
       icon: Scissors,
       color: "from-yellow-600 to-yellow-700",
-      image: "/images/pexels-jibarofoto-1453005.jpg",
+      image: herrenStylingImage,
       services: [
         {
           name: "Klassischer Herrenschnitt",
           price: "25-35€",
           description: "Zeitlose Schnitte mit moderner Präzision",
-          image: "/images/pexels-ryank-12304509.jpg",
+          image: herrenCutImage,
         },
         {
           name: "Bart trimmen & stylen",
           price: "15-25€",
           description: "Professionelle Bartformung und -pflege",
-          image: "/images/pexels-cottonbro-3998427.jpg",
+          image: bartTrimImage,
         },
         {
           name: "Heißes Handtuch Rasur",
           price: "30-40€",
           description: "Traditionelles Barbier-Erlebnis",
-          image: "/images/pexels-mostafameraji-3037215.jpg",
+          image: hotTowelImage,
         },
         {
           name: "Herren Farb-Touch-up",
           price: "40-60€",
           description: "Grauabdeckung und Farbverbesserung",
-          image: "/images/pexels-shkrabaanthony-6599038.jpg",
+          image: colorTouchupImage,
         },
       ],
     },
-    {
-      title: "Bio-Pflege",
-      icon: Leaf,
-      color: "from-yellow-600 to-yellow-700",
-      image: "/images/pexels-jibarofoto-1453005.jpg",
-      services: [
-        {
-          name: "Tiefenpflege-Behandlung",
-          price: "25-40€",
-          description: "Intensive Feuchtigkeits und Reparaturtherapie Behandlung",
-          image: "/images/pexels-ryank-12304509.jpg",
-        },
-        {
-          name: "Kopfhaut & Behandlung",
-          price: "30-45€",
-          description: "Entspannende Kopfhauttherapie mit Bio-Ölen",
-          image: "/images/pexels-cottonbro-3998427.jpg",
-        },
-        {
-          name: "Keratin-Glättung",
-          price: "120-180€",
-          description: "Krauses Haar glätten für monatelang glattes Haar",
-          image: "/images/pexels-mostafameraji-3037215.jpg",
-        },
-        {
-          name: "Bio-Haarmaske",
-          price: "20-35€",
-          description: "Natürliche Inhaltsstoffe für gesundes, glänzendes Haar",
-          image: "/images/pexels-shkrabaanthony-6599038.jpg",
-        },
-      ],
-    },
+    // {
+    //   title: "Bio-Pflege",
+    //   icon: Leaf,
+    //   color: "from-yellow-600 to-yellow-700",
+    //   image: bioPflegeImage,
+    //   services: [
+    //     {
+    //       name: "Tiefenpflege-Behandlung",
+    //       price: "25-40€",
+    //       description: "Intensive Feuchtigkeits und Reparaturtherapie Behandlung",
+    //       image: herrenCutImage,
+    //     },
+    //     {
+    //       name: "Kopfhaut & Behandlung",
+    //       price: "30-45€",
+    //       description: "Entspannende Kopfhauttherapie mit Bio-Ölen",
+    //       image: bartTrimImage,
+    //     },
+    //     {
+    //       name: "Keratin-Glättung",
+    //       price: "120-180€",
+    //       description: "Krauses Haar glätten für monatelang glattes Haar",
+    //       image: hotTowelImage,
+    //     },
+    //     {
+    //       name: "Bio-Haarmaske",
+    //       price: "20-35€",
+    //       description: "Natürliche Inhaltsstoffe für gesundes, glänzendes Haar",
+    //       image: colorTouchupImage,
+    //     },
+    //   ],
+    // },
   ]
 
   return (
@@ -349,7 +364,7 @@ export default function ServicesPage() {
                   transition={{ duration: 0.3, ease: "easeOut" }}
                 >
                   <Image
-                    src={category.image || "/placeholder.svg"}
+                    src={category.image}
                     alt={`${category.title} Salon Bild`}
                     fill
                     className="object-cover transition-transform duration-300 hover:scale-105"
@@ -395,7 +410,7 @@ export default function ServicesPage() {
                       }`}>
                         <div className="relative h-40 sm:h-48 overflow-hidden flex-shrink-0">
                           <Image
-                            src={service.image || "/placeholder.svg"}
+                            src={service.image}
                             alt={service.name}
                             fill
                             className="object-cover transition-transform duration-300 group-hover:scale-110"
@@ -481,7 +496,7 @@ export default function ServicesPage() {
                 description: "Komplettes Premium-Paket für Ihre perfekte Verwandlung",
                 includes: ["Schnitt & Style", "Vollfarbe", "Tiefenbehandlung", "Styling"],
                 popular: false,
-                image: "/images/done.png",
+                image: doneImage,
               },
               {
                 name: "Komplett-Auffrischung",
@@ -490,7 +505,7 @@ export default function ServicesPage() {
                 description: "Frische und Glanz für Ihren Look",
                 includes: ["Schnitt & Style", "Highlights", "Föhnen", "Haarmaske"],
                 popular: false,
-                image: "/images/pexels-cottonbro-7440066.jpg",
+                image: treatmentImage,
               },
               {
                 name: "Urban Gentleman",
@@ -499,7 +514,7 @@ export default function ServicesPage() {
                 description: "Modernes Styling für den zeitgenössischen Mann",
                 includes: ["Herrenschnitt", "Bart trimmen", "Heißes Handtuch", "Styling"],
                 popular: false,
-                image: "/images/man_service.png",
+                image: manServiceImage,
               },
             ].map((pkg, index) => (
               <motion.div key={index} variants={fadeInUp} className="flex">
@@ -510,7 +525,7 @@ export default function ServicesPage() {
                 }`}>
                   <div className="relative h-40 sm:h-48 overflow-hidden flex-shrink-0">
                     <Image
-                      src={pkg.image || "/placeholder.svg"}
+                      src={pkg.image}
                       alt={pkg.name}
                       fill
                       className="object-cover transition-transform duration-300 group-hover:scale-110"

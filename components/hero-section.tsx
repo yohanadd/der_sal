@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Calendar } from "lucide-react";
 import { motion } from "framer-motion";
+import homepageImage from "@/public/images/homepageC.jpg";
 
 export function HeroSection() {
   const fadeInUp = {
@@ -25,7 +26,7 @@ export function HeroSection() {
       <div 
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: `url('/images/homepage (2).jpg')`,
+          backgroundImage: `url(${homepageImage.src})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed'

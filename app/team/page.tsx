@@ -8,6 +8,8 @@ import { Star, Heart, Scissors, Palette, Clock, Smile, Award, Users } from "luci
 import Image from "next/image"
 import { ScrollToTop } from "@/components/scroll-to-top"
 import { Footer } from "@/components/footer"
+import InesImage from "@/public/images/Ines.jpg"
+import SandraImage from "@/public/images/sandra.jpg"
 
 export default function TeamPage() {
   const teamMembers = [
@@ -15,7 +17,7 @@ export default function TeamPage() {
       name: "Ines Scharavin",
       role: "Friseurmeisterin · Coloristin · Blondexpertin",
       icon: "palette",
-      image: "/images/ines.jpg",
+      image: InesImage,
       objectPosition: "center 20%",
       specialties: ["Balayage & Strähnen", "Blond-Expertise & Glossing", "Haarverlängerungen", "Herren- und Barber-Cuts"],
       experience: "Seit 2018 Friseurin · Seit 2022 Friseurmeisterin",
@@ -28,7 +30,7 @@ export default function TeamPage() {
       name: "Sandra Krause",
       role: "Friseurin · Spezialistin für Damenkurzhaar & Dauerwelle",
       icon: "scissors",
-      image: "/images/sandra.jpg",
+      image: SandraImage,
       objectPosition: "80% 6%",
       specialties: ["Damenkurzhaar", "Dauerwelle", "Klassische Herrenfrisuren"],
       experience: "23 Jahre Berufserfahrung · 2 Jahre Salonleitung in der Schweiz",
@@ -72,7 +74,7 @@ export default function TeamPage() {
                     <div className="relative bg-white rounded-xl sm:rounded-2xl p-3 sm:p-4 shadow-2xl">
                       <div className="aspect-square overflow-hidden rounded-lg sm:rounded-xl">
                         <Image
-                          src={member.image || "/placeholder.svg"}
+                          src={member.image}
                           alt={member.name}
                           width={400}
                           height={400}
