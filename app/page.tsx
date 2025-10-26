@@ -25,15 +25,18 @@ import {
 import Image from "next/image";
 import stylist1 from "@/public/images/Owner (2).jpg";
 import stylist2 from "@/public/images/member2.jpg";
-import stylist3 from "@/public/images/member2.jpg";
-import gallery1 from "@/public/images/pexels-cottonbro-3993469.jpg";
-import gallery2 from "@/public/images/pexels-cottonbro-3998427.jpg";
-import gallery3 from "@/public/images/pexels-cottonbro-7440131.jpg";
-import gallery4 from "@/public/images/pexels-cottonbro-wash.jpg";
-import gallery5 from "@/public/images/pexels-enginakyurt-3065209 (1).jpg";
-import gallery6 from "@/public/images/pexels-ryank-12304509.jpg";
-import gallery7 from "@/public/images/pexels-enginakyurt-extension.jpg";
-import gallery8 from "@/public/images/pexels-markusspiske-112782.jpg";
+import cu1 from "@/public/images/cu1.jpg";
+import cu2 from "@/public/images/cu2.jpg";
+import cu3 from "@/public/images/cu3.jpg";
+import cu4 from "@/public/images/cu4.jpg";
+import cu5 from "@/public/images/cu5.jpg";
+import cu6 from "@/public/images/cu6.jpg";
+import cu7 from "@/public/images/cu7.jpg";
+import cu8 from "@/public/images/cu8.jpg";
+import cu9 from "@/public/images/cu9.jpg";
+import cu10 from "@/public/images/cu10.jpg";
+import cu11 from "@/public/images/cu11.jpg";
+import cu12 from "@/public/images/cu12.jpg";
 import { motion } from "framer-motion";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import { Footer } from "@/components/footer";
@@ -126,14 +129,18 @@ export default function HomePage() {
   ];
 
   const galleryImages = [
-    gallery1,
-    gallery2,
-    gallery3,
-    gallery4,
-    gallery5,
-    gallery6,
-    gallery7,
-    gallery8,
+    cu1,
+    cu2,
+    cu3,
+    cu4,
+    cu5,
+    cu6,
+    cu7,
+    cu8,
+    cu9,
+    cu10,
+    cu11,
+    cu12,
   ];
 
   // Get card dimensions based on screen size - safe for SSR
@@ -158,13 +165,13 @@ export default function HomePage() {
   const cardDimensions = getCardDimensions();
 
   return (
-    <div className="min-h-screen bg-gray-900 font-orbitron">
+    <div className="min-h-screen bg-red-700 font-orbitron">
       {/* Hero Section */}
       <HeroSection />
 
       {/* Services Preview */}
       <motion.section
-        className="py-16 sm:py-20 px-4 sm:px-6 bg-gray-900"
+        className="py-16 sm:py-20 px-4 sm:px-6 bg-anthracite-700"
         initial="initial"
         whileInView="animate"
         viewport={{ once: true, margin: "-100px" }}
@@ -175,7 +182,7 @@ export default function HomePage() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight px-4 sm:px-0">
               Unsere Services
             </h2>
-            <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto tracking-wide px-4 sm:px-0">
+            <p className="text-lg sm:text-xl text-anthracite-300 max-w-2xl mx-auto tracking-wide px-4 sm:px-0">
               Professionelle Haarservices in einer Atmosphäre verfeinerter Eleganz
             </p>
           </motion.div>
@@ -210,19 +217,19 @@ export default function HomePage() {
               },
             ].map((service, index) => (
               <motion.div key={index} variants={fadeInUp} className="flex">
-                <Card className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 sm:hover:-translate-y-2 border border-gray-700 bg-gray-800/50 backdrop-blur-sm h-full flex flex-col w-full">
+                <Card className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 sm:hover:-translate-y-2 border border-anthracite-600 bg-anthracite-600/50 backdrop-blur-sm h-full flex flex-col w-full">
                   <CardContent className="p-4 sm:p-6 text-center flex flex-col flex-grow">
                     <motion.div
                       className="text-3xl sm:text-4xl mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300"
                       whileHover={{ scale: 1.2 }}
                       transition={{ type: "spring", stiffness: 300 }}
                     >
-                      <service.icon className="w-10 h-10 sm:w-12 sm:h-12 text-yellow-400 mx-auto" />
+                      <service.icon className="w-10 h-10 sm:w-12 sm:h-12 text-white mx-auto" />
                     </motion.div>
                     <h3 className="text-lg sm:text-xl font-bold text-white mb-2 tracking-tight">
                       {service.title}
                     </h3>
-                    <p className="text-gray-400 text-sm sm:text-base tracking-wide flex-grow">
+                    <p className="text-anthracite-400 text-sm sm:text-base tracking-wide flex-grow">
                       {service.desc}
                     </p>
                   </CardContent>
@@ -235,7 +242,7 @@ export default function HomePage() {
 
       {/* Team Preview */}
       <motion.section
-        className="py-16 sm:py-20 px-4 sm:px-6 bg-gray-800"
+        className="py-16 sm:py-20 px-4 sm:px-6 bg-anthracite-700"
         initial="initial"
         whileInView="animate"
         viewport={{ once: true, margin: "-100px" }}
@@ -246,13 +253,13 @@ export default function HomePage() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight px-4 sm:px-0">
               Unser Team
             </h2>
-            <p className="text-lg sm:text-xl text-gray-300 tracking-wide px-4 sm:px-0">
+            <p className="text-lg sm:text-xl text-anthracite-300 tracking-wide px-4 sm:px-0">
               Erfahrene Profis mit Leidenschaft für Haar-Exzellenz
             </p>
           </motion.div>
 
           <motion.div
-            className="bg-gray-700/50 rounded-xl sm:rounded-2xl p-6 sm:p-8 mb-12 sm:mb-16 text-center border border-gray-600 shadow-2xl mx-2 sm:mx-0"
+            className="bg-anthracite-600/50 rounded-xl sm:rounded-2xl p-6 sm:p-8 mb-12 sm:mb-16 text-center border border-anthracite-500 shadow-2xl mx-2 sm:mx-0"
             variants={fadeInUp}
             whileHover={{ scale: 1.01 }}
             transition={{ type: "spring", stiffness: 300 }}
@@ -263,7 +270,7 @@ export default function HomePage() {
               viewport={{ once: true }}
               transition={{ type: "spring", stiffness: 300, delay: 0.2 }}
             >
-              <Award className="w-10 h-10 sm:w-12 sm:h-12 text-yellow-400 mx-auto mb-3 sm:mb-4" />
+              <Award className="w-10 h-10 sm:w-12 sm:h-12 text-white mx-auto mb-3 sm:mb-4" />
             </motion.div>
             <h3 className="text-2xl sm:text-3xl font-bold text-white mb-3 sm:mb-4 tracking-tight">
               Warum Unser Salon?
@@ -283,8 +290,8 @@ export default function HomePage() {
                   variants={fadeInUp}
                   whileHover={{ scale: 1.05 }}
                 >
-                  <item.icon className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-400" />
-                  <span className="text-gray-300 text-sm sm:text-base tracking-wide">
+                  <item.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                  <span className="text-anthracite-300 text-sm sm:text-base tracking-wide">
                     {item.text}
                   </span>
                 </motion.div>
@@ -301,7 +308,7 @@ export default function HomePage() {
           >
             {teamMembers.map((member, index) => (
               <motion.div key={index} variants={fadeInUp} className="flex">
-                <Card className="group hover:shadow-xl transition-all duration-300 bg-gray-700/30 border border-gray-600 backdrop-blur-sm flex flex-col w-full">
+                <Card className="group hover:shadow-xl transition-all duration-300 bg-anthracite-600/30 border border-anthracite-500 backdrop-blur-sm flex flex-col w-full">
                   <CardContent className="p-4 sm:p-6 text-center flex flex-col flex-grow">
                     {/* Responsive image size */}
                     <motion.div
@@ -309,7 +316,7 @@ export default function HomePage() {
                       whileHover={{ scale: 1.05 }}
                       transition={{ type: "spring", stiffness: 300 }}
                     >
-                      <div className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-2 border-yellow-400 shadow-lg">
+                      <div className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-2 border-white shadow-lg">
                         <Image
                           src={member.image}
                           alt={member.name}
@@ -326,33 +333,33 @@ export default function HomePage() {
                     </h3>
                     
                     {/* Updated badge styling */}
-                    <Badge className="bg-gray-600 text-gray-200 mb-2 sm:mb-3 font-semibold border border-gray-500 tracking-wide text-xs sm:text-sm">
+                    <Badge className="bg-anthracite-500 text-anthracite-200 mb-2 sm:mb-3 font-semibold border border-anthracite-400 tracking-wide text-xs sm:text-sm">
                       {member.role}
                     </Badge>
                     
                     {/* Responsive bio text */}
-                    <p className="text-gray-400 text-xs sm:text-sm mb-2 sm:mb-3 tracking-wide flex-grow">
+                    <p className="text-anthracite-400 text-xs sm:text-sm mb-2 sm:mb-3 tracking-wide flex-grow">
                       {member.bio}
                     </p>
                     
                     {/* Responsive specialties */}
-                    <p className="text-gray-500 text-xs mb-2 sm:mb-3 tracking-wide">
+                    <p className="text-anthracite-500 text-xs mb-2 sm:mb-3 tracking-wide">
                       {member.specialties.join(" • ")}
                     </p>
                     
-                    {/* Gold star rating */}
+                    {/* Star rating */}
                     <div className="flex items-center justify-center space-x-1 mb-2">
                       {[...Array(5)].map((_, i) => (
                         <Star
                           key={i}
                           className={`w-3 h-3 sm:w-4 sm:h-4 ${
                             i < Math.floor(member.rating)
-                              ? "text-yellow-400 fill-current"
-                              : "text-gray-600"
+                              ? "text-white fill-current"
+                              : "text-anthracite-500"
                           }`}
                         />
                       ))}
-                      <span className="text-gray-500 text-xs ml-1 tracking-wide">
+                      <span className="text-anthracite-500 text-xs ml-1 tracking-wide">
                         ({member.reviews})
                       </span>
                     </div>
@@ -367,7 +374,7 @@ export default function HomePage() {
             className="mt-8 sm:mt-12 max-w-3xl mx-auto text-center px-4 sm:px-0"
             variants={fadeInUp}
           >
-            <p className="text-gray-300 text-sm sm:text-base tracking-wide">
+            <p className="text-anthracite-300 text-sm sm:text-base tracking-wide">
               👉 Gemeinsam stehen wir für Professionalität, Kreativität und
               persönliche Beratung – damit jeder Besuch bei uns ein Erlebnis
               wird.
@@ -378,7 +385,7 @@ export default function HomePage() {
 
       {/* Gallery Preview - Updated with Responsive Controls */}
       <motion.section
-        className="py-16 sm:py-20 px-4 sm:px-6 bg-gray-900"
+        className="py-16 sm:py-20 px-4 sm:px-6 bg-anthracite-700"
         initial="initial"
         whileInView="animate"
         viewport={{ once: true, margin: "-100px" }}
@@ -389,7 +396,7 @@ export default function HomePage() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight px-4 sm:px-0">
               Unsere Arbeiten
             </h2>
-            <p className="text-lg sm:text-xl text-gray-300 tracking-wide px-4 sm:px-0">
+            <p className="text-lg sm:text-xl text-anthracite-300 tracking-wide px-4 sm:px-0">
               Exzellenz in Haarstyling und Verwandlung
             </p>
           </motion.div>
@@ -400,7 +407,7 @@ export default function HomePage() {
             {isClient && showLeftButton && (
               <motion.button
                 onClick={scrollLeft}
-                className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 z-10 p-2 sm:p-4 rounded-full bg-gray-800 border border-yellow-400 text-yellow-400 hover:bg-gray-700 transition-all duration-300 shadow-lg hidden sm:block"
+                className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 z-10 p-2 sm:p-4 rounded-full bg-anthracite-600 border border-white text-white hover:bg-anthracite-500 transition-all duration-300 shadow-lg hidden sm:block"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 initial={{ opacity: 0 }}
@@ -424,7 +431,7 @@ export default function HomePage() {
               {galleryImages.map((imageSrc, index) => (
                 <motion.div
                   key={index}
-                  className="group flex-shrink-0 relative overflow-hidden rounded-xl sm:rounded-2xl border-2 border-yellow-400 hover:border-yellow-300 transition-all duration-300"
+                  className="group flex-shrink-0 relative overflow-hidden rounded-xl sm:rounded-2xl border-2 border-white hover:border-anthracite-300 transition-all duration-300"
                   variants={fadeInUp}
                   whileHover={{ scale: 1.03 }}
                   transition={{ type: "spring", stiffness: 300 }}
@@ -443,19 +450,19 @@ export default function HomePage() {
                       priority={index < 2}
                     />
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                  <div className="absolute inset-0 bg-gradient-to-t from-anthracite-700/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                     <div className="p-4 sm:p-6 text-white w-full">
                       <p className="font-bold text-lg sm:text-xl mb-1 sm:mb-2 tracking-wide">
                         Style #{index + 1}
                       </p>
-                      <p className="text-gray-200 text-xs sm:text-sm tracking-wide">
+                      <p className="text-anthracite-200 text-xs sm:text-sm tracking-wide">
                         Professionelle Haarverwandlung
                       </p>
                     </div>
                   </div>
                   
-                  {/* Gold hover overlay */}
-                  <div className="absolute inset-0 bg-yellow-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </motion.div>
               ))}
             </motion.div>
@@ -464,7 +471,7 @@ export default function HomePage() {
             {isClient && showRightButton && (
               <motion.button
                 onClick={scrollRight}
-                className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 z-10 p-2 sm:p-4 rounded-full bg-gray-800 border border-yellow-400 text-yellow-400 hover:bg-gray-700 transition-all duration-300 shadow-lg hidden sm:block"
+                className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 z-10 p-2 sm:p-4 rounded-full bg-anthracite-600 border border-white text-white hover:bg-anthracite-500 transition-all duration-300 shadow-lg hidden sm:block"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 initial={{ opacity: 0 }}
@@ -478,14 +485,14 @@ export default function HomePage() {
             <div className="flex justify-center space-x-2 mt-4 sm:hidden">
               <motion.button
                 onClick={scrollLeft}
-                className="p-2 rounded-full bg-gray-800 border border-yellow-400 text-yellow-400"
+                className="p-2 rounded-full bg-anthracite-600 border border-white text-white"
                 whileTap={{ scale: 0.9 }}
               >
                 <ChevronLeft className="w-4 h-4" />
               </motion.button>
               <motion.button
                 onClick={scrollRight}
-                className="p-2 rounded-full bg-gray-800 border border-yellow-400 text-yellow-400"
+                className="p-2 rounded-full bg-anthracite-600 border border-white text-white"
                 whileTap={{ scale: 0.9 }}
               >
                 <ChevronRight className="w-4 h-4" />
@@ -493,8 +500,8 @@ export default function HomePage() {
             </div>
 
             {/* Gradient fade effects on sides - Hidden on mobile */}
-            <div className="absolute left-0 top-0 bottom-0 w-8 sm:w-20 bg-gradient-to-r from-gray-900 to-transparent pointer-events-none hidden sm:block" />
-            <div className="absolute right-0 top-0 bottom-0 w-8 sm:w-20 bg-gradient-to-l from-gray-900 to-transparent pointer-events-none hidden sm:block" />
+            <div className="absolute left-0 top-0 bottom-0 w-8 sm:w-20 bg-gradient-to-r from-anthracite-700 to-transparent pointer-events-none hidden sm:block" />
+            <div className="absolute right-0 top-0 bottom-0 w-8 sm:w-20 bg-gradient-to-l from-anthracite-700 to-transparent pointer-events-none hidden sm:block" />
           </div>
 
           <motion.div
@@ -511,7 +518,7 @@ export default function HomePage() {
 
       {/* Contact & Location */}
       <motion.section
-        className="py-16 sm:py-20 px-4 sm:px-6 bg-gray-800"
+        className="py-16 sm:py-20 px-4 sm:px-6 bg-anthracite-700"
         initial="initial"
         whileInView="animate"
         viewport={{ once: true, margin: "-100px" }}
@@ -522,7 +529,7 @@ export default function HomePage() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-white tracking-tight px-4 sm:px-0">
               Ihr Style-Spot in Bad Laasphe
             </h2>
-            <p className="text-lg sm:text-xl text-gray-300 tracking-wide px-4 sm:px-0">
+            <p className="text-lg sm:text-xl text-anthracite-300 tracking-wide px-4 sm:px-0">
               Hier geht's nicht nur um Haare – hier geht's um Persönlichkeit,
               Ausstrahlung und den Look, der zu dir passt.
             </p>
@@ -545,7 +552,7 @@ export default function HomePage() {
                 {
                   icon: Phone,
                   title: "Telefon",
-                  desc: "02752 / 22029205",
+                  desc: "02752 / 2029205",
                 },
                 {
                   icon: Mail,
@@ -561,30 +568,30 @@ export default function HomePage() {
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   <motion.div
-                    className="w-10 h-10 sm:w-12 sm:h-12 bg-yellow-500/20 rounded-full flex items-center justify-center border border-yellow-500/30 flex-shrink-0"
+                    className="w-10 h-10 sm:w-12 sm:h-12 bg-anthracite-600 rounded-full flex items-center justify-center border border-anthracite-500 flex-shrink-0"
                     whileHover={{ rotate: 360, scale: 1.1 }}
                     transition={{ duration: 0.6 }}
                   >
-                    <item.icon className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-400" />
+                    <item.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                   </motion.div>
                   <div>
                     <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight">
                       {item.title}
                     </h3>
-                    <p className="text-gray-300 text-sm sm:text-base tracking-wide">{item.desc}</p>
+                    <p className="text-anthracite-300 text-sm sm:text-base tracking-wide">{item.desc}</p>
                   </div>
                 </motion.div>
               ))}
 
               <motion.div className="pt-4" variants={fadeInUp}>
-                <p className="text-gray-300 text-base sm:text-lg tracking-wide">
+                <p className="text-anthracite-300 text-base sm:text-lg tracking-wide">
                   Schreiben Sie uns, rufen Sie uns an oder buchen Sie direkt Ihren Termin – wir sind für Sie da
                 </p>
               </motion.div>
             </motion.div>
 
             <motion.div
-              className="bg-gray-700/30 rounded-xl sm:rounded-2xl p-6 sm:p-8 border border-gray-600 backdrop-blur-sm mx-2 sm:mx-0"
+              className="bg-anthracite-600/30 rounded-xl sm:rounded-2xl p-6 sm:p-8 border border-anthracite-500 backdrop-blur-sm mx-2 sm:mx-0"
               variants={fadeInUp}
               whileHover={{ scale: 1.01 }}
               transition={{ type: "spring", stiffness: 300 }}
@@ -592,7 +599,7 @@ export default function HomePage() {
               <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 tracking-tight">
                 Buchen Sie Ihren Termin
               </h3>
-              <p className="text-gray-300 text-sm sm:text-base mb-4 sm:mb-6 tracking-wide">
+              <p className="text-anthracite-300 text-sm sm:text-base mb-4 sm:mb-6 tracking-wide">
                 Erleben Sie professionelle Haarpflege in unserem eleganten, modernen Salonambiente.
               </p>
               <motion.div
@@ -601,7 +608,7 @@ export default function HomePage() {
               >
                 <Button
                   size="lg"
-                  className="w-full bg-yellow-500/20 text-yellow-400 hover:bg-yellow-500/30 font-semibold border border-yellow-500/30 tracking-wide text-sm sm:text-base"
+                  className="w-full bg-anthracite-600 text-white hover:bg-anthracite-500 font-semibold border border-anthracite-400 tracking-wide text-sm sm:text-base"
                 >
                   <motion.div
                     animate={{ rotate: [0, 5, -5, 0] }}
@@ -611,7 +618,7 @@ export default function HomePage() {
                       repeatDelay: 3,
                     }}
                   >
-                    <Scissors className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-yellow-400" />
+                    <Scissors className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-white" />
                   </motion.div>
                   Termin buchen
                 </Button>

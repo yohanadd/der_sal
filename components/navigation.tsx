@@ -31,7 +31,7 @@ export function Navigation() {
     <motion.nav 
       className={`fixed top-0 w-full z-50 transition-all duration-1000 ease-in-out ${
         isScrolled 
-          ? "bg-gray-900/90 backdrop-blur-md shadow-lg border-b border-gray-700" 
+          ? "bg-gray-950/90 backdrop-blur-md shadow-lg border-b border-gray-800" 
           : "bg-transparent"
       }`}
       initial={{ y: -100 }}
@@ -97,7 +97,7 @@ export function Navigation() {
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Button className="bg-yellow-500/20 text-yellow-400 hover:bg-yellow-500/30 font-semibold border border-yellow-500/30 font-orbitron tracking-wide">
+                  <Button className="bg-gray-800 text-white hover:bg-gray-700 font-semibold border border-gray-600 font-orbitron tracking-wide">
                     Termin buchen
                   </Button>
                 </motion.div>
@@ -124,7 +124,7 @@ export function Navigation() {
                 </Button>
               </motion.div>
             </SheetTrigger>
-            <SheetContent side="right" className="bg-gray-900 border-gray-700">
+            <SheetContent side="right" className="bg-gray-950 border-gray-800">
               <motion.div 
                 className="flex flex-col space-y-6 mt-8"
                 initial={{ opacity: 0, x: 20 }}
@@ -162,7 +162,7 @@ export function Navigation() {
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
-                      <Button className="bg-yellow-500/20 text-yellow-400 hover:bg-yellow-500/30 font-semibold mt-4 border border-yellow-500/30 font-orbitron tracking-wide w-full">
+                      <Button className="bg-gray-800 text-white hover:bg-gray-700 font-semibold mt-4 border border-gray-600 font-orbitron tracking-wide w-full">
                         Termin buchen
                       </Button>
                     </motion.div>
@@ -176,116 +176,3 @@ export function Navigation() {
     </motion.nav>
   )
 }
-
-
-  // const [isMenuOpen, setIsMenuOpen] = useState(false);
-  // const [isScrolled, setIsScrolled] = useState(false);
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     setIsScrolled(window.scrollY > 50);
-  //   };
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, []);
-
-  // const navItems = [
-  //   { name: "Home", href: "#home" },
-  //   { name: "Team", href: "#team" },
-  //   { name: "Services", href: "#services" },
-  //   { name: "Gallery", href: "#gallery" },
-  //   { name: "Booking", href: "#booking" },
-  //   { name: "Contact", href: "#contact" },
-  // ];
-
-  // return (
-  //   <header 
-  //     className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-  //       isScrolled 
-  //         ? "bg-background/95 backdrop-blur-md shadow-elegant" 
-  //         : "bg-transparent"
-  //     }`}
-  //   >
-  //     <div className="container mx-auto px-4">
-  //       <div className="flex items-center justify-between h-20">
-  //         {/* Logo */}
-  //         <div className="flex items-center space-x-3">
-  //           <div className="relative">
-  //             <Scissors className="w-8 h-8 text-jungle-gold scissors-float" />
-  //             <img 
-  //               src={floatingLeaf.src} 
-  //               alt="Leaf decoration" 
-  //               className="absolute -top-2 -right-2 w-6 h-6 leaf-sway opacity-70"
-  //             />
-  //           </div>
-  //           <div>
-  //             <h1 className="font-heading text-2xl font-bold text-jungle-green">
-  //               Jungle Glam Hair
-  //             </h1>
-  //             <p className="text-xs text-muted-foreground font-body">
-  //               Bad Laasphe
-  //             </p>
-  //           </div>
-  //         </div>
-
-  //         {/* Desktop Navigation */}
-  //         <nav className="hidden lg:flex items-center space-x-8">
-  //           {navItems.map((item) => (
-  //             <a
-  //               key={item.name}
-  //               href={item.href}
-  //               className="text-foreground hover:text-jungle-gold transition-smooth font-body font-medium relative group"
-  //             >
-  //               {item.name}
-  //               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-jungle-gold transition-all duration-300 group-hover:w-full"></span>
-  //             </a>
-  //           ))}
-  //         </nav>
-
-  //         {/* CTA Button */}
-  //         <Button 
-  //           variant="default" 
-  //           className="hidden lg:inline-flex gradient-gold text-jungle-black font-semibold shadow-gold hover:scale-105 transition-all duration-300"
-  //         >
-  //           Book Now
-  //         </Button>
-
-  //         {/* Mobile Menu Button */}
-  //         <button
-  //           className="lg:hidden p-2"
-  //           onClick={() => setIsMenuOpen(!isMenuOpen)}
-  //         >
-  //           {isMenuOpen ? (
-  //             <X className="w-6 h-6 text-jungle-green" />
-  //           ) : (
-  //             <Menu className="w-6 h-6 text-jungle-green" />
-  //           )}
-  //         </button>
-  //       </div>
-
-  //       {/* Mobile Menu */}
-  //       {isMenuOpen && (
-  //         <div className="lg:hidden absolute top-full left-0 w-full bg-background/95 backdrop-blur-md border-t border-border shadow-elegant">
-  //           <nav className="flex flex-col space-y-4 p-6">
-  //             {navItems.map((item) => (
-  //               <a
-  //                 key={item.name}
-  //                 href={item.href}
-  //                 className="text-foreground hover:text-jungle-gold transition-smooth font-body font-medium"
-  //                 onClick={() => setIsMenuOpen(false)}
-  //               >
-  //                 {item.name}
-  //               </a>
-  //             ))}
-  //             <Button 
-  //               variant="default" 
-  //               className="gradient-gold text-jungle-black font-semibold shadow-gold mt-4"
-  //             >
-  //               Book Now
-  //             </Button>
-  //           </nav>
-  //         </div>
-  //       )}
-  //     </div>
-  //   </header>
-  // );

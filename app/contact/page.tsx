@@ -504,7 +504,8 @@ export default function ContactPage() {
                     className="mb-3 sm:mb-4 p-3 bg-green-900/20 border border-green-700 rounded-lg flex items-center"
                   >
                     <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-400 mr-2 flex-shrink-0" />
-                    <span className="text-green-300 text-sm sm:text-base">
+                    <span className="text-green-300 text-sm sm:text-b
+                    ase">
                       Nachricht erfolgreich gesendet! Wir melden uns bald bei Ihnen.
                     </span>
                   </motion.div>
