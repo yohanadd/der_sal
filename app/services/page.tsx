@@ -45,7 +45,7 @@ export default function ServicesPage() {
     {
       title: "Damen-Services",
       icon: Crown,
-      color: "from-yellow-600 to-yellow-700",
+      color: "from-gray-600 to-gray-700",
       image: damenServiceImage,
       services: [
         {
@@ -77,7 +77,7 @@ export default function ServicesPage() {
     {
       title: "Farb-Magie",
       icon: Palette,
-      color: "from-yellow-600 to-yellow-700",
+      color: "from-gray-600 to-gray-700",
       image: colorMagicImage,
       services: [
         {
@@ -109,7 +109,7 @@ export default function ServicesPage() {
     {
       title: "Herren-Styling",
       icon: Scissors,
-      color: "from-yellow-600 to-yellow-700",
+      color: "from-gray-600 to-gray-700",
       image: herrenStylingImage,
       services: [
         {
@@ -138,38 +138,6 @@ export default function ServicesPage() {
         },
       ],
     },
-    // {
-    //   title: "Bio-Pflege",
-    //   icon: Leaf,
-    //   color: "from-yellow-600 to-yellow-700",
-    //   image: bioPflegeImage,
-    //   services: [
-    //     {
-    //       name: "Tiefenpflege-Behandlung",
-    //       price: "25-40€",
-    //       description: "Intensive Feuchtigkeits und Reparaturtherapie Behandlung",
-    //       image: herrenCutImage,
-    //     },
-    //     {
-    //       name: "Kopfhaut & Behandlung",
-    //       price: "30-45€",
-    //       description: "Entspannende Kopfhauttherapie mit Bio-Ölen",
-    //       image: bartTrimImage,
-    //     },
-    //     {
-    //       name: "Keratin-Glättung",
-    //       price: "120-180€",
-    //       description: "Krauses Haar glätten für monatelang glattes Haar",
-    //       image: hotTowelImage,
-    //     },
-    //     {
-    //       name: "Bio-Haarmaske",
-    //       price: "20-35€",
-    //       description: "Natürliche Inhaltsstoffe für gesundes, glänzendes Haar",
-    //       image: colorTouchupImage,
-    //     },
-    //   ],
-    // },
   ]
 
   return (
@@ -220,7 +188,7 @@ export default function ServicesPage() {
           >
             <motion.div variants={fadeInUp}>
               <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6 font-serif flex items-center">
-                <Crown className="w-6 h-6 sm:w-8 sm:h-8 mr-3 text-yellow-400" />
+                <Crown className="w-6 h-6 sm:w-8 sm:h-8 mr-3 text-gray-300" />
                 Cuts für Sie
               </h2>
               <p className="text-gray-200 text-base sm:text-lg leading-relaxed font-orbitron-400">
@@ -230,7 +198,7 @@ export default function ServicesPage() {
             
             <motion.div variants={fadeInUp}>
               <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6 font-serif flex items-center">
-                <Palette className="w-6 h-6 sm:w-8 sm:h-8 mr-3 text-yellow-400" />
+                <Palette className="w-6 h-6 sm:w-8 sm:h-8 mr-3 text-gray-300" />
                 Color & Gloss
               </h2>
               <p className="text-gray-200 text-base sm:text-lg leading-relaxed font-orbitron-400">
@@ -245,7 +213,7 @@ export default function ServicesPage() {
           >
             <motion.div variants={fadeInUp}>
               <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6 font-serif flex items-center">
-                <Scissors className="w-6 h-6 sm:w-8 sm:h-8 mr-3 text-yellow-400" />
+                <Scissors className="w-6 h-6 sm:w-8 sm:h-8 mr-3 text-gray-300" />
                 Men's Styles
               </h2>
               <p className="text-gray-200 text-base sm:text-lg leading-relaxed font-orbitron-400">
@@ -255,7 +223,7 @@ export default function ServicesPage() {
             
             <motion.div variants={fadeInUp}>
               <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 sm:mb-6 font-serif flex items-center">
-                <Leaf className="w-6 h-6 sm:w-8 sm:h-8 mr-3 text-yellow-400" />
+                <Leaf className="w-6 h-6 sm:w-8 sm:h-8 mr-3 text-gray-300" />
                 Care & Specials
               </h2>
               <p className="text-gray-200 text-base sm:text-lg leading-relaxed font-orbitron-400">
@@ -266,7 +234,7 @@ export default function ServicesPage() {
 
           {/* Team Description */}
           <motion.div 
-            className="mt-12 sm:mt-16 p-6 sm:p-8 bg-gradient-to-r from-yellow-600/20 to-yellow-700/20 rounded-xl sm:rounded-2xl border border-yellow-500/30"
+            className="mt-12 sm:mt-16 p-6 sm:p-8 bg-gradient-to-r from-gray-700/50 to-gray-800/50 rounded-xl sm:rounded-2xl border border-gray-600"
             variants={fadeInUp}
           >
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3 sm:mb-4 font-serif">Unser Team</h2>
@@ -275,7 +243,7 @@ export default function ServicesPage() {
               Jede von uns bringt ihre eigene Handschrift mit, und genau das macht den Unterschied: 
               Kreativität, Professionalität und eine Atmosphäre, die man einfach erleben muss.
             </p>
-            <p className="text-yellow-300 text-lg sm:text-xl font-semibold font-orbitron-700">
+            <p className="text-gray-300 text-lg sm:text-xl font-semibold font-orbitron-700">
               👉 Jetzt Termin sichern und erleben, wie cool Perfektion aussehen kann.
             </p>
           </motion.div>
@@ -312,14 +280,14 @@ export default function ServicesPage() {
                     transition={{ duration: 0.6 }}
                   >
                     <motion.div
-                      className="w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-4 sm:mb-6 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center shadow-2xl border-2 border-yellow-300"
+                      className="w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-4 sm:mb-6 bg-gradient-to-br from-gray-600 to-gray-700 rounded-full flex items-center justify-center shadow-2xl border-2 border-gray-400"
                       whileHover={{ scale: 1.15, rotate: 5 }}
                       transition={{ type: "spring", stiffness: 300, damping: 20 }}
                     >
-                      <category.icon className="w-10 h-10 sm:w-12 sm:h-12 text-yellow-100" />
+                      <category.icon className="w-10 h-10 sm:w-12 sm:h-12 text-gray-200" />
                     </motion.div>
                     <motion.h2 
-                      className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4 font-serif bg-gradient-to-r from-yellow-400 to-yellow-300 bg-clip-text text-transparent"
+                      className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4 font-serif bg-gradient-to-r from-gray-300 to-gray-200 bg-clip-text text-transparent"
                       whileHover={{ scale: 1.05 }}
                       transition={{ type: "spring", stiffness: 300, damping: 20 }}
                     >
@@ -339,11 +307,11 @@ export default function ServicesPage() {
                     transition={{ duration: 0.6 }}
                   >
                     <motion.div
-                      className={`w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-3 sm:mb-4 bg-gradient-to-br ${category.color} rounded-full flex items-center justify-center shadow-xl border border-yellow-500/30`}
+                      className={`w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-3 sm:mb-4 bg-gradient-to-br ${category.color} rounded-full flex items-center justify-center shadow-xl border border-gray-500`}
                       whileHover={{ scale: 1.1 }}
                       transition={{ type: "spring", stiffness: 300, damping: 20 }}
                     >
-                      <category.icon className="w-8 h-8 sm:w-10 sm:h-10 text-yellow-200" />
+                      <category.icon className="w-8 h-8 sm:w-10 sm:h-10 text-gray-200" />
                     </motion.div>
                     <motion.h2 
                       className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 font-serif"
@@ -405,8 +373,8 @@ export default function ServicesPage() {
                     >
                       <Card className={`group hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 sm:hover:-translate-y-2 border-2 overflow-hidden bg-gray-800 h-full flex flex-col ${
                         categoryIndex === 0 
-                          ? 'border-yellow-400 hover:border-yellow-300 shadow-lg' 
-                          : 'border-yellow-500/30 hover:border-yellow-400'
+                          ? 'border-gray-400 hover:border-gray-300 shadow-lg' 
+                          : 'border-gray-600 hover:border-gray-500'
                       }`}>
                         <div className="relative h-40 sm:h-48 overflow-hidden flex-shrink-0">
                           <Image
@@ -419,7 +387,7 @@ export default function ServicesPage() {
                           />
                           <div className="absolute top-3 sm:top-4 right-3 sm:right-4">
                             <Badge className={`bg-gradient-to-r ${category.color} text-white transition-transform duration-200 hover:scale-105 border ${
-                              categoryIndex === 0 ? 'border-yellow-300' : 'border-yellow-400'
+                              categoryIndex === 0 ? 'border-gray-300' : 'border-gray-400'
                             } font-orbitron-700 text-xs sm:text-sm`}>
                               {service.price}
                             </Badge>
@@ -460,14 +428,14 @@ export default function ServicesPage() {
             transition={{ duration: 0.6 }}
           >
             <motion.div
-              className="w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-4 sm:mb-6 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center shadow-2xl border-2 border-yellow-300"
+              className="w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-4 sm:mb-6 bg-gradient-to-br from-gray-600 to-gray-700 rounded-full flex items-center justify-center shadow-2xl border-2 border-gray-400"
               whileHover={{ scale: 1.15, rotate: 5 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
-              <Sparkles className="w-10 h-10 sm:w-12 sm:h-12 text-yellow-100" />
+              <Sparkles className="w-10 h-10 sm:w-12 sm:h-12 text-gray-200" />
             </motion.div>
             <motion.h2 
-              className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4 font-serif bg-gradient-to-r from-yellow-400 to-yellow-300 bg-clip-text text-transparent"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3 sm:mb-4 font-serif bg-gradient-to-r from-gray-300 to-gray-200 bg-clip-text text-transparent"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
@@ -520,8 +488,8 @@ export default function ServicesPage() {
               <motion.div key={index} variants={fadeInUp} className="flex">
                 <Card className={`group hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 sm:hover:-translate-y-2 border-2 overflow-hidden bg-gray-800 flex flex-col h-full w-full ${
                   pkg.popular 
-                    ? 'border-yellow-400 hover:border-yellow-300 shadow-lg' 
-                    : 'border-yellow-500/30 hover:border-yellow-400'
+                    ? 'border-gray-400 hover:border-gray-300 shadow-lg' 
+                    : 'border-gray-600 hover:border-gray-500'
                 }`}>
                   <div className="relative h-40 sm:h-48 overflow-hidden flex-shrink-0">
                     <Image
@@ -533,7 +501,7 @@ export default function ServicesPage() {
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     />
                     <div className="absolute top-3 sm:top-4 right-3 sm:right-4">
-                      <Badge className="bg-gradient-to-r from-yellow-600 to-yellow-700 text-white transition-transform duration-200 hover:scale-105 border border-yellow-400 font-orbitron-700 text-xs sm:text-sm">
+                      <Badge className="bg-gradient-to-r from-gray-600 to-gray-700 text-white transition-transform duration-200 hover:scale-105 border border-gray-400 font-orbitron-700 text-xs sm:text-sm">
                         {pkg.price}
                       </Badge>
                     </div>
@@ -563,13 +531,13 @@ export default function ServicesPage() {
                           transition={{ delay: itemIndex * 0.1 }}
                           whileHover={{ x: 5 }}
                         >
-                          <Heart className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 mr-2 flex-shrink-0" />
+                          <Heart className="w-3 h-3 sm:w-4 sm:h-4 text-gray-300 mr-2 flex-shrink-0" />
                           <span className="text-gray-300 text-xs sm:text-sm font-orbitron-400">{item}</span>
                         </motion.li>
                       ))}
                     </motion.ul>
                     <div className="flex items-center justify-between mb-3 sm:mb-4">
-                      <span className="text-xl sm:text-2xl font-bold text-yellow-400 font-orbitron-700">
+                      <span className="text-xl sm:text-2xl font-bold text-gray-300 font-orbitron-700">
                         {pkg.price}
                       </span>
                       <span className="text-sm text-gray-400 line-through font-orbitron-500">
@@ -583,8 +551,8 @@ export default function ServicesPage() {
                       <Button
                         className={`w-full text-xs sm:text-sm ${
                           pkg.popular 
-                            ? "bg-gradient-to-r from-yellow-600 to-yellow-500 hover:from-yellow-700 hover:to-yellow-600 text-white border border-yellow-400" 
-                            : "bg-yellow-500/20 hover:bg-yellow-500/30 text-yellow-400 border border-yellow-500/30"
+                            ? "bg-gradient-to-r from-gray-600 to-gray-500 hover:from-gray-700 hover:to-gray-600 text-white border border-gray-400" 
+                            : "bg-gray-600/20 hover:bg-gray-600/30 text-gray-300 border border-gray-600"
                         } font-orbitron-600 py-2 sm:py-3`}
                       >
                         Paket buchen
@@ -634,9 +602,9 @@ export default function ServicesPage() {
             >
               <Button
                 size="lg"
-                className="bg-yellow-500/20 text-yellow-400 hover:bg-yellow-500/30 font-semibold px-6 sm:px-8 border border-yellow-500/30 font-orbitron-600 text-sm sm:text-base w-full sm:w-auto"
+                className="bg-gray-700 text-gray-200 hover:bg-gray-600 font-semibold px-6 sm:px-8 border border-gray-600 font-orbitron-600 text-sm sm:text-base w-full sm:w-auto"
               >
-                <Scissors className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-yellow-400" />
+                <Scissors className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-gray-300" />
                 Termin vereinbaren
               </Button>
             </motion.div>
@@ -648,7 +616,7 @@ export default function ServicesPage() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-gray-900 px-6 sm:px-8 bg-transparent font-orbitron-600 text-sm sm:text-base w-full sm:w-auto"
+                className="border-2 border-gray-400 text-gray-300 hover:bg-gray-400 hover:text-gray-900 px-6 sm:px-8 bg-transparent font-orbitron-600 text-sm sm:text-base w-full sm:w-auto"
               >
                 Jetzt anrufen
               </Button>

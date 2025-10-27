@@ -205,11 +205,11 @@ export default function ContactPage() {
                   <CardContent className="p-4 sm:p-6">
                     <div className="flex items-start space-x-3 sm:space-x-4">
                       <motion.div 
-                        className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-amber-600 to-amber-700 rounded-full flex items-center justify-center flex-shrink-0"
+                        className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-gray-600 to-gray-700 rounded-full flex items-center justify-center flex-shrink-0"
                         whileHover={{ rotate: 360, scale: 1.1 }}
                         transition={{ duration: 0.5 }}
                       >
-                        <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-amber-100" />
+                        <MapPin className="w-5 h-5 sm:w-6 sm:h-6 text-gray-200" />
                       </motion.div>
                       <div className="flex-1 min-w-0">
                         <h3 className="text-lg sm:text-xl font-bold text-white mb-2">Unser Standort</h3>
@@ -259,11 +259,11 @@ export default function ContactPage() {
                     <CardContent className="p-4 sm:p-6 h-full flex flex-col">
                       <div className="flex items-start space-x-3 sm:space-x-4 flex-grow">
                         <motion.div 
-                          className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-amber-600 to-amber-700 rounded-full flex items-center justify-center flex-shrink-0"
+                          className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-gray-600 to-gray-700 rounded-full flex items-center justify-center flex-shrink-0"
                           whileHover={{ rotate: 360, scale: 1.1 }}
                           transition={{ duration: 0.5 }}
                         >
-                          <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-amber-100" />
+                          <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-gray-200" />
                         </motion.div>
                         <div className="flex-grow">
                           <h3 className="text-base sm:text-lg font-bold text-white">Rufen Sie uns an</h3>
@@ -285,11 +285,11 @@ export default function ContactPage() {
                     <CardContent className="p-4 sm:p-6 h-full flex flex-col">
                       <div className="flex items-start space-x-3 sm:space-x-4 flex-grow">
                         <motion.div 
-                          className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-amber-600 to-amber-700 rounded-full flex items-center justify-center flex-shrink-0"
+                          className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-gray-600 to-gray-700 rounded-full flex items-center justify-center flex-shrink-0"
                           whileHover={{ rotate: 360, scale: 1.1 }}
                           transition={{ duration: 0.5 }}
                         >
-                          <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-amber-100" />
+                          <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-gray-200" />
                         </motion.div>
                         <div className="flex-grow">
                           <h3 className="text-base sm:text-lg font-bold text-white">E-Mail senden</h3>
@@ -333,7 +333,7 @@ export default function ContactPage() {
                           <Button
                             className={`bg-gradient-to-r ${social.color} hover:scale-105 transition-transform duration-300 text-white font-orbitron border border-gray-600 w-full text-xs sm:text-sm`}
                           >
-                            <social.icon className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-amber-400" />
+                            <social.icon className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-gray-300" />
                             <span className="truncate">{social.label}</span>
                           </Button>
                         </motion.div>
@@ -378,7 +378,7 @@ export default function ContactPage() {
                     >
                       <div className="flex items-center space-x-2 sm:space-x-3">
                         <motion.div 
-                          className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-amber-600 to-amber-700 rounded-full flex items-center justify-center flex-shrink-0"
+                          className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-gray-600 to-gray-700 rounded-full flex items-center justify-center flex-shrink-0"
                           animate={{ 
                             scale: [1, 1.1, 1],
                             rotate: [0, 5, -5, 0]
@@ -389,7 +389,7 @@ export default function ContactPage() {
                             ease: "easeInOut"
                           }}
                         >
-                          <Scissors className="w-4 h-4 sm:w-5 sm:h-5 text-amber-100" />
+                          <Scissors className="w-4 h-4 sm:w-5 sm:h-5 text-gray-200" />
                         </motion.div>
                         <div className="flex-1 min-w-0">
                           <h3 className="text-base sm:text-lg font-bold text-white truncate">Der Salon</h3>
@@ -429,11 +429,11 @@ export default function ContactPage() {
                   <Card className="border-2 border-gray-700 hover:border-gray-600 transition-colors duration-300 p-3 sm:p-4 bg-gray-800">
                     <div className="text-center">
                       <motion.div 
-                        className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-amber-600 to-amber-700 rounded-full flex items-center justify-center mx-auto mb-2"
+                        className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-gray-600 to-gray-700 rounded-full flex items-center justify-center mx-auto mb-2"
                         animate={{ rotate: [0, 10, -10, 0] }}
                         transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                       >
-                        <Car className="w-4 h-4 sm:w-5 sm:h-5 text-amber-100" />
+                        <Car className="w-4 h-4 sm:w-5 sm:h-5 text-gray-200" />
                       </motion.div>
                       <p className="text-xs sm:text-sm font-semibold text-white">Kostenlose</p>
                       <p className="text-xs text-gray-300">Parkplätze</p>
@@ -449,11 +449,11 @@ export default function ContactPage() {
                   <Card className="border-2 border-gray-700 hover:border-gray-600 transition-colors duration-300 p-3 sm:p-4 bg-gray-800">
                     <div className="text-center">
                       <motion.div 
-                        className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-amber-600 to-amber-700 rounded-full flex items-center justify-center mx-auto mb-2"
+                        className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-gray-600 to-gray-700 rounded-full flex items-center justify-center mx-auto mb-2"
                         animate={{ scale: [1, 1.1, 1] }}
                         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
                       >
-                        <Bus className="w-4 h-4 sm:w-5 sm:h-5 text-amber-100" />
+                        <Bus className="w-4 h-4 sm:w-5 sm:h-5 text-gray-200" />
                       </motion.div>
                       <p className="text-xs sm:text-sm font-semibold text-white">Bushaltestelle</p>
                       <p className="text-xs text-gray-300">in der Nähe</p>
@@ -504,8 +504,7 @@ export default function ContactPage() {
                     className="mb-3 sm:mb-4 p-3 bg-green-900/20 border border-green-700 rounded-lg flex items-center"
                   >
                     <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-400 mr-2 flex-shrink-0" />
-                    <span className="text-green-300 text-sm sm:text-b
-                    ase">
+                    <span className="text-green-300 text-sm sm:text-base">
                       Nachricht erfolgreich gesendet! Wir melden uns bald bei Ihnen.
                     </span>
                   </motion.div>
@@ -647,12 +646,12 @@ export default function ContactPage() {
                       >
                         {formState.loading ? (
                           <>
-                            <Loader2 className="w-4 h-4 sm:w-5 sm:h-5 mr-2 animate-spin text-amber-400" />
+                            <Loader2 className="w-4 h-4 sm:w-5 sm:h-5 mr-2 animate-spin text-gray-300" />
                             Wird gesendet...
                           </>
                         ) : (
                           <>
-                            <Send className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-amber-400" />
+                            <Send className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-gray-300" />
                             Nachricht senden
                           </>
                         )}
