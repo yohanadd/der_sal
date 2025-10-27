@@ -77,21 +77,13 @@ export default function GalleryPage() {
     {
       id: 4,
       category: "color",
-      title: "Dschungel-Grün Ombré",
+      title: "Blond Ombrė",
       description: "Kräftiger Smaragd-Verlauf mit natürlichem Ansatz",
       likes: 203,
       stylist: "Ines",
       image: cu4,
     },
-    {
-      id: 5,
-      category: "cuts",
-      title: "Strukturierte Stufen",
-      description: "Voluminöser Schnitt mit Bewegung und Schwung",
-      likes: 94,
-      stylist: "Ines",
-      image: cu5,
-    },
+   
     {
       id: 6,
       category: "events",
