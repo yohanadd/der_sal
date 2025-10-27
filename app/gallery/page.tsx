@@ -62,7 +62,7 @@ export default function GalleryPage() {
       title: "Moderner Bob",
       description: "Eleganter Präzisionsschnitt mit subtilen Stufen",
       likes: 89,
-      stylist: "Sandra",
+      stylist: "Ines",
       image: cu2,
     },
     {
@@ -71,7 +71,7 @@ export default function GalleryPage() {
       title: "Braut-Hochsteckfrisur",
       description: "Elegante Hochzeitsfrisur mit botanischen Akzenten",
       likes: 156,
-      stylist: "Luna",
+      stylist: "Ines",
       image: cu3,
     },
     {
@@ -89,7 +89,7 @@ export default function GalleryPage() {
       title: "Strukturierte Stufen",
       description: "Voluminöser Schnitt mit Bewegung und Schwung",
       likes: 94,
-      stylist: "Sandra",
+      stylist: "Ines",
       image: cu5,
     },
     {
@@ -98,7 +98,7 @@ export default function GalleryPage() {
       title: "Abschlussball-Glamour",
       description: "Hollywood-Wellen mit goldenen Highlights",
       likes: 178,
-      stylist: "Luna",
+      stylist: "Ines",
       image: cu6,
     },
     {
@@ -116,7 +116,7 @@ export default function GalleryPage() {
       title: "Pixie-Perfektion",
       description: "Kantiger Kurzhaarschnitt mit texturiertem Styling",
       likes: 145,
-      stylist: "Sandra",
+      stylist: "Ines",
       image: cu8,
     },
     {
@@ -125,7 +125,7 @@ export default function GalleryPage() {
       title: "Festival-Zöpfe",
       description: "Boho-Flechtfrisur mit farbigen Akzenten",
       likes: 167,
-      stylist: "Luna",
+      stylist: "Ines",
       image: cu9,
     },
     {
@@ -143,7 +143,7 @@ export default function GalleryPage() {
       title: "Shag-Revival",
       description: "70er-inspirierter Shag mit modernem Twist",
       likes: 134,
-      stylist: "Sandra",
+      stylist: "Ines",
       image: cu11,
     },
     {
@@ -152,7 +152,7 @@ export default function GalleryPage() {
       title: "Roter Teppich bereit",
       description: "Elegante Hochsteckfrisur für besondere Anlässe",
       likes: 198,
-      stylist: "Luna",
+      stylist: "Ines",
       image: cu12,
     },
   ]
@@ -223,12 +223,12 @@ export default function GalleryPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-800 to-gray-900 font-orbitron">
+    <div className="min-h-screen bg-gray-800 font-orbitron">
       {/* Hero Section */}
-      <section className="py-16 sm:py-20 px-4 sm:px-6 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 bg-gray-800 text-white">
         <div className="max-w-6xl mx-auto text-center">
           <div className="mb-6 sm:mb-8">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-gray-300 px-2 sm:px-0">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white px-2 sm:px-0">
               Unsere Arbeiten
             </h1>
             <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto px-4 sm:px-0">
@@ -239,10 +239,10 @@ export default function GalleryPage() {
       </section>
 
       {/* First Instagram Reels Section */}
-      <section className="py-12 sm:py-16 px-4 sm:px-6 bg-gradient-to-br from-gray-700 to-gray-800">
+      <section className="py-12 sm:py-16 px-4 sm:px-6 bg-gray-700">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12 sm:mb-16">
-            <Instagram className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 text-amber-400" />
+            <Instagram className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 text-white" />
             <p className="text-lg sm:text-xl text-gray-300 px-4 sm:px-0">
               Schauen Sie unseren Stylisten dabei zu, wie sie ihre Magie in Echtzeit wirken
             </p>
@@ -276,7 +276,7 @@ export default function GalleryPage() {
                   />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300">
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <div className={`w-10 h-10 sm:w-12 sm:h-12 bg-amber-400/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-all duration-300 ${playingVideos[reel.id] ? 'opacity-0' : 'opacity-80'}`}>
+                      <div className={`w-10 h-10 sm:w-12 sm:h-12 bg-white/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-all duration-300 ${playingVideos[reel.id] ? 'opacity-0' : 'opacity-80'}`}>
                         <div className="w-0 h-0 border-l-[6px] sm:border-l-[8px] border-l-gray-800 border-t-[4px] sm:border-t-[6px] border-t-transparent border-b-[4px] sm:border-b-[6px] border-b-transparent ml-0.5 sm:ml-1"></div>
                       </div>
                     </div>
@@ -284,10 +284,10 @@ export default function GalleryPage() {
                       <p className="text-white text-xs sm:text-sm font-medium mb-1">{reel.title}</p>
                       <div className="flex items-center justify-between">
                         <div className="flex items-center">
-                          <Eye className="w-3 h-3 text-amber-400 mr-1" />
+                          <Eye className="w-3 h-3 text-white mr-1" />
                           <span className="text-white text-xs">{reel.views} Aufrufe</span>
                         </div>
-                        <div className="text-amber-400 text-xs hidden xs:block">
+                        <div className="text-white text-xs hidden xs:block">
                           {playingVideos[reel.id] ? 'Läuft automatisch' : 'Autoplay'}
                         </div>
                       </div>
@@ -301,9 +301,9 @@ export default function GalleryPage() {
           <div className="text-center mt-8 sm:mt-12">
             <Button
               size="lg"
-              className="bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white px-6 sm:px-8 font-orbitron text-sm sm:text-base"
+              className="bg-gray-700 hover:bg-gray-600 text-white px-6 sm:px-8 font-orbitron text-sm sm:text-base"
             >
-              <Instagram className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-amber-400" />
+              <Instagram className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-white" />
               Folgen Sie @SalonBadLaasphe
             </Button>
           </div>
@@ -321,11 +321,11 @@ export default function GalleryPage() {
                 variant={activeFilter === filter.id ? "default" : "outline"}
                 className={`font-orbitron text-xs sm:text-sm ${
                   activeFilter === filter.id
-                    ? "bg-gradient-to-r from-gray-600 to-gray-700 text-white"
+                    ? "bg-gray-700 text-white"
                     : "border-gray-600 text-gray-300 hover:bg-gray-700"
                 } px-3 sm:px-6 py-1.5 sm:py-2 rounded-full transition-all duration-300`}
               >
-                <Filter className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 text-amber-400" />
+                <Filter className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2 text-white" />
                 {filter.label}
                 <Badge className="ml-1 sm:ml-2 bg-gray-600 text-gray-100 font-orbitron text-xs">
                   {filter.count}
@@ -358,14 +358,14 @@ export default function GalleryPage() {
                     <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4">
                       <div className="flex items-center justify-between text-white">
                         <div className="flex items-center space-x-1 sm:space-x-2">
-                          <Heart className="w-3 h-3 sm:w-4 sm:h-4 text-amber-400" />
+                          <Heart className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                           <span className="text-xs sm:text-sm">{item.likes}</span>
                         </div>
                         <div className="flex space-x-1 sm:space-x-2">
-                          <Button size="sm" variant="ghost" className="text-amber-400 hover:text-amber-300 p-1 h-6 w-6 sm:h-8 sm:w-8">
+                          <Button size="sm" variant="ghost" className="text-white hover:text-gray-300 p-1 h-6 w-6 sm:h-8 sm:w-8">
                             <Eye className="w-3 h-3 sm:w-4 sm:h-4" />
                           </Button>
-                          <Button size="sm" variant="ghost" className="text-amber-400 hover:text-amber-300 p-1 h-6 w-6 sm:h-8 sm:w-8">
+                          <Button size="sm" variant="ghost" className="text-white hover:text-gray-300 p-1 h-6 w-6 sm:h-8 sm:w-8">
                             <Share2 className="w-3 h-3 sm:w-4 sm:h-4" />
                           </Button>
                         </div>
@@ -373,11 +373,11 @@ export default function GalleryPage() {
                     </div>
                   </div>
                   <Badge className="absolute top-2 sm:top-3 left-2 sm:left-3 bg-gray-700 text-gray-100 font-orbitron text-xs">
-                    von {item.stylist}
+                    von Ines
                   </Badge>
                 </div>
                 <CardContent className="p-3 sm:p-4">
-                  <h3 className="text-sm sm:text-base lg:text-lg font-bold text-amber-400 mb-1">{item.title}</h3>
+                  <h3 className="text-sm sm:text-base lg:text-lg font-bold text-white mb-1">{item.title}</h3>
                   <p className="text-gray-300 text-xs sm:text-sm">{item.description}</p>
                 </CardContent>
               </Card>
@@ -387,11 +387,11 @@ export default function GalleryPage() {
       </section>
 
       {/* Second Instagram Reels Section */}
-      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-gradient-to-br from-gray-700 to-gray-800">
+      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-gray-700">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12 sm:mb-16">
-            <Instagram className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 text-amber-400" />
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-300 mb-3 sm:mb-4 px-2 sm:px-0">
+            <Instagram className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-3 sm:mb-4 text-white" />
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4 px-2 sm:px-0">
               Hinter den Kulissen
             </h2>
             <p className="text-lg sm:text-xl text-gray-300 px-4 sm:px-0">
@@ -427,7 +427,7 @@ export default function GalleryPage() {
                   />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300">
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <div className={`w-10 h-10 sm:w-12 sm:h-12 bg-amber-400/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-all duration-300 ${playingVideos[reel.id] ? 'opacity-0' : 'opacity-80'}`}>
+                      <div className={`w-10 h-10 sm:w-12 sm:h-12 bg-white/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-all duration-300 ${playingVideos[reel.id] ? 'opacity-0' : 'opacity-80'}`}>
                         <div className="w-0 h-0 border-l-[6px] sm:border-l-[8px] border-l-gray-800 border-t-[4px] sm:border-t-[6px] border-t-transparent border-b-[4px] sm:border-b-[6px] border-b-transparent ml-0.5 sm:ml-1"></div>
                       </div>
                     </div>
@@ -435,10 +435,10 @@ export default function GalleryPage() {
                       <p className="text-white text-xs sm:text-sm font-medium mb-1">{reel.title}</p>
                       <div className="flex items-center justify-between">
                         <div className="flex items-center">
-                          <Eye className="w-3 h-3 text-amber-400 mr-1" />
+                          <Eye className="w-3 h-3 text-white mr-1" />
                           <span className="text-white text-xs">{reel.views} Aufrufe</span>
                         </div>
-                        <div className="text-amber-400 text-xs hidden xs:block">
+                        <div className="text-white text-xs hidden xs:block">
                           {playingVideos[reel.id] ? 'Läuft automatisch' : 'Autoplay'}
                         </div>
                       </div>
@@ -452,9 +452,9 @@ export default function GalleryPage() {
           <div className="text-center mt-8 sm:mt-12">
             <Button
               size="lg"
-              className="bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white px-6 sm:px-8 font-orbitron text-sm sm:text-base"
+              className="bg-gray-700 hover:bg-gray-600 text-white px-6 sm:px-8 font-orbitron text-sm sm:text-base"
             >
-              <Instagram className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-amber-400" />
+              <Instagram className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-white" />
               Folgen Sie @SalonBadLaasphe
             </Button>
           </div>
@@ -462,9 +462,9 @@ export default function GalleryPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+      <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-gray-800 text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-gray-300 px-2 sm:px-0">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-white px-2 sm:px-0">
             Bereit für Ihren großen Auftritt?
           </h2>
           <p className="text-lg sm:text-xl text-gray-300 mb-6 sm:mb-8 px-4 sm:px-0">
@@ -472,9 +472,9 @@ export default function GalleryPage() {
           </p>
           <Button
             size="lg"
-            className="bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white font-semibold px-6 sm:px-8 font-orbitron text-sm sm:text-base"
+            className="bg-gray-700 hover:bg-gray-600 text-white font-semibold px-6 sm:px-8 font-orbitron text-sm sm:text-base"
           >
-            <Camera className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-amber-400" />
+            <Camera className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-white" />
             Buchen Sie Ihre Verwandlung
           </Button>
         </div>

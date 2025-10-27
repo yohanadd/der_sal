@@ -1,4 +1,3 @@
-
 "use client"
 
 import { Card, CardContent } from "@/components/ui/card"
@@ -93,7 +92,7 @@ export default function TeamPage() {
                     <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-2 sm:mb-3 font-serif">
                       {member.name}
                     </h2>
-                    <Badge className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-white text-sm sm:text-base px-3 sm:px-4 py-1 border border-yellow-400 font-orbitron-600">
+                    <Badge className="bg-gray-700 text-white text-sm sm:text-base px-3 sm:px-4 py-1 border border-gray-600 font-orbitron-600">
                       {member.role}
                     </Badge>
                   </div>
@@ -105,13 +104,13 @@ export default function TeamPage() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                     <div>
                       <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 flex items-center font-orbitron-700">
-                        <Scissors className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-yellow-400" />
+                        <Scissors className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-gray-400" />
                         Spezialgebiete
                       </h3>
                       <ul className="space-y-1 sm:space-y-2">
                         {member.specialties.map((specialty, specIndex) => (
                           <li key={specIndex} className="flex items-center">
-                            <Star className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 mr-2 flex-shrink-0" />
+                            <Star className="w-3 h-3 sm:w-4 sm:h-4 text-gray-400 mr-2 flex-shrink-0" />
                             <span className="text-gray-200 text-sm sm:text-base font-orbitron-400">{specialty}</span>
                           </li>
                         ))}
@@ -120,7 +119,7 @@ export default function TeamPage() {
 
                     <div>
                       <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 flex items-center font-orbitron-700">
-                        <Award className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-yellow-400" />
+                        <Award className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-gray-400" />
                         Erfahrung & Erfolge
                       </h3>
                       <p className="text-gray-200 text-sm sm:text-base mb-2 sm:mb-3 font-orbitron-400">{member.experience}</p>
@@ -128,7 +127,7 @@ export default function TeamPage() {
                       <div className="space-y-1 sm:space-y-2 mb-3 sm:mb-4">
                         {member.achievements.map((achievement, achieveIndex) => (
                           <div key={achieveIndex} className="flex items-center">
-                            <Award className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 mr-2 flex-shrink-0" />
+                            <Award className="w-3 h-3 sm:w-4 sm:h-4 text-gray-400 mr-2 flex-shrink-0" />
                             <span className="text-gray-200 text-xs sm:text-sm font-orbitron-400">{achievement}</span>
                           </div>
                         ))}
@@ -139,7 +138,7 @@ export default function TeamPage() {
                           <Badge
                             key={certIndex}
                             variant="outline"
-                            className="border-yellow-400 text-yellow-300 text-xs sm:text-sm font-orbitron-500"
+                            className="border-gray-600 text-gray-300 text-xs sm:text-sm font-orbitron-500"
                           >
                             {cert}
                           </Badge>
@@ -148,15 +147,15 @@ export default function TeamPage() {
                     </div>
                   </div>
 
-                  <div className="bg-gradient-to-br from-yellow-500/10 to-yellow-600/10 rounded-lg sm:rounded-xl p-4 sm:p-6 border-l-4 border-yellow-400">
+                  <div className="bg-gradient-to-br from-gray-700/50 to-gray-800/50 rounded-lg sm:rounded-xl p-4 sm:p-6 border-l-4 border-gray-600">
                     <h3 className="text-base sm:text-lg font-bold text-white mb-2 flex items-center font-orbitron-700">
-                      <Heart className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-yellow-400" />
+                      <Heart className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-gray-400" />
                       Persönlicher Fakt
                     </h3>
                     <p className="text-gray-200 text-sm sm:text-base italic font-orbitron-400">{member.funFact}</p>
                   </div>
 
-                  <Button className="bg-yellow-500/20 text-yellow-400 hover:bg-yellow-500/30 font-semibold px-6 sm:px-8 py-2 sm:py-3 border border-yellow-500/30 font-orbitron-600 text-sm sm:text-base w-full sm:w-auto">
+                  <Button className="bg-gray-700 text-gray-200 hover:bg-gray-600 font-semibold px-6 sm:px-8 py-2 sm:py-3 border border-gray-600 font-orbitron-600 text-sm sm:text-base w-full sm:w-auto">
                     Termin bei {member.name.split(" ")[0]} buchen
                   </Button>
                 </div>
@@ -178,19 +177,19 @@ export default function TeamPage() {
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             {[
-              { number: "8+", label: "Jahre Erfahrung", icon: <Clock className="w-6 h-6 sm:w-8 sm:h-8 text-yellow-400" /> },
-              { number: "500+", label: "Zufriedene Kunden", icon: <Smile className="w-6 h-6 sm:w-8 sm:h-8 text-yellow-400" /> },
-              { number: "10+", label: "Zertifikate", icon: <Award className="w-6 h-6 sm:w-8 sm:h-8 text-yellow-400" /> },
-              { number: "100%", label: "Leidenschaft für Haare", icon: <Heart className="w-6 h-6 sm:w-8 sm:h-8 text-yellow-400" /> },
+              { number: "8+", label: "Jahre Erfahrung", icon: <Clock className="w-6 h-6 sm:w-8 sm:h-8 text-gray-400" /> },
+              { number: "500+", label: "Zufriedene Kunden", icon: <Smile className="w-6 h-6 sm:w-8 sm:h-8 text-gray-400" /> },
+              { number: "10+", label: "Zertifikate", icon: <Award className="w-6 h-6 sm:w-8 sm:h-8 text-gray-400" /> },
+              { number: "100%", label: "Leidenschaft für Haare", icon: <Heart className="w-6 h-6 sm:w-8 sm:h-8 text-gray-400" /> },
             ].map((stat, index) => (
               <div key={index} className="flex">
-                <Card className="text-center p-4 sm:p-6 lg:p-8 hover:shadow-xl transition-shadow duration-300 border-2 border-yellow-500/30 hover:border-yellow-400 bg-gray-800 flex-1 flex flex-col">
+                <Card className="text-center p-4 sm:p-6 lg:p-8 hover:shadow-xl transition-shadow duration-300 border-2 border-gray-600 hover:border-gray-500 bg-gray-800 flex-1 flex flex-col">
                   <CardContent className="p-0 flex flex-col flex-1 justify-between">
                     <div>
                       <div className="text-gray-300 mb-3 sm:mb-4 flex justify-center">
                         {stat.icon}
                       </div>
-                      <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-yellow-400 mb-1 sm:mb-2 font-orbitron-700">
+                      <div className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-300 mb-1 sm:mb-2 font-orbitron-700">
                         {stat.number}
                       </div>
                     </div>
@@ -216,9 +215,9 @@ export default function TeamPage() {
           </p>
           <Button
             size="lg"
-            className="bg-yellow-500/20 text-yellow-400 hover:bg-yellow-500/30 font-semibold px-6 sm:px-8 border border-yellow-500/30 font-orbitron-600 text-sm sm:text-base"
+            className="bg-gray-700 text-gray-200 hover:bg-gray-600 font-semibold px-6 sm:px-8 border border-gray-600 font-orbitron-600 text-sm sm:text-base"
           >
-            <Scissors className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-yellow-400" />
+            <Scissors className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-gray-400" />
             Beratungstermin buchen
           </Button>
         </div>
