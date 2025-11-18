@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Calendar } from "lucide-react";
 import { motion } from "framer-motion";
-import homepageImage from "../out/images/homepageC.jpg";
+import homepageImage from "@/public/images/homepageC.jpg";
 
 export function HeroSection() {
   const fadeInUp = {

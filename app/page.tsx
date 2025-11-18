@@ -23,20 +23,20 @@ import {
   ChevronRight,
 } from "lucide-react";
 import Image from "next/image";
-import stylist1 from "../out/images/Owner (2).jpg";
-import stylist2 from "../out/images/member2.jpg";
-import cu1 from "../out/images/cu1.jpg";
-import cu2 from "../out/images/cu2.jpg";
-import cu3 from "../out/images/cu3.jpg";
-import cu4 from "../out/images/cu4.jpg";
-import cu5 from "../out/images/cu5.jpg";
-import cu6 from "../out/images/cu6.jpg";
-import cu7 from "../out/images/cu7.jpg";
-import cu8 from "../out/images/cu8.jpg";
-import cu9 from "../out/images/cu9.jpg";
-import cu10 from "../out/images/cu10.jpg";
-import cu11 from "../out/images/cu11.jpg";
-import cu12 from "../out/images/cu12.jpg";
+import stylist1 from "@/public/images/Owner.jpg";
+import stylist2 from "@/public/images/member2.jpg";
+import cu1 from "@/public/images/cu1.jpg";
+import cu2 from "@/public/images/cu2.jpg";
+import cu3 from "@/public/images/cu3.jpg";
+import cu4 from "@/public/images/cu4.jpg";
+import cu5 from "@/public/images/cu5.jpg";
+import cu6 from "@/public/images/cu6.jpg";
+import cu7 from "@/public/images/cu7.jpg";
+import cu8 from "@/public/images/cu8.jpg";
+import cu9 from "@/public/images/cu9.jpg";
+import cu10 from "@/public/images/cu10.jpg";
+import cu11 from "@/public/images/cu11.jpg";
+import cu12 from "@/public/images/cu12.jpg";
 import { motion } from "framer-motion";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import { Footer } from "@/components/footer";
@@ -581,7 +581,9 @@ export default function HomePage() {
                     <h3 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl font-black tracking-widest uppercase text-white leading-tight" style={{ fontFamily: 'var(--font-posterama)', fontWeight: 900, letterSpacing: '0.06em' }}>
                       {item.title}
                     </h3>
-                    <p className="text-white text-lg sm:text-xl md:text-xl lg:text-2xl tracking-wider uppercase leading-relaxed" style={{ fontFamily: 'var(--font-posterama)', fontWeight: 800, letterSpacing: '0.04em' }}>{item.desc}</p>
+                    <p className="text-white text-lg sm:text-xl md:text-xl lg:text-2xl tracking-wider uppercase leading-relaxed" style={{ fontFamily: 'var(--font-posterama)', fontWeight: 800, letterSpacing: '0.04em' }}>
+                      <span className="break-words whitespace-normal max-w-full inline-block">{item.desc}</span>
+                    </p>
                   </div>
                 </motion.div>
               ))}

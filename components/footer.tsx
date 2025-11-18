@@ -4,6 +4,9 @@ import { motion } from "framer-motion"
 import { Instagram, Facebook, Phone, Mail, MapPin } from "lucide-react"
 
 export function Footer() {
+  // Get current year dynamically
+  const currentYear = new Date().getFullYear()
+
   // Animation variants
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
@@ -33,38 +36,63 @@ export function Footer() {
           variants={staggerContainer}
         >
           {/* Contact Information */}
-          <motion.div 
-            className="text-center xs:text-left col-span-1 xs:col-span-2 lg:col-span-1"
-            variants={fadeInUp}
-          >
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-white mb-4 sm:mb-5 md:mb-6 lg:mb-8 tracking-wider uppercase" style={{ fontFamily: 'var(--font-posterama)' }}>Kontakt</h3>
-            <div className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
-              <div className="flex items-center justify-center xs:justify-start space-x-2 sm:space-x-3 md:space-x-4">
-                <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 bg-[#2d2a32] rounded-full flex items-center justify-center border border-[#3a3640] flex-shrink-0">
-                  <MapPin className="w-4 h-4 sm:w-4.5 sm:h-4.5 md:w-5 md:h-5 text-white" />
-                </div>
-                <span className="text-white text-sm sm:text-base md:text-lg font-black tracking-wider uppercase break-words" style={{ fontFamily: 'var(--font-posterama)' }}>
-                  Königsstraße 34 · 57334 Bad Laasphe
-                </span>
-              </div>
-              <div className="flex items-center justify-center xs:justify-start space-x-2 sm:space-x-3 md:space-x-4">
-                <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 bg-[#2d2a32] rounded-full flex items-center justify-center border border-[#3a3640] flex-shrink-0">
-                  <Phone className="w-4 h-4 sm:w-4.5 sm:h-4.5 md:w-5 md:h-5 text-white" />
-                </div>
-                <span className="text-white text-sm sm:text-base md:text-lg font-black tracking-wider uppercase" style={{ fontFamily: 'var(--font-posterama)' }}>
-                  02752 / 2029205
-                </span>
-              </div>
-              <div className="flex items-center justify-center xs:justify-start space-x-2 sm:space-x-3 md:space-x-4">
-                <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 bg-[#2d2a32] rounded-full flex items-center justify-center border border-[#3a3640] flex-shrink-0">
-                  <Mail className="w-4 h-4 sm:w-4.5 sm:h-4.5 md:w-5 md:h-5 text-white" />
-                </div>
-                <span className="text-white text-sm sm:text-base md:text-lg font-black tracking-wider uppercase break-all" style={{ fontFamily: 'var(--font-posterama)' }}>
-                  info@dersalon-scharavin.de
-                </span>
-              </div>
-            </div>
-          </motion.div>
+      <motion.div 
+  className="text-left col-span-1 xs:col-span-2 lg:col-span-1"
+  variants={fadeInUp}
+>
+  <h3
+    className="text-xl sm:text-2xl md:text-3xl font-black text-white mb-4 sm:mb-5 md:mb-6 lg:mb-8 tracking-wider uppercase"
+    style={{ fontFamily: 'var(--font-posterama)' }}
+  >
+    Kontakt
+  </h3>
+
+  <div className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
+
+    {/* Address */}
+    <div className="flex items-start justify-start space-x-2 sm:space-x-3 md:space-x-4">
+      <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 bg-[#2d2a32] rounded-full flex items-center justify-center border border-[#3a3640] flex-shrink-0 mt-0.5">
+        <MapPin className="w-4 h-4 sm:w-4.5 sm:h-4.5 md:w-5 md:h-5 text-white" />
+      </div>
+      <span
+        className="text-white text-sm sm:text-base md:text-lg font-black tracking-wider uppercase break-words text-left"
+        style={{ fontFamily: 'var(--font-posterama)' }}
+      >
+        Königsstraße 34 · 57334 Bad Laasphe
+      </span>
+    </div>
+
+    {/* Phone */}
+    <div className="flex items-start justify-start space-x-2 sm:space-x-3 md:space-x-4">
+      <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 bg-[#2d2a32] rounded-full flex items-center justify-center border border-[#3a3640] flex-shrink-0 mt-0.5">
+        <Phone className="w-4 h-4 sm:w-4.5 sm:h-4.5 md:w-5 md:h-5 text-white" />
+      </div>
+
+      <span
+        className="text-white text-sm sm:text-base md:text-lg font-black tracking-wider uppercase break-words text-left"
+        style={{ fontFamily: 'var(--font-posterama)' }}
+      >
+        02752 / 2029205
+      </span>
+    </div>
+
+    {/* Email */}
+    <div className="flex items-start justify-start space-x-2 sm:space-x-3 md:space-x-4">
+      <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 bg-[#2d2a32] rounded-full flex items-center justify-center border border-[#3a3640] flex-shrink-0 mt-0.5">
+        <Mail className="w-4 h-4 sm:w-4.5 sm:h-4.5 md:w-5 md:h-5 text-white" />
+      </div>
+
+      <span
+        className="text-white text-sm sm:text-base md:text-lg font-black tracking-wider uppercase break-words whitespace-normal max-w-full text-left"
+        style={{ fontFamily: 'var(--font-posterama)' }}
+      >
+        info@dersalon-scharavin.de
+      </span>
+    </div>
+
+  </div>
+</motion.div>
+
 
           {/* Social Media */}
           <motion.div 
@@ -175,12 +203,12 @@ export function Footer() {
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
           >
-            © 2024 Der Salon. Alle Rechte vorbehalten.
+            © {currentYear} Der Salon. Alle Rechte vorbehalten.
           </motion.p>
           
-          {/* Additional Info */}
+          {/* Additional Info - Now in a single row */}
           <motion.div 
-            className="flex flex-col xs:flex-row justify-center items-center space-y-2 sm:space-y-3 xs:space-y-0 xs:space-x-4 sm:xs:space-x-6 md:xs:space-x-8 text-sm sm:text-base md:text-lg font-black"
+            className="flex flex-row justify-center items-center space-x-4 sm:space-x-6 md:space-x-8 text-sm sm:text-base md:text-lg font-black mb-4"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -237,19 +265,6 @@ export function Footer() {
                 <span>E-Mail</span>
               </motion.a>
             </div>
-          </motion.div>
-
-          {/* Desktop additional info */}
-          <motion.div 
-            className="mt-6 sm:mt-7 md:mt-8 hidden lg:block"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.7 }}
-          >
-            <p className="text-white text-base sm:text-lg md:text-lg font-black tracking-wider uppercase" style={{ fontFamily: 'var(--font-posterama)' }}>
-              Professionelle Haarpflege und Styling in Bad Laasphe seit 2016
-            </p>
           </motion.div>
         </motion.div>
       </div>

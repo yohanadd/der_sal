@@ -27,25 +27,28 @@ import { ScrollToTop } from "@/components/scroll-to-top"
 import { Footer } from "@/components/footer"
 
 export default function ContactPage() {
-  // Animation variants
+  // Ultra-fast animation variants
   const fadeInUp = {
-    initial: { opacity: 0, y: 30 },
-    animate: { opacity: 1, y: 0 }
+    initial: { opacity: 0, y: 10 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.2, ease: "easeOut" }
   }
 
   const staggerContainer = {
     initial: {},
-    animate: { transition: { staggerChildren: 0.1 } }
+    animate: { transition: { staggerChildren: 0.03 } }
   }
 
   const slideInLeft = {
-    initial: { opacity: 0, x: -50 },
-    animate: { opacity: 1, x: 0 }
+    initial: { opacity: 0, x: -20 },
+    animate: { opacity: 1, x: 0 },
+    transition: { duration: 0.2, ease: "easeOut" }
   }
 
   const slideInRight = {
-    initial: { opacity: 0, x: 50 },
-    animate: { opacity: 1, x: 0 }
+    initial: { opacity: 0, x: 20 },
+    animate: { opacity: 1, x: 0 },
+    transition: { duration: 0.2, ease: "easeOut" }
   }
 
   const [formData, setFormData] = useState({
@@ -145,20 +148,16 @@ export default function ContactPage() {
         initial="initial"
         animate="animate"
         variants={fadeInUp}
-        transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <div className="max-w-6xl mx-auto text-center">
           <motion.div 
             className="mb-4 sm:mb-6 md:mb-8"
             variants={fadeInUp}
-            transition={{ duration: 0.6, ease: "easeOut" }}
           >
             <motion.h1 
               className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-3 sm:mb-4 text-white px-2 sm:px-0 tracking-wider md:tracking-widest uppercase" 
               style={{ fontFamily: 'var(--font-posterama)' }}
               variants={fadeInUp}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              whileHover={{ scale: 1.05 }}
             >
               Kontakt & Anfahrt
             </motion.h1>
@@ -166,7 +165,6 @@ export default function ContactPage() {
               className="text-base sm:text-lg md:text-xl text-white max-w-3xl mx-auto px-2 sm:px-0 tracking-normal sm:tracking-wider uppercase" 
               style={{ fontFamily: 'var(--font-posterama)' }}
               variants={fadeInUp}
-              transition={{ duration: 0.6, ease: "easeOut" }}
             >
               Finden Sie unseren Salon in Bad Laasphe - Königstraße 34. Kostenlose Parkplätze & beste Erreichbarkeit.
             </motion.p>
@@ -179,9 +177,8 @@ export default function ContactPage() {
         className="py-8 sm:py-12 md:py-16 lg:py-20 px-4 sm:px-6 lg:px-8"
         initial="initial"
         whileInView="animate"
-        viewport={{ once: true, margin: "-50px" }}
+        viewport={{ once: true, margin: "-20px" }}
         variants={fadeInUp}
-        transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12">
@@ -191,9 +188,9 @@ export default function ContactPage() {
               variants={staggerContainer}
               initial="initial"
               whileInView="animate"
-              viewport={{ once: true, margin: "-30px" }}
+              viewport={{ once: true, margin: "-10px" }}
             >
-              <motion.div variants={fadeInUp} transition={{ duration: 0.6, ease: "easeOut" }}>
+              <motion.div variants={fadeInUp}>
                 <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-white mb-4 sm:mb-6 md:mb-8 tracking-wider md:tracking-widest uppercase" 
                     style={{ fontFamily: 'var(--font-posterama)' }}>
                   Ihr Salon in Bad Laasphe
@@ -203,16 +200,14 @@ export default function ContactPage() {
               {/* Location */}
               <motion.div 
                 variants={slideInLeft}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-                whileHover={{ scale: 1.02 }}
               >
-                <Card className="border border-[#3a3640] hover:border-white transition-colors duration-300 bg-[#2d2a32]">
+                <Card className="border border-[#3a3640] hover:border-white transition-colors duration-150 bg-[#2d2a32]">
                   <CardContent className="p-3 sm:p-4 md:p-6">
                     <div className="flex items-start space-x-2 sm:space-x-3 md:space-x-4">
                       <motion.div 
                         className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-[#3a3640] rounded-full flex items-center justify-center flex-shrink-0"
-                        whileHover={{ rotate: 360, scale: 1.1 }}
-                        transition={{ duration: 0.5 }}
+                        whileHover={{ rotate: 180, scale: 1.05 }}
+                        transition={{ duration: 0.2 }}
                       >
                         <MapPin className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white" />
                       </motion.div>
@@ -236,14 +231,14 @@ export default function ContactPage() {
                           whileInView="animate"
                           viewport={{ once: true }}
                         >
-                          <motion.div variants={fadeInUp} whileHover={{ scale: 1.05 }}>
+                          <motion.div variants={fadeInUp}>
                             <Badge className="bg-[#3a3640] text-white text-xs border border-white tracking-wide uppercase" 
                                    style={{ fontFamily: 'var(--font-posterama)' }}>
                               <Car className="w-3 h-3 mr-1 text-white" />
                               Kostenlose Parkplätze
                             </Badge>
                           </motion.div>
-                          <motion.div variants={fadeInUp} whileHover={{ scale: 1.05 }}>
+                          <motion.div variants={fadeInUp}>
                             <Badge className="bg-[#3a3640] text-white text-xs border border-white tracking-wide uppercase" 
                                    style={{ fontFamily: 'var(--font-posterama)' }}>
                               <Bus className="w-3 h-3 mr-1 text-white" />
@@ -263,21 +258,19 @@ export default function ContactPage() {
                 variants={staggerContainer}
                 initial="initial"
                 whileInView="animate"
-                viewport={{ once: true, margin: "-30px" }}
+                viewport={{ once: true, margin: "-10px" }}
               >
                 <motion.div 
                   variants={slideInLeft}
-                  transition={{ duration: 0.6, ease: "easeOut" }}
-                  whileHover={{ scale: 1.02 }}
                   className="h-full"
                 >
-                  <Card className="border border-[#3a3640] hover:border-white transition-colors duration-300 bg-[#2d2a32] h-full">
+                  <Card className="border border-[#3a3640] hover:border-white transition-colors duration-150 bg-[#2d2a32] h-full">
                     <CardContent className="p-3 sm:p-4 md:p-6 h-full flex flex-col">
                       <div className="flex items-start space-x-2 sm:space-x-3 md:space-x-4 flex-grow">
                         <motion.div 
                           className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-[#3a3640] rounded-full flex items-center justify-center flex-shrink-0"
-                          whileHover={{ rotate: 360, scale: 1.1 }}
-                          transition={{ duration: 0.5 }}
+                          whileHover={{ rotate: 180, scale: 1.05 }}
+                          transition={{ duration: 0.2 }}
                         >
                           <Phone className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white" />
                         </motion.div>
@@ -302,17 +295,15 @@ export default function ContactPage() {
 
                 <motion.div 
                   variants={slideInRight}
-                  transition={{ duration: 0.6, ease: "easeOut" }}
-                  whileHover={{ scale: 1.02 }}
                   className="h-full"
                 >
-                  <Card className="border border-[#3a3640] hover:border-white transition-colors duration-300 bg-[#2d2a32] h-full">
+                  <Card className="border border-[#3a3640] hover:border-white transition-colors duration-150 bg-[#2d2a32] h-full">
                     <CardContent className="p-3 sm:p-4 md:p-6 h-full flex flex-col">
                       <div className="flex items-start space-x-2 sm:space-x-3 md:space-x-4 flex-grow">
                         <motion.div 
                           className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-[#3a3640] rounded-full flex items-center justify-center flex-shrink-0"
-                          whileHover={{ rotate: 360, scale: 1.1 }}
-                          transition={{ duration: 0.5 }}
+                          whileHover={{ rotate: 180, scale: 1.05 }}
+                          transition={{ duration: 0.2 }}
                         >
                           <Mail className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white" />
                         </motion.div>
@@ -323,7 +314,9 @@ export default function ContactPage() {
                           </h3>
                           <p className="text-white text-sm sm:text-base tracking-wide uppercase" 
                              style={{ fontFamily: 'var(--font-posterama)' }}>
-                            info@dersalon-scharavin.de
+                            <a href="mailto:info@dersalon-scharavin.de" className="break-words whitespace-normal max-w-full inline-block">
+                              info@dersalon-scharavin.de
+                            </a>
                           </p>
                           <p className="text-xs sm:text-sm text-white mt-1 sm:mt-2 tracking-wide uppercase" 
                              style={{ fontFamily: 'var(--font-posterama)' }}>
@@ -339,10 +332,8 @@ export default function ContactPage() {
               {/* Social Media */}
               <motion.div 
                 variants={fadeInUp}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-                whileHover={{ scale: 1.02 }}
               >
-                <Card className="border border-[#3a3640] hover:border-white transition-colors duration-300 bg-[#2d2a32]">
+                <Card className="border border-[#3a3640] hover:border-white transition-colors duration-150 bg-[#2d2a32]">
                   <CardContent className="p-3 sm:p-4 md:p-6">
                     <h3 className="text-base sm:text-lg md:text-xl font-black text-white mb-2 sm:mb-3 md:mb-4 tracking-wide md:tracking-wider uppercase" 
                         style={{ fontFamily: 'var(--font-posterama)' }}>
@@ -375,12 +366,10 @@ export default function ContactPage() {
                         <motion.div 
                           key={index}
                           variants={fadeInUp}
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
                           className="flex-1 min-w-0"
                         >
                           <Button
-                            className="bg-[#3a3640] hover:bg-white hover:text-[#201d24] text-white font-black border border-white transition-colors duration-300 w-full text-xs sm:text-sm tracking-wide uppercase" 
+                            className="bg-[#3a3640] hover:bg-white hover:text-[#201d24] text-white font-black border border-white transition-colors duration-150 w-full text-xs sm:text-sm tracking-wide uppercase" 
                             style={{ fontFamily: 'var(--font-posterama)' }}
                             onClick={() => window.open(social.href, '_blank')}
                           >
@@ -401,10 +390,9 @@ export default function ContactPage() {
               variants={slideInRight}
               initial="initial"
               whileInView="animate"
-              viewport={{ once: true, margin: "-30px" }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
+              viewport={{ once: true, margin: "-10px" }}
             >
-              <motion.div whileHover={{ scale: 1.01 }} className="w-full">
+              <div className="w-full">
                 <div className="border border-[#3a3640] overflow-hidden bg-[#2d2a32] rounded-lg">
                   <div className="aspect-square sm:aspect-video lg:aspect-square relative">
                     <iframe
@@ -422,26 +410,15 @@ export default function ContactPage() {
                     {/* Floating info card over the map */}
                     <motion.div 
                       className="absolute top-2 sm:top-3 md:top-4 left-2 sm:left-3 md:left-4 right-2 sm:right-3 md:right-4 bg-[#2d2a32]/95 backdrop-blur-sm rounded-lg p-2 sm:p-3 md:p-4 shadow-lg border border-[#3a3640]"
-                      initial={{ opacity: 0, y: -20 }}
+                      initial={{ opacity: 0, y: -5 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
-                      transition={{ duration: 0.6, ease: "easeOut", delay: 0.5 }}
+                      transition={{ duration: 0.2, ease: "easeOut", delay: 0.1 }}
                     >
                       <div className="flex items-center space-x-1 sm:space-x-2 md:space-x-3">
-                        <motion.div 
-                          className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-10 lg:h-10 bg-[#3a3640] rounded-full flex items-center justify-center flex-shrink-0"
-                          animate={{ 
-                            scale: [1, 1.1, 1],
-                            rotate: [0, 5, -5, 0]
-                          }}
-                          transition={{ 
-                            duration: 2,
-                            repeat: Infinity,
-                            ease: "easeInOut"
-                          }}
-                        >
+                        <div className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-10 lg:h-10 bg-[#3a3640] rounded-full flex items-center justify-center flex-shrink-0">
                           <Scissors className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-white" />
-                        </motion.div>
+                        </div>
                         <div className="flex-1 min-w-0">
                           <h3 className="text-sm sm:text-base md:text-lg font-black text-white truncate tracking-wide md:tracking-wider uppercase" 
                               style={{ fontFamily: 'var(--font-posterama)' }}>
@@ -452,11 +429,7 @@ export default function ContactPage() {
                             Königstraße 34, 57334 Bad Laasphe
                           </p>
                         </div>
-                        <motion.div
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                          className="flex-shrink-0"
-                        >
+                        <div className="flex-shrink-0">
                           <Button 
                             size="sm"
                             className="bg-[#3a3640] hover:bg-white hover:text-[#201d24] text-white font-black border border-white text-xs sm:text-sm tracking-wide uppercase" 
@@ -465,12 +438,12 @@ export default function ContactPage() {
                           >
                             Anfahrt
                           </Button>
-                        </motion.div>
+                        </div>
                       </div>
                     </motion.div>
                   </div>
                 </div>
-              </motion.div>
+              </div>
               
               {/* Additional location info */}
               <motion.div 
@@ -480,20 +453,12 @@ export default function ContactPage() {
                 whileInView="animate"
                 viewport={{ once: true }}
               >
-                <motion.div 
-                  variants={fadeInUp}
-                  transition={{ duration: 0.6, ease: "easeOut" }}
-                  whileHover={{ scale: 1.05 }}
-                >
-                  <Card className="border border-[#3a3640] hover:border-white transition-colors duration-300 p-2 sm:p-3 md:p-4 bg-[#2d2a32]">
+                <motion.div variants={fadeInUp}>
+                  <Card className="border border-[#3a3640] hover:border-white transition-colors duration-150 p-2 sm:p-3 md:p-4 bg-[#2d2a32]">
                     <div className="text-center">
-                      <motion.div 
-                        className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-10 lg:h-10 bg-[#3a3640] rounded-full flex items-center justify-center mx-auto mb-1 sm:mb-2"
-                        animate={{ rotate: [0, 10, -10, 0] }}
-                        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                      >
+                      <div className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-10 lg:h-10 bg-[#3a3640] rounded-full flex items-center justify-center mx-auto mb-1 sm:mb-2">
                         <Car className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-white" />
-                      </motion.div>
+                      </div>
                       <p className="text-xs sm:text-sm font-black text-white tracking-wide uppercase" 
                          style={{ fontFamily: 'var(--font-posterama)' }}>
                         Kostenlose
@@ -506,20 +471,12 @@ export default function ContactPage() {
                   </Card>
                 </motion.div>
                 
-                <motion.div 
-                  variants={fadeInUp}
-                  transition={{ duration: 0.6, ease: "easeOut" }}
-                  whileHover={{ scale: 1.05 }}
-                >
-                  <Card className="border border-[#3a3640] hover:border-white transition-colors duration-300 p-2 sm:p-3 md:p-4 bg-[#2d2a32]">
+                <motion.div variants={fadeInUp}>
+                  <Card className="border border-[#3a3640] hover:border-white transition-colors duration-150 p-2 sm:p-3 md:p-4 bg-[#2d2a32]">
                     <div className="text-center">
-                      <motion.div 
-                        className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-10 lg:h-10 bg-[#3a3640] rounded-full flex items-center justify-center mx-auto mb-1 sm:mb-2"
-                        animate={{ scale: [1, 1.1, 1] }}
-                        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                      >
+                      <div className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-10 lg:h-10 bg-[#3a3640] rounded-full flex items-center justify-center mx-auto mb-1 sm:mb-2">
                         <Bus className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-white" />
-                      </motion.div>
+                      </div>
                       <p className="text-xs sm:text-sm font-black text-white tracking-wide uppercase" 
                          style={{ fontFamily: 'var(--font-posterama)' }}>
                         Bushaltestelle
@@ -542,15 +499,13 @@ export default function ContactPage() {
         className="py-8 sm:py-12 md:py-16 px-4 sm:px-6 lg:px-8"
         initial="initial"
         whileInView="animate"
-        viewport={{ once: true, margin: "-50px" }}
+        viewport={{ once: true, margin: "-20px" }}
         variants={fadeInUp}
-        transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <div className="max-w-4xl mx-auto">
           <motion.div 
             className="text-center mb-4 sm:mb-6 md:mb-8"
             variants={fadeInUp}
-            transition={{ duration: 0.6, ease: "easeOut" }}
           >
             <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black text-white mb-2 sm:mb-3 md:mb-4 px-2 sm:px-0 tracking-wider md:tracking-widest uppercase" 
                 style={{ fontFamily: 'var(--font-posterama)' }}>
@@ -560,8 +515,6 @@ export default function ContactPage() {
 
           <motion.div
             variants={slideInLeft}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            whileHover={{ scale: 1.01 }}
           >
             <Card className="border border-[#3a3640] bg-[#2d2a32]">
               <CardHeader className="bg-[#3a3640]/30 p-3 sm:p-4 md:p-6">
@@ -574,7 +527,7 @@ export default function ContactPage() {
                 {/* Success Message */}
                 {formState.success && (
                   <motion.div
-                    initial={{ opacity: 0, y: -10 }}
+                    initial={{ opacity: 0, y: -5 }}
                     animate={{ opacity: 1, y: 0 }}
                     className="mb-2 sm:mb-3 md:mb-4 p-2 sm:p-3 bg-green-900/20 border border-green-700 rounded-lg flex items-center"
                   >
@@ -589,7 +542,7 @@ export default function ContactPage() {
                 {/* Error Message */}
                 {formState.error && (
                   <motion.div
-                    initial={{ opacity: 0, y: -10 }}
+                    initial={{ opacity: 0, y: -5 }}
                     animate={{ opacity: 1, y: 0 }}
                     className="mb-2 sm:mb-3 md:mb-4 p-2 sm:p-3 bg-red-900/20 border border-red-700 rounded-lg flex items-center"
                   >
@@ -616,7 +569,7 @@ export default function ContactPage() {
                     className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4"
                     variants={staggerContainer}
                   >
-                    <motion.div variants={fadeInUp} transition={{ duration: 0.6, ease: "easeOut" }}>
+                    <motion.div variants={fadeInUp}>
                       <label htmlFor="name" className="block text-sm font-black text-white mb-1 sm:mb-2 tracking-wide uppercase" 
                              style={{ fontFamily: 'var(--font-posterama)' }}>
                         Ihr Name *
@@ -634,7 +587,7 @@ export default function ContactPage() {
                         disabled={formState.loading}
                       />
                     </motion.div>
-                    <motion.div variants={fadeInUp} transition={{ duration: 0.6, ease: "easeOut" }}>
+                    <motion.div variants={fadeInUp}>
                       <label htmlFor="email" className="block text-sm font-black text-white mb-1 sm:mb-2 tracking-wide uppercase" 
                              style={{ fontFamily: 'var(--font-posterama)' }}>
                         E-Mail-Adresse *
@@ -658,7 +611,7 @@ export default function ContactPage() {
                     className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4"
                     variants={staggerContainer}
                   >
-                    <motion.div variants={fadeInUp} transition={{ duration: 0.6, ease: "easeOut" }}>
+                    <motion.div variants={fadeInUp}>
                       <label htmlFor="phone" className="block text-sm font-black text-white mb-1 sm:mb-2 tracking-wide uppercase" 
                              style={{ fontFamily: 'var(--font-posterama)' }}>
                         Telefonnummer
@@ -675,7 +628,7 @@ export default function ContactPage() {
                         disabled={formState.loading}
                       />
                     </motion.div>
-                    <motion.div variants={fadeInUp} transition={{ duration: 0.6, ease: "easeOut" }}>
+                    <motion.div variants={fadeInUp}>
                       <label htmlFor="service" className="block text-sm font-black text-white mb-1 sm:mb-2 tracking-wide uppercase" 
                              style={{ fontFamily: 'var(--font-posterama)' }}>
                         Service
@@ -699,7 +652,7 @@ export default function ContactPage() {
                     </motion.div>
                   </motion.div>
 
-                  <motion.div variants={fadeInUp} transition={{ duration: 0.6, ease: "easeOut" }}>
+                  <motion.div variants={fadeInUp}>
                     <label htmlFor="message" className="block text-sm font-black text-white mb-1 sm:mb-2 tracking-wide uppercase" 
                            style={{ fontFamily: 'var(--font-posterama)' }}>
                       Ihre Anfrage *
@@ -721,13 +674,8 @@ export default function ContactPage() {
                   <motion.div 
                     className="text-center"
                     variants={fadeInUp}
-                    transition={{ duration: 0.6, ease: "easeOut" }}
                   >
-                    <motion.div
-                      whileHover={{ scale: formState.loading ? 1 : 1.05 }}
-                      whileTap={{ scale: formState.loading ? 1 : 0.95 }}
-                      className="flex justify-center"
-                    >
+                    <div className="flex justify-center">
                       <Button
                         type="submit"
                         size="lg"
@@ -747,7 +695,7 @@ export default function ContactPage() {
                           </>
                         )}
                       </Button>
-                    </motion.div>
+                    </div>
                   </motion.div>
                 </motion.form>
               </CardContent>

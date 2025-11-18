@@ -7,22 +7,22 @@ import { Star, Heart, Scissors, Palette, Clock, Smile, Award, Users } from "luci
 import Image from "next/image"
 import { ScrollToTop } from "@/components/scroll-to-top"
 import { Footer } from "@/components/footer"
-import InesImage from "../../out/images/Ines.jpg"
-import SandraImage from "../../out/images/sandra.jpg"
+import InesImage from "@/public/images/Ines.jpg"
+import SandraImage from "@/public/images/sandra.jpg"
 import { motion } from "framer-motion"
 
 export default function TeamPage() {
-  // Animation variants
+  // Ultra-fast animation variants
   const fadeInUp = {
-    initial: { opacity: 0, y: 60 },
+    initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6, ease: "easeOut" },
+    transition: { duration: 0.25, ease: "easeOut" },
   }
 
   const staggerContainer = {
     animate: {
       transition: {
-        staggerChildren: 0.1,
+        staggerChildren: 0.05,
       },
     },
   }
@@ -30,7 +30,6 @@ export default function TeamPage() {
   const teamMembers = [
     {
       name: "INES SCHARAVIN",
-      // role: "FRISEURMEISTERIN · COLORISTIN · BLONDEXPERTIN",
       icon: "palette",
       image: InesImage,
       objectPosition: "center 20%",
@@ -43,7 +42,6 @@ export default function TeamPage() {
     },
     {
       name: "SANDRA KRAUSE",
-      // role: "FRISEURIN · SPEZIALISTIN FÜR DAMENKURZHAAR & DAUERWELLE",
       icon: "scissors",
       image: SandraImage,
       objectPosition: "80% 6%",
@@ -62,8 +60,7 @@ export default function TeamPage() {
       <motion.section
         className="py-12 sm:py-16 md:py-20 px-3 sm:px-4 md:px-6 bg-[#201d24]"
         initial="initial"
-        whileInView="animate"
-        viewport={{ once: true, margin: "-100px" }}
+        animate="animate"
         variants={fadeInUp}
       >
         <div className="max-w-7xl mx-auto text-center">
@@ -83,7 +80,7 @@ export default function TeamPage() {
         className="py-12 sm:py-16 md:py-20 px-3 sm:px-4 md:px-6 bg-[#201d24]"
         initial="initial"
         whileInView="animate"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, margin: "-30px" }}
         variants={fadeInUp}
       >
         <div className="max-w-7xl mx-auto">
@@ -92,6 +89,7 @@ export default function TeamPage() {
               <motion.div
                 key={index}
                 variants={fadeInUp}
+                transition={{ duration: 0.25 }}
                 className={`grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center ${
                   index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
                 }`}
@@ -100,8 +98,8 @@ export default function TeamPage() {
                 <div className={`${index % 2 === 1 ? "lg:col-start-2" : ""}`}>
                   <motion.div 
                     className="relative group"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ type: "spring", stiffness: 300 }}
+                    whileHover={{ scale: 1.01 }}
+                    transition={{ type: "spring", stiffness: 500, damping: 30 }}
                   >
                     <div className="relative bg-white rounded-xl sm:rounded-2xl md:rounded-3xl p-3 sm:p-4 md:p-6 shadow-xl sm:shadow-2xl border-2 border-[#3a3640]">
                       <div className="aspect-square overflow-hidden rounded-lg sm:rounded-xl md:rounded-2xl">
@@ -110,9 +108,10 @@ export default function TeamPage() {
                           alt={`Friseur ${member.name} -  in Bad Laasphe`}
                           width={500}
                           height={500}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
                           style={{ objectPosition: member.objectPosition }}
                           sizes="(max-width: 1024px) 100vw, 50vw"
+                          priority={index === 0}
                         />
                       </div>
                     </div>
@@ -125,9 +124,6 @@ export default function TeamPage() {
                     <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-white mb-3 sm:mb-4 tracking-widest uppercase leading-tight" style={{ fontFamily: 'var(--font-posterama)', fontWeight: 900, letterSpacing: '0.08em' }}>
                       {member.name}
                     </h2>
-                    {/* <Badge className="bg-[#2d2a32] text-white text-base sm:text-lg md:text-xl px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-3 border-2 border-[#3a3640] tracking-wider uppercase" style={{ fontFamily: 'var(--font-posterama)', fontWeight: 800, letterSpacing: '0.04em' }}>
-                      {member.role}
-                    </Badge> */}
                   </div>
 
                   <p className="text-white text-base sm:text-lg md:text-xl leading-relaxed tracking-wider uppercase" style={{ fontFamily: 'var(--font-posterama)', fontWeight: 700, letterSpacing: '0.035em' }}>
@@ -145,8 +141,8 @@ export default function TeamPage() {
                           <motion.li 
                             key={specIndex} 
                             className="flex items-center"
-                            whileHover={{ x: 5 }}
-                            transition={{ type: "spring", stiffness: 300 }}
+                            whileHover={{ x: 3 }}
+                            transition={{ type: "spring", stiffness: 500, duration: 0.15 }}
                           >
                             <Star className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-white mr-2 sm:mr-3 flex-shrink-0" />
                             <p className="text-white text-sm sm:text-base md:text-lg tracking-wider uppercase" style={{ fontFamily: 'var(--font-posterama)', fontWeight: 700, letterSpacing: '0.03em' }}>{specialty}</p>
@@ -167,8 +163,8 @@ export default function TeamPage() {
                           <motion.div 
                             key={achieveIndex} 
                             className="flex items-center"
-                            whileHover={{ x: 5 }}
-                            transition={{ type: "spring", stiffness: 300 }}
+                            whileHover={{ x: 3 }}
+                            transition={{ type: "spring", stiffness: 500, duration: 0.15 }}
                           >
                             <Award className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-white mr-2 sm:mr-3 flex-shrink-0" />
                             <p className="text-white text-xs sm:text-sm md:text-base tracking-wider uppercase" style={{ fontFamily: 'var(--font-posterama)', fontWeight: 700, letterSpacing: '0.025em' }}>{achievement}</p>
@@ -193,8 +189,8 @@ export default function TeamPage() {
 
                   <motion.div 
                     className="bg-[#2d2a32] rounded-lg sm:rounded-xl md:rounded-2xl p-4 sm:p-6 md:p-8 border-l-4 border-[#3a3640]"
-                    whileHover={{ scale: 1.01 }}
-                    transition={{ type: "spring", stiffness: 300 }}
+                    whileHover={{ scale: 1.005 }}
+                    transition={{ type: "spring", stiffness: 500, duration: 0.15 }}
                   >
                     <h3 className="text-base sm:text-lg md:text-xl font-black text-white mb-2 sm:mb-3 flex items-center tracking-wider uppercase leading-tight" style={{ fontFamily: 'var(--font-posterama)', fontWeight: 900, letterSpacing: '0.05em' }}>
                       <Heart className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 mr-2 sm:mr-3 text-white" />
@@ -204,8 +200,9 @@ export default function TeamPage() {
                   </motion.div>
 
                   <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.97 }}
+                    transition={{ type: "spring", stiffness: 500, duration: 0.15 }}
                   >
                     <Button className="bg-[#2d2a32] text-white hover:bg-[#3a3640] font-black px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-4 border-2 border-[#3a3640] text-base sm:text-lg md:text-xl w-full sm:w-auto tracking-widest uppercase" style={{ fontFamily: 'var(--font-posterama)', fontWeight: 900, letterSpacing: '0.06em' }}>
                       TERMIN BEI {member.name.split(" ")[0]} BUCHEN
@@ -223,7 +220,7 @@ export default function TeamPage() {
         className="py-12 sm:py-16 md:py-20 px-3 sm:px-4 md:px-6 bg-[#2d2a32]"
         initial="initial"
         whileInView="animate"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, margin: "-30px" }}
         variants={fadeInUp}
       >
         <div className="max-w-7xl mx-auto">
@@ -246,16 +243,16 @@ export default function TeamPage() {
               { number: "10+", label: "ZERTIFIKATE", icon: <Award className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-10 lg:h-10 text-white" /> },
               { number: "100%", label: "LEIDENSCHAFT FÜR HAARE", icon: <Heart className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-10 lg:h-10 text-white" /> },
             ].map((stat, index) => (
-              <motion.div key={index} variants={fadeInUp}>
+              <motion.div key={index} variants={fadeInUp} transition={{ duration: 0.25 }}>
                 <Card className="
                   p-3 sm:p-4 md:p-5 lg:p-6 xl:p-7 
                   text-center 
                   hover:shadow-xl 
-                  transition-all duration-300 
+                  transition-all duration-200 
                   border-2 border-[#3a3640] 
                   hover:border-white 
                   bg-[#201d24] 
-                  hover:-translate-y-1 sm:hover:-translate-y-2
+                  hover:-translate-y-1
                   flex items-center justify-center
                   h-full
                 ">
@@ -263,9 +260,9 @@ export default function TeamPage() {
                     
                     {/* ICON */}
                     <motion.div
-                      className="text-white flex justify-center group-hover:scale-110 transition-transform duration-300"
-                      whileHover={{ rotate: 360 }}
-                      transition={{ duration: 0.6 }}
+                      className="text-white flex justify-center"
+                      whileHover={{ rotate: 360, scale: 1.05 }}
+                      transition={{ duration: 0.3 }}
                     >
                       {stat.icon}
                     </motion.div>
@@ -307,7 +304,7 @@ export default function TeamPage() {
         className="py-12 sm:py-16 md:py-20 px-3 sm:px-4 md:px-6 bg-[#201d24]"
         initial="initial"
         whileInView="animate"
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, margin: "-30px" }}
         variants={fadeInUp}
       >
         <div className="max-w-4xl sm:max-w-5xl mx-auto text-center">
@@ -319,8 +316,9 @@ export default function TeamPage() {
           </motion.p>
           <motion.div
             variants={fadeInUp}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
+            transition={{ type: "spring", stiffness: 500, duration: 0.15 }}
           >
             <Button
               size="lg"
@@ -328,11 +326,11 @@ export default function TeamPage() {
               style={{ fontFamily: 'var(--font-posterama)', fontWeight: 900, letterSpacing: '0.06em' }}
             >
               <motion.div
-                animate={{ rotate: [0, 5, -5, 0] }}
+                animate={{ rotate: [0, 3, -3, 0] }}
                 transition={{
-                  duration: 2,
+                  duration: 1,
                   repeat: Infinity,
-                  repeatDelay: 3,
+                  repeatDelay: 1,
                 }}
               >
                 <Scissors className="w-5 h-5 sm:w-5.5 sm:h-5.5 md:w-6 md:h-6 lg:w-7 lg:h-7 mr-2 sm:mr-3 text-white" />
